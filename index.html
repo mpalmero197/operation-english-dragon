@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#e85d4c" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="English Dragon" />
+<title>Opération English Dragon</title>
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<style>
+  :root {
+    --bg: #0f1419;
+    --card: #1a2332;
+    --border: #2d3a4f;
+    --text: #e8eef7;
+    --muted: #8b9bb4;
+    --accent: #e85d4c;
+    --ok: #3ecf8e;
+    --warn: #f0b429;
+    --lane1: #7c9cff;
+    --lane2: #f0b429;
+    --lane3: #3ecf8e;
+    --lane4: #e85d4c;
+    --lane5: #d48cf0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.45;
+    padding: 1.25rem;
+    padding-bottom: 5rem;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+  header { margin-bottom: 1rem; }
+  h1 { font-size: 1.35rem; margin: 0 0 0.35rem; }
+  .sub { color: var(--muted); font-size: 0.9rem; }
+  .overall, .clock-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .overall-top, .clock-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.55rem;
+  }
+  .pct { font-size: 1.75rem; font-weight: 700; color: var(--accent); }
+  .bar, .mini-bar {
+    height: 10px;
+    background: #243044;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .mini-bar { height: 6px; }
+  .bar > span, .mini-bar > span {
+    display: block; height: 100%; width: 0%;
+    background: linear-gradient(90deg, var(--accent), #ff8a6b);
+    transition: width 0.25s ease;
+  }
+  .l1 .mini-bar > span { background: var(--lane1); }
+  .l2 .mini-bar > span { background: var(--lane2); }
+  .l3 .mini-bar > span { background: var(--lane3); }
+  .l4 .mini-bar > span { background: var(--lane4); }
+  .l5 .mini-bar > span { background: var(--lane5); }
+  .lanes { display: grid; gap: 0.85rem; }
+  details.lane {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  details.lane[open] { border-color: #3a4d6a; }
+  summary {
+    list-style: none; cursor: pointer; padding: 0.9rem 1rem;
+    display: grid; gap: 0.45rem; user-select: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  .lane-head { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; }
+  .lane-title { font-weight: 650; }
+  .lane-pct { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .body { padding: 0 1rem 1rem; border-top: 1px solid var(--border); }
+  .goal { font-size: 0.85rem; color: var(--muted); margin: 0.75rem 0 0.65rem; }
+  .step {
+    margin: 0.55rem 0; padding: 0.65rem 0.7rem;
+    background: #141c28; border-radius: 10px; border: 1px solid #243044;
+  }
+  .step-main { display: flex; gap: 0.55rem; align-items: flex-start; }
+  .step-main label { font-weight: 600; cursor: pointer; }
+  .subs { margin: 0.45rem 0 0 1.55rem; display: grid; gap: 0.3rem; }
+  .subs label {
+    display: flex; gap: 0.45rem; align-items: flex-start;
+    font-size: 0.9rem; color: #c5d0e0; cursor: pointer;
+  }
+  input[type="checkbox"] {
+    width: 1.05rem; height: 1.05rem; margin-top: 0.15rem;
+    accent-color: var(--ok); flex-shrink: 0;
+  }
+  .done label, .done .step-main label { color: var(--muted); text-decoration: line-through; }
+  .lanes.locked { opacity: 0.45; pointer-events: none; filter: grayscale(0.3); }
+  footer { margin-top: 1.25rem; color: var(--muted); font-size: 0.8rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.85rem; }
+  button {
+    background: #243044; color: var(--text);
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 0.55rem 0.95rem; font: inherit; cursor: pointer;
+  }
+  button:hover { border-color: #4a6288; }
+  button.primary { background: var(--accent); border-color: #ff7a68; color: #fff; font-weight: 650; }
+  button.danger { background: #3a1f24; border-color: #7a3038; color: #ffb4b4; }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .tip {
+    margin-top: 0.75rem; padding: 0.7rem 0.85rem;
+    background: #1a2838; border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0; font-size: 0.85rem; color: #c5d0e0;
+  }
+  .clock-status {
+    font-size: 0.95rem; margin: 0.35rem 0 0.75rem; font-weight: 600;
+  }
+  .clock-status.ok { color: var(--ok); }
+  .clock-status.warn { color: var(--warn); }
+  .clock-status.bad { color: #ff7a68; }
+  .timer {
+    font-size: 2rem; font-weight: 700; font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em; margin: 0.25rem 0 0.75rem;
+  }
+  .stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+    font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem;
+  }
+  .stats strong { color: var(--text); display: block; font-size: 1.05rem; }
+  .sessions {
+    margin-top: 0.75rem; max-height: 160px; overflow: auto;
+    font-size: 0.8rem; color: var(--muted);
+  }
+  .sessions div { padding: 0.25rem 0; border-bottom: 1px solid #243044; }
+  .install-bar {
+    position: sticky; top: 0; z-index: 20;
+    background: #1f2a3d; border: 1px solid var(--border);
+    border-radius: 12px; padding: 0.7rem 0.85rem; margin-bottom: 1rem;
+    display: none; gap: 0.5rem; align-items: center; justify-content: space-between;
+  }
+  .install-bar.show { display: flex; flex-wrap: wrap; }
+  .force-banner {
+    position: sticky; top: 0; z-index: 30;
+    background: #4a1c22; border: 1px solid #a33;
+    border-radius: 12px; padding: 0.85rem 1rem; margin-bottom: 1rem;
+    display: none;
+  }
+  .force-banner.show { display: block; }
+  .force-banner h2 { margin: 0 0 0.35rem; font-size: 1.05rem; color: #ffb4b4; }
+  .force-banner p { margin: 0 0 0.65rem; font-size: 0.9rem; color: #ffd0d0; }
+</style>
+</head>
+<body>
+  <div id="forceBanner" class="force-banner" aria-live="assertive">
+    <h2 id="forceTitle">Study check-in required</h2>
+    <p id="forceMsg"></p>
+    <button type="button" class="primary" id="forceClockIn">Clock in now</button>
+  </div>
+
+  <div id="installBar" class="install-bar">
+    <span class="sub">Install English Dragon on this device</span>
+    <button type="button" class="primary" id="installBtn">Install</button>
+  </div>
+
+  <header>
+    <h1>Opération English Dragon</h1>
+    <p class="sub">Michael + Coco · CELTA → GZ job (Z) → live together · works offline after install</p>
+  </header>
+
+  <section class="clock-card" id="clockCard">
+    <div class="clock-top">
+      <div>
+        <div class="sub">Study clock · noon CT lunch (weekdays)</div>
+        <strong>Mandatory check-in</strong>
+      </div>
+      <div class="sub" id="ctNow"></div>
+    </div>
+    <div class="clock-status" id="clockStatus">—</div>
+    <div class="timer" id="liveTimer">00:00:00</div>
+    <div class="stats">
+      <div>Today<strong id="todayMins">0 min</strong></div>
+      <div>This week<strong id="weekMins">0 min</strong></div>
+      <div>Streak<strong id="streak">0 days</strong></div>
+      <div>Sessions logged<strong id="sessionCount">0</strong></div>
+    </div>
+    <div class="actions">
+      <button type="button" class="primary" id="clockInBtn">Clock in</button>
+      <button type="button" class="danger" id="clockOutBtn" disabled>Clock out</button>
+      <button type="button" id="notifyBtn">Enable reminders</button>
+    </div>
+    <p class="tip">Weekdays: you must clock in during lunch (11:30am–1:30pm CT) or the lanes lock until you do. Weekends: at least one session Sat or Sun. No silent skips.</p>
+    <div class="sessions" id="sessionList"></div>
+  </section>
+
+  <section class="overall">
+    <div class="overall-top">
+      <div>
+        <div class="sub">Overall goal</div>
+        <strong>Move to Guangzhou with Coco</strong>
+      </div>
+      <div class="pct" id="overallPct">0%</div>
+    </div>
+    <div class="bar"><span id="overallBar"></span></div>
+    <div class="actions">
+      <button type="button" id="exportBtn">Copy progress summary</button>
+      <button type="button" id="resetBtn">Reset checklist ticks</button>
+    </div>
+    <p class="tip">Show Coco once a week: <strong>1 win + next step</strong> — plus this week’s study minutes from the clock.</p>
+  </section>
+
+  <div class="lanes" id="lanes"></div>
+
+  <footer>
+    PWA checklist · progress + study log stored on this device · pair with team PROGRESS.md
+  </footer>
+
+<script>
+const DATA = [
+  {
+    id: "celta",
+    className: "l1",
+    title: "1 · CELTA / momentum",
+    goal: "8-week prep pack → authorised CELTA certificate (visible daily reps for Coco)",
+    steps: [
+      {
+        id: "c1",
+        label: "Lock the daily study block (start here)",
+        subs: [
+          { id: "c1a", label: "Study block locked: lunch noon US Central (America/Chicago)", doneDefault: true },
+          { id: "c1b", label: "Weekday lunch check-in required in Study Clock (can’t skip)", doneDefault: true },
+          { id: "c1c", label: "Open study home (README in celta-study pack)" },
+          { id: "c1d", label: "Use schedule.md week checklists alongside this app" }
+        ]
+      },
+      {
+        id: "c2",
+        label: "Week 1 — Learners, context & grammar foundations",
+        subs: [
+          { id: "c2a", label: "Lesson 01: /workspace/celta-study/lessons/01-learners-and-context.md" },
+          { id: "c2b", label: "Start Lesson 02 grammar: /workspace/celta-study/lessons/02-grammar-for-teachers.md" },
+          { id: "c2c", label: "Sun checkpoint: /workspace/celta-study/exams/quiz-week1.md" },
+          { id: "c2d", label: "Week 1 win: class profile + basic CCQs" }
+        ]
+      },
+      {
+        id: "c3",
+        label: "Week 2 — Grammar for teachers (depth)",
+        subs: [
+          { id: "c3a", label: "Finish Lesson 02 (tense/aspect, modals, MFP)" },
+          { id: "c3b", label: "Quiz: /workspace/celta-study/exams/quiz-week2.md" },
+          { id: "c3c", label: "Week 2 win: analyse TL for meaning, form, problems, CCQs" }
+        ]
+      },
+      {
+        id: "c4",
+        label: "Week 3 — Lexis + phonology",
+        subs: [
+          { id: "c4a", label: "Lesson 03 lexis: /workspace/celta-study/lessons/03-lexis.md" },
+          { id: "c4b", label: "Lesson 04 phonology: /workspace/celta-study/lessons/04-phonology.md" },
+          { id: "c4c", label: "Quiz: /workspace/celta-study/exams/quiz-week3.md" },
+          { id: "c4d", label: "Week 3 win: mark stress + spot collocation problems" }
+        ]
+      },
+      {
+        id: "c5",
+        label: "Week 4 — Receptive skills + midterm",
+        subs: [
+          { id: "c5a", label: "Lesson 05: /workspace/celta-study/lessons/05-receptive-skills.md" },
+          { id: "c5b", label: "Quiz: /workspace/celta-study/exams/quiz-week4.md" },
+          { id: "c5c", label: "Midterm: /workspace/celta-study/exams/midterm.md" },
+          { id: "c5d", label: "Week 4 win: stage a receptive skills lesson" }
+        ]
+      },
+      {
+        id: "c6",
+        label: "Week 5 — Productive skills",
+        subs: [
+          { id: "c6a", label: "Lesson 06: /workspace/celta-study/lessons/06-productive-skills.md" },
+          { id: "c6b", label: "Quiz: /workspace/celta-study/exams/quiz-week5.md" },
+          { id: "c6c", label: "Week 5 win: one speaking + one writing sequence designed" }
+        ]
+      },
+      {
+        id: "c7",
+        label: "Week 6 — Lesson planning & resources",
+        subs: [
+          { id: "c7a", label: "Lesson 07: /workspace/celta-study/lessons/07-lesson-planning.md" },
+          { id: "c7b", label: "Draft one full mini lesson plan" },
+          { id: "c7c", label: "Quiz: /workspace/celta-study/exams/quiz-week6.md" }
+        ]
+      },
+      {
+        id: "c8",
+        label: "Week 7 — Classroom management, CCQs, correction",
+        subs: [
+          { id: "c8a", label: "Lesson 08: /workspace/celta-study/lessons/08-classroom-management.md" },
+          { id: "c8b", label: "Lesson 09: /workspace/celta-study/lessons/09-error-correction-and-ccqs.md" },
+          { id: "c8c", label: "Quiz: /workspace/celta-study/exams/quiz-week7.md" }
+        ]
+      },
+      {
+        id: "c9",
+        label: "Week 8 — Written assignments + final mock",
+        subs: [
+          { id: "c9a", label: "Lesson 10: /workspace/celta-study/lessons/10-written-assignments-guide.md" },
+          { id: "c9b", label: "Quiz: /workspace/celta-study/exams/quiz-week8.md" },
+          { id: "c9c", label: "Final practice: /workspace/celta-study/exams/final-practice.md" },
+          { id: "c9d", label: "Week 8 win: practice drafts of all 4 assignment genres" }
+        ]
+      },
+      {
+        id: "c10",
+        label: "Enrol & finish authorised CELTA (the real certificate)",
+        subs: [
+          { id: "c10a", label: "Pre-course free warm-up: https://www.eltconcourse.com/training/initial/celta/celta_pre-course.html" },
+          { id: "c10b", label: "Syllabus PDF: https://www.cambridgeenglish.org/images/21816-celta-syllabus.pdf" },
+          { id: "c10c", label: "Choose authorised Cambridge centre + enrol / pay deposit" },
+          { id: "c10d", label: "CELTA certificate in hand" }
+        ]
+      }
+    ]
+  },
+  {
+    id: "jobs",
+    className: "l2",
+    title: "2 · Jobs (Guangzhou)",
+    goal: "Language-center Z offer in ¥18–25k band, then climb to intl school",
+    steps: [
+      {
+        id: "j0",
+        label: "Bachelor’s gate cleared",
+        doneDefault: true,
+        subs: [
+          { id: "j0a", label: "ITT Digital Entertainment & Game Design (Nashville) confirmed", doneDefault: true }
+        ]
+      },
+      {
+        id: "j1",
+        label: "China teaching CV ready",
+        subs: [
+          { id: "j1a", label: "Draft China-format CV (photo, education, CELTA in progress, Part 107 optional)" },
+          { id: "j1b", label: "Add professional headshot (white/neutral background)" },
+          { id: "j1c", label: "1-page PDF + Word version for recruiters" }
+        ]
+      },
+      {
+        id: "j2",
+        label: "Profiles + boards live",
+        subs: [
+          { id: "j2a", label: "eChinacities: https://jobs.echinacities.com (Guangzhou ESL filter)" },
+          { id: "j2b", label: "Dave’s ESL Cafe China: https://www.eslcafe.com" },
+          { id: "j2c", label: "LoveTEFL / similar board profile or saved GZ alerts" }
+        ]
+      },
+      {
+        id: "j3",
+        label: "Apply to licensed Z sponsors only",
+        subs: [
+          { id: "j3a", label: "English 1 careers / GZ openings (chain, first-timer friendly)" },
+          { id: "j3b", label: "3–5 licensed GZ training centers in ¥18–25k band" },
+          { id: "j3c", label: "Verify each offer lists Work Permit / Z sponsorship (no grey agents)" },
+          { id: "j3d", label: "Track applications (school · date · status) for Coco updates" }
+        ]
+      },
+      {
+        id: "j4",
+        label: "Interview → offer → contract",
+        subs: [
+          { id: "j4a", label: "Demo lesson / interview prep done" },
+          { id: "j4b", label: "Interviews completed" },
+          { id: "j4c", label: "Written offer + Z sponsor docs from school" },
+          { id: "j4d", label: "Contract signed (prefer housing stipend in cash — already with Coco)" }
+        ]
+      }
+    ]
+  },
+  {
+    id: "money",
+    className: "l3",
+    title: "3 · Money",
+    goal: "Fund CELTA ($2–3k) + landing buffer; first Coco-visible win is cutting the $281 phone",
+    steps: [
+      {
+        id: "m1",
+        label: "Snapshot (do this first)",
+        subs: [
+          { id: "m1a", label: "Write today’s bank balance (checking + savings)" },
+          { id: "m1b", label: "Confirm take-home: ~$950 / 2 weeks (~$1,900/mo)" },
+          { id: "m1c", label: "List fixed burns: $281 phone, $80 insurance, Jumpspeak, Duolingo" },
+          { id: "m1d", label: "Add anything else monthly (rent, car, food) so the gap is real" }
+        ]
+      },
+      {
+        id: "m2",
+        label: "Cut drag — first Coco-visible money win",
+        subs: [
+          { id: "m2a", label: "Pull the $281 phone bill: what’s actually on it (lines, devices, extras)" },
+          { id: "m2b", label: "Cut or switch plan this month (target well under $80)" },
+          { id: "m2c", label: "Review Jumpspeak + Duolingo — keep one paid Mandarin tool if they overlap" },
+          { id: "m2d", label: "Plan: US phone dies for a cheap GZ SIM after landing" }
+        ]
+      },
+      {
+        id: "m3",
+        label: "Pick the path: thin/fast vs $70k stack",
+        subs: [
+          { id: "m3a", label: "If Flight Coordinator ($70k) offer lands: take it or keep going ASAP" },
+          { id: "m3b", label: "Thin/fast = stay on ~$1,900/mo, fund CELTA + thin buffer, move sooner" },
+          { id: "m3c", label: "Stack = 2–3 months at $70k, CELTA + real cushion, show Coco the bank" },
+          { id: "m3d", label: "Tell Financial Assistant + Coco which path (weekly pulse)" }
+        ]
+      },
+      {
+        id: "m4",
+        label: "Reserve CELTA tuition ($2–3k US)",
+        subs: [
+          { id: "m4a", label: "Compare authorised centres: https://www.cambridgeenglish.org/teaching-english/teaching-qualifications/celta/" },
+          { id: "m4b", label: "US price check (Teaching House ~$2,995): https://www.teachinghouse.com/coursess/the-celta-course" },
+          { id: "m4c", label: "Open a named pot / transfer: CELTA tuition" },
+          { id: "m4d", label: "Deposit or full fee paid when the centre is chosen" }
+        ]
+      },
+      {
+        id: "m5",
+        label: "Landing buffer (cheaper if housed with Coco)",
+        subs: [
+          { id: "m5a", label: "Target if her place: flight + visa docs + 1–2 months spend (~$3–4k)" },
+          { id: "m5b", label: "If solo housing: add deposit shock (up to ~¥32k / ~$4.4k extra)" },
+          { id: "m5c", label: "Open a named pot: Landing" },
+          { id: "m5d", label: "Buffer funded before booking the CAN flight" }
+        ]
+      },
+      {
+        id: "m6",
+        label: "Pay the paper-trail fees (don’t let docs stall on cash)",
+        subs: [
+          { id: "m6a", label: "Budget ITT replacement diploma + sealed transcripts (closed school = wildcard)" },
+          { id: "m6b", label: "TN apostille is cheap ($2/doc): https://sos.tn.gov/businesses/guides/apostille-authentication-guide" },
+          { id: "m6c", label: "FBI Identity History (~$18): https://www.edo.cjis.gov/" },
+          { id: "m6d", label: "Set aside Z / medical / residence-permit cash (small; school may reimburse)" }
+        ]
+      },
+      {
+        id: "m7",
+        label: "Offer math (when Jobs has a written offer)",
+        subs: [
+          { id: "m7a", label: "Compare base ¥ + housing stipend in CASH (don’t take a school flat)" },
+          { id: "m7b", label: "Add flight reimbursement + contract bonus if any" },
+          { id: "m7c", label: "Confirm first-paycheck date — buffer must cover that gap" },
+          { id: "m7d", label: "Year-one “good money” = his Z pay + Coco’s L’Oréal + shared housing" }
+        ]
+      },
+      {
+        id: "m8",
+        label: "US wind-down before wheels up",
+        subs: [
+          { id: "m8a", label: "Cancel or pause leftover US subs after the last useful month" },
+          { id: "m8b", label: "Put insurance / phone / any lease end dates on a calendar" },
+          { id: "m8c", label: "Keep a small US account alive for leftovers / tax" }
+        ]
+      }
+    ]
+  },
+  {
+    id: "move",
+    className: "l4",
+    title: "4 · Move / visa (Guangzhou Z)",
+    goal: "Legal path: papers → Z → flight → GZ residence permit",
+    steps: [
+      {
+        id: "v1",
+        label: "Get degree paperwork (start now — closed school)",
+        subs: [
+          { id: "v1a", label: "Find where ITT records live now (transcript service / school successor)" },
+          { id: "v1b", label: "Order official diploma copy / confirmation" },
+          { id: "v1c", label: "Order official sealed transcripts" },
+          { id: "v1d", label: "Keep scans + tracking numbers" }
+        ]
+      },
+      {
+        id: "v2",
+        label: "Authenticate for China (Tennessee path)",
+        subs: [
+          { id: "v2a", label: "Notarize copies if required" },
+          { id: "v2b", label: "Tennessee Secretary of State apostille / authentication" },
+          { id: "v2c", label: "Chinese Embassy/Consulate legalization if employer requires (beyond apostille)" }
+        ]
+      },
+      {
+        id: "v3",
+        label: "Background + passport",
+        subs: [
+          { id: "v3a", label: "FBI Identity History Summary (or state police check as sponsor specifies)" },
+          { id: "v3b", label: "Apostille / authenticate the background check" },
+          { id: "v3c", label: "Passport valid 6+ months past planned entry" }
+        ]
+      },
+      {
+        id: "v4",
+        label: "Work Permit + Z visa (after offer)",
+        subs: [
+          { id: "v4a", label: "School starts Work Permit Notification (employer side)" },
+          { id: "v4b", label: "Medical exam / other docs school lists" },
+          { id: "v4c", label: "Apply Z visa at Chinese consulate with notification letter" },
+          { id: "v4d", label: "Z visa sticker in passport" }
+        ]
+      },
+      {
+        id: "v5",
+        label: "Land in Guangzhou",
+        subs: [
+          { id: "v5a", label: "Book flight to CAN" },
+          { id: "v5b", label: "Arrive & convert to residence permit (within required window)" },
+          { id: "v5c", label: "Register address (police / hotel / with Coco’s help)" }
+        ]
+      }
+    ]
+  },
+  {
+    id: "us",
+    className: "l5",
+    title: "5 · Us (Michael + Coco)",
+    goal: "Plan as a team — housing, timeline, weekly pulse, show real progress",
+    steps: [
+      {
+        id: "u1",
+        label: "Align the move together (do this first)",
+        subs: [
+          { id: "u1a", label: "Talk housing: move into Coco’s place vs find together after Z" },
+          { id: "u1b", label: "Agree a shared “soon” window (e.g. CELTA done → GZ by month X)" },
+          { id: "u1c", label: "Agree what “good money” means for both of you year one" },
+          { id: "u1d", label: "Note her constraints (L’Oréal hours, lease, family in Guangdong)" }
+        ]
+      },
+      {
+        id: "u2",
+        label: "Set the weekly pulse (Coco-facing)",
+        subs: [
+          { id: "u2a", label: "Pick a fixed day/time for the weekly update (e.g. Sunday night)" },
+          { id: "u2b", label: "Rule locked: 1 win + next step only (no daily dump)" },
+          { id: "u2c", label: "Use tracker “Copy progress summary” → paste to Coco" },
+          { id: "u2d", label: "First pulse sent (even if % is still low)" }
+        ]
+      },
+      {
+        id: "u3",
+        label: "Build the life together from afar",
+        subs: [
+          { id: "u3a", label: "Mandarin together: shared Jumpspeak / Duolingo check-in once a week" },
+          { id: "u3b", label: "Share one GZ life detail she cares about (neighborhood, commute, weekend)" },
+          { id: "u3c", label: "Decide how you’ll handle money once you’re on a Z salary" },
+          { id: "u3d", label: "Plan first-month-in-GZ together (welcome / settling / her friends)" }
+        ]
+      },
+      {
+        id: "u4",
+        label: "Protect the relationship during the grind",
+        subs: [
+          { id: "u4a", label: "Say what support you need from her during CELTA (and what you don’t)" },
+          { id: "u4b", label: "Protect one non-move date/call each week — no tracker talk" },
+          { id: "u4c", label: "If stress spikes: reset expectations together, don’t ghost the plan" }
+        ]
+      }
+    ]
+  }
+];
+
+const KEY = "oed-tracker-v2";
+const STUDY_KEY = "oed-study-v1";
+const TZ = "America/Chicago";
+
+function loadJSON(key, fallback) {
+  try { return JSON.parse(localStorage.getItem(key) || "null") ?? fallback; }
+  catch { return fallback; }
+}
+function saveJSON(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
+
+function defaults() {
+  const s = {};
+  for (const lane of DATA) {
+    for (const step of lane.steps) {
+      if (step.doneDefault) s[step.id] = true;
+      for (const sub of step.subs || []) {
+        if (sub.doneDefault) s[sub.id] = true;
+      }
+    }
+  }
+  return s;
+}
+
+let state = { ...defaults(), ...loadJSON(KEY, {}) };
+let study = loadJSON(STUDY_KEY, { sessions: [], active: null });
+
+function partsInTZ(date = new Date()) {
+  const fmt = new Intl.DateTimeFormat("en-US", {
+    timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit",
+    weekday: "short", hour: "2-digit", minute: "2-digit", second: "2-digit",
+    hour12: false
+  });
+  const map = {};
+  for (const p of fmt.formatToParts(date)) if (p.type !== "literal") map[p.type] = p.value;
+  return {
+    y: +map.year, m: +map.month, d: +map.day,
+    weekday: map.weekday, // Sun Mon ...
+    hour: +map.hour, minute: +map.minute, second: +map.second,
+    dateKey: `${map.year}-${map.month}-${map.day}`
+  };
+}
+
+function isWeekend(p) { return p.weekday === "Sat" || p.weekday === "Sun"; }
+
+function sessionMinutes(sess, now = Date.now()) {
+  const end = sess.end || now;
+  return Math.max(0, Math.round((end - sess.start) / 60000));
+}
+
+function sessionsOnDate(dateKey) {
+  return study.sessions.filter(s => s.dateKey === dateKey);
+}
+
+function todaySatisfied(p = partsInTZ()) {
+  if (study.active && study.active.dateKey === p.dateKey) return true;
+  return sessionsOnDate(p.dateKey).some(s => sessionMinutes(s) >= 1 || (s.end && s.end > s.start));
+}
+
+function weekendWindowSatisfied(p = partsInTZ()) {
+  // For Sat/Sun: need at least one session that day OR already did the other weekend day? 
+  // Requirement: at least one session on Sat OR Sun for that weekend.
+  // Simpler rule user asked: check-in when studying; weekend sporadic but need to check in.
+  // Enforce: by Sunday 8pm CT, if neither Sat nor Sun has a session → overdue.
+  // During weekend: if today has no session and it's Sunday after noon → warn; after 8pm → overdue unless Sat had one.
+  const today = p.dateKey;
+  // find Saturday and Sunday of this weekend
+  // Use weekday to walk back/forward
+  const dayIdx = { Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6 }[p.weekday];
+  // Build date keys for sat/sun of current week (Sun-start week: sat is yesterday if sun, etc.)
+  function shiftKey(base, dayDelta) {
+    // approximate using Date in TZ via noon UTC trick
+    const iso = `${base}T18:00:00Z`; // rough
+    const dt = new Date(iso);
+    dt.setUTCDate(dt.getUTCDate() + dayDelta);
+    return partsInTZ(dt).dateKey;
+  }
+  // Better: collect sessions from last 2 calendar days if weekend
+  if (p.weekday === "Sat") {
+    return todaySatisfied(p);
+  }
+  if (p.weekday === "Sun") {
+    const satKey = (() => {
+      // previous day in Chicago
+      const probe = new Date();
+      // binary search not needed — subtract hours until dateKey changes then once more
+      let t = Date.now();
+      const todayKey = p.dateKey;
+      while (partsInTZ(new Date(t)).dateKey === todayKey) t -= 3600000;
+      return partsInTZ(new Date(t)).dateKey; // Saturday
+    })();
+    return todaySatisfied(p) || sessionsOnDate(satKey).length > 0;
+  }
+  return true;
+}
+
+function checkInState(now = new Date()) {
+  const p = partsInTZ(now);
+  const mins = p.hour * 60 + p.minute;
+  const lunchStart = 11 * 60 + 30; // 11:30
+  const lunchEnd = 13 * 60 + 30;   // 13:30
+
+  if (study.active) {
+    return { level: "ok", code: "active", title: "Session running", msg: "You’re clocked in. Stay in the seat — clock out when done.", lock: false, p };
+  }
+
+  if (!isWeekend(p)) {
+    if (todaySatisfied(p)) {
+      return { level: "ok", code: "done", title: "Lunch check-in done", msg: "Today’s required check-in is complete. You can still clock in again.", lock: false, p };
+    }
+    if (mins < lunchStart) {
+      return { level: "warn", code: "soon", title: "Lunch check-in coming", msg: `Clock in at noon CT (window 11:30am–1:30pm). Lanes unlock after you check in today.`, lock: true, p };
+    }
+    if (mins <= lunchEnd) {
+      return { level: "bad", code: "now", title: "CHECK IN NOW", msg: "Lunch window is open (11:30am–1:30pm CT). Clock in to study — lanes stay locked until you do.", lock: true, p };
+    }
+    return { level: "bad", code: "overdue", title: "OVERDUE — missed lunch check-in", msg: "You skipped noon CT. Clock in now to unlock the tracker. No silent skips.", lock: true, p };
+  }
+
+  // Weekend
+  if (weekendWindowSatisfied(p) && todaySatisfied(p)) {
+    return { level: "ok", code: "done", title: "Weekend check-in done", msg: "You’re good for today. Clock in anytime you study.", lock: false, p };
+  }
+  if (weekendWindowSatisfied(p) && !todaySatisfied(p)) {
+    return { level: "warn", code: "flex", title: "Weekend flex day", msg: "Weekend requirement met (Sat or Sun). Still clock in when you study so minutes count.", lock: false, p };
+  }
+  // Neither day yet
+  if (p.weekday === "Sat") {
+    return { level: "warn", code: "weekend", title: "Weekend check-in needed", msg: "Clock in at least once this weekend when you study. Don’t let Sat+Sun both go dark.", lock: false, p };
+  }
+  // Sunday without sat or sun session
+  if (mins >= 20 * 60) {
+    return { level: "bad", code: "overdue", title: "OVERDUE — weekend check-in", msg: "No weekend study check-in yet. Clock in now to unlock lanes.", lock: true, p };
+  }
+  return { level: "warn", code: "weekend", title: "Weekend check-in still open", msg: "At least one session Sat or Sun. Clock in when you hit the books.", lock: false, p };
+}
+
+function weekDateKeys(p = partsInTZ()) {
+  // Mon-Sun week in Chicago: gather last 7 keys ending today by walking back
+  const keys = [];
+  let t = Date.now();
+  let last = null;
+  while (keys.length < 7) {
+    const k = partsInTZ(new Date(t)).dateKey;
+    if (k !== last) { keys.push(k); last = k; }
+    t -= 3600000;
+  }
+  return keys;
+}
+
+function totalMinutesForKeys(keys) {
+  let n = 0;
+  for (const s of study.sessions) {
+    if (keys.includes(s.dateKey)) n += sessionMinutes(s);
+  }
+  if (study.active && keys.includes(study.active.dateKey)) n += sessionMinutes(study.active);
+  return n;
+}
+
+function calcStreak() {
+  // Count consecutive satisfied days ending today (weekdays must have session; weekend: either day of weekend counts as maintaining if at least one weekend day done when evaluating sun... keep simple: day has >=1 min session)
+  let streak = 0;
+  let t = Date.now();
+  let last = null;
+  for (let i = 0; i < 60; i++) {
+    const p = partsInTZ(new Date(t));
+    if (p.dateKey === last) { t -= 3600000; continue; }
+    last = p.dateKey;
+    const mins = sessionsOnDate(p.dateKey).reduce((a, s) => a + sessionMinutes(s), 0)
+      + (study.active && study.active.dateKey === p.dateKey ? sessionMinutes(study.active) : 0);
+    const ok = mins >= 1;
+    if (ok) streak++;
+    else if (p.dateKey !== partsInTZ().dateKey) break; // miss in the past breaks; today without yet doesn't break streak display from yesterday
+    else break;
+    t -= 3600000;
+  }
+  // Fix: if today not done yet, streak should be consecutive past days only if today pending
+  const today = partsInTZ();
+  const todayMins = sessionsOnDate(today.dateKey).reduce((a, s) => a + sessionMinutes(s), 0)
+    + (study.active && study.active.dateKey === today.dateKey ? sessionMinutes(study.active) : 0);
+  if (todayMins < 1) {
+    // recompute excluding today
+    streak = 0;
+    t = Date.now();
+    last = today.dateKey;
+    let seenToday = false;
+    for (let i = 0; i < 80; i++) {
+      const p = partsInTZ(new Date(t));
+      if (p.dateKey === last && seenToday) { t -= 3600000; continue; }
+      if (p.dateKey === today.dateKey) { seenToday = true; last = p.dateKey; t -= 3600000; continue; }
+      if (p.dateKey === last) { t -= 3600000; continue; }
+      last = p.dateKey;
+      const mins = sessionsOnDate(p.dateKey).reduce((a, s) => a + sessionMinutes(s), 0);
+      if (mins >= 1) streak++;
+      else break;
+      t -= 3600000;
+    }
+  }
+  return streak;
+}
+
+function formatDur(ms) {
+  const s = Math.floor(ms / 1000);
+  const h = String(Math.floor(s / 3600)).padStart(2, "0");
+  const m = String(Math.floor((s % 3600) / 60)).padStart(2, "0");
+  const sec = String(s % 60).padStart(2, "0");
+  return `${h}:${m}:${sec}`;
+}
+
+function saveStudy() { saveJSON(STUDY_KEY, study); }
+
+function clockIn() {
+  if (study.active) return;
+  const p = partsInTZ();
+  study.active = { start: Date.now(), dateKey: p.dateKey, note: "study" };
+  saveStudy();
+  renderStudy();
+  render();
+  maybeNotify("Clocked in", "Study session started. Clock out when you’re done.");
+}
+
+function clockOut() {
+  if (!study.active) return;
+  const sess = { ...study.active, end: Date.now() };
+  if (sessionMinutes(sess) < 1) {
+    // still count short check-ins as 1 min so "can't skip" is satisfied
+    sess.end = sess.start + 60000;
+  }
+  study.sessions.unshift(sess);
+  study.sessions = study.sessions.slice(0, 200);
+  study.active = null;
+  saveStudy();
+  renderStudy();
+  render();
+}
+
+function allIds() {
+  const ids = [];
+  for (const lane of DATA) {
+    for (const step of lane.steps) {
+      ids.push(step.id);
+      for (const sub of step.subs || []) ids.push(sub.id);
+    }
+  }
+  return ids;
+}
+
+function laneStats(lane) {
+  const ids = [];
+  for (const step of lane.steps) {
+    ids.push(step.id);
+    for (const sub of step.subs || []) ids.push(sub.id);
+  }
+  const done = ids.filter(id => state[id]).length;
+  const pct = ids.length ? Math.round((done / ids.length) * 100) : 0;
+  return { done, total: ids.length, pct };
+}
+
+function overallStats() {
+  const ids = allIds();
+  const done = ids.filter(id => state[id]).length;
+  const pct = ids.length ? Math.round((done / ids.length) * 100) : 0;
+  return { done, total: ids.length, pct };
+}
+
+function renderStudy() {
+  const st = checkInState();
+  const statusEl = document.getElementById("clockStatus");
+  statusEl.textContent = st.title + " — " + st.msg;
+  statusEl.className = "clock-status " + st.level;
+
+  const p = st.p;
+  document.getElementById("ctNow").textContent =
+    `${p.weekday} ${String(p.hour).padStart(2,"0")}:${String(p.minute).padStart(2,"0")} CT`;
+
+  const todayKey = p.dateKey;
+  const today = totalMinutesForKeys([todayKey]);
+  const week = totalMinutesForKeys(weekDateKeys(p));
+  document.getElementById("todayMins").textContent = today + " min";
+  document.getElementById("weekMins").textContent = week + " min";
+  document.getElementById("streak").textContent = calcStreak() + " days";
+  document.getElementById("sessionCount").textContent = String(study.sessions.length + (study.active ? 1 : 0));
+
+  if (study.active) {
+    document.getElementById("liveTimer").textContent = formatDur(Date.now() - study.active.start);
+    document.getElementById("clockInBtn").disabled = true;
+    document.getElementById("clockOutBtn").disabled = false;
+  } else {
+    document.getElementById("liveTimer").textContent = "00:00:00";
+    document.getElementById("clockInBtn").disabled = false;
+    document.getElementById("clockOutBtn").disabled = true;
+  }
+
+  const banner = document.getElementById("forceBanner");
+  if (st.lock && !study.active) {
+    banner.classList.add("show");
+    document.getElementById("forceTitle").textContent = st.title;
+    document.getElementById("forceMsg").textContent = st.msg;
+    document.getElementById("lanes").classList.add("locked");
+  } else {
+    banner.classList.remove("show");
+    document.getElementById("lanes").classList.remove("locked");
+  }
+
+  const list = document.getElementById("sessionList");
+  const rows = [];
+  if (study.active) {
+    rows.push(`<div>▶ now · started ${new Date(study.active.start).toLocaleString()} · running</div>`);
+  }
+  for (const s of study.sessions.slice(0, 14)) {
+    rows.push(`<div>${s.dateKey} · ${sessionMinutes(s)} min · ${new Date(s.start).toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"})}</div>`);
+  }
+  list.innerHTML = rows.length ? "<strong style='color:var(--text)'>Recent sessions</strong>" + rows.join("") : "<em>No sessions yet — clock in at lunch.</em>";
+}
+
+function render() {
+  const root = document.getElementById("lanes");
+  root.innerHTML = "";
+  for (const lane of DATA) {
+    const st = laneStats(lane);
+    const details = document.createElement("details");
+    details.className = `lane ${lane.className}`;
+    if (lane.id === "celta") details.open = true;
+    details.innerHTML = `
+      <summary>
+        <div class="lane-head">
+          <span class="lane-title">${lane.title}</span>
+          <span class="lane-pct">${st.pct}% · ${st.done}/${st.total}</span>
+        </div>
+        <div class="mini-bar"><span style="width:${st.pct}%"></span></div>
+      </summary>
+      <div class="body">
+        <p class="goal"><strong>Goal:</strong> ${lane.goal}</p>
+        ${lane.steps.map(step => {
+          const stepDone = !!state[step.id];
+          return `
+          <div class="step ${stepDone ? "done" : ""}" data-step="${step.id}">
+            <div class="step-main">
+              <input type="checkbox" id="${step.id}" ${stepDone ? "checked" : ""} />
+              <label for="${step.id}">${step.label}</label>
+            </div>
+            <div class="subs">
+              ${(step.subs || []).map(sub => `
+                <label class="${state[sub.id] ? "done" : ""}">
+                  <input type="checkbox" id="${sub.id}" ${state[sub.id] ? "checked" : ""} />
+                  <span>${sub.label}</span>
+                </label>
+              `).join("")}
+            </div>
+          </div>`;
+        }).join("")}
+      </div>`;
+    root.appendChild(details);
+  }
+
+  const o = overallStats();
+  document.getElementById("overallPct").textContent = o.pct + "%";
+  document.getElementById("overallBar").style.width = o.pct + "%";
+
+  root.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener("change", () => {
+      state[cb.id] = cb.checked;
+      for (const lane of DATA) {
+        for (const step of lane.steps) {
+          if (!step.subs || !step.subs.length) continue;
+          if (step.subs.some(s => s.id === cb.id) || step.id === cb.id) {
+            if (cb.id === step.id && cb.checked) {
+              step.subs.forEach(s => { state[s.id] = true; });
+            } else if (step.subs.every(s => state[s.id])) {
+              state[step.id] = true;
+            }
+          }
+        }
+      }
+      saveJSON(KEY, state);
+      render();
+      renderStudy();
+    });
+  });
+}
+
+document.getElementById("clockInBtn").addEventListener("click", clockIn);
+document.getElementById("clockOutBtn").addEventListener("click", clockOut);
+document.getElementById("forceClockIn").addEventListener("click", clockIn);
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+  if (!confirm("Reset checklist ticks on this device? Study log is kept.")) return;
+  state = defaults();
+  saveJSON(KEY, state);
+  render();
+});
+
+document.getElementById("exportBtn").addEventListener("click", async () => {
+  const o = overallStats();
+  const p = partsInTZ();
+  const week = totalMinutesForKeys(weekDateKeys(p));
+  const today = totalMinutesForKeys([p.dateKey]);
+  const lines = [
+    `Opération English Dragon — ${o.pct}% overall (${o.done}/${o.total})`,
+    `Study: ${today} min today · ${week} min this week · streak ${calcStreak()} days`,
+    ""
+  ];
+  for (const lane of DATA) {
+    const st = laneStats(lane);
+    lines.push(`${lane.title}: ${st.pct}%`);
+    for (const step of lane.steps) {
+      lines.push(`  [${state[step.id] ? "x" : " "}] ${step.label}`);
+    }
+    lines.push("");
+  }
+  const text = lines.join("\n");
+  try {
+    await navigator.clipboard.writeText(text);
+    alert("Progress summary copied — paste to Coco.");
+  } catch {
+    prompt("Copy this summary:", text);
+  }
+});
+
+document.getElementById("notifyBtn").addEventListener("click", async () => {
+  if (!("Notification" in window)) { alert("Notifications not supported on this browser."); return; }
+  const perm = await Notification.requestPermission();
+  if (perm === "granted") {
+    localStorage.setItem("oed-notify", "1");
+    alert("Reminders on. We’ll nudge you at lunch CT when this app is open.");
+  } else {
+    alert("Permission denied — open the app at lunch and the red banner will still lock lanes.");
+  }
+});
+
+function maybeNotify(title, body) {
+  if (localStorage.getItem("oed-notify") === "1" && Notification.permission === "granted") {
+    try { new Notification(title, { body, icon: "icon-192.png" }); } catch {}
+  }
+}
+
+let lastNotifySlot = "";
+setInterval(() => {
+  renderStudy();
+  const st = checkInState();
+  if (st.code === "now" || st.code === "overdue") {
+    const slot = st.p.dateKey + "-" + st.code;
+    if (slot !== lastNotifySlot) {
+      lastNotifySlot = slot;
+      maybeNotify(st.title, st.msg);
+    }
+  }
+}, 1000);
+
+// PWA install
+let deferredPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById("installBar").classList.add("show");
+});
+document.getElementById("installBtn").addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  document.getElementById("installBar").classList.remove("show");
+});
+window.addEventListener("appinstalled", () => {
+  document.getElementById("installBar").classList.remove("show");
+});
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
+
+render();
+renderStudy();
+</script>
+</body>
+</html>
