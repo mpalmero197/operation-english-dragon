@@ -1,4 +1,4 @@
-const CACHE = "oed-v6";
+const CACHE = "oed-v9";
 const ASSETS = [
   "./",
   "./index.html",
@@ -8,6 +8,9 @@ const ASSETS = [
   "./apple-touch-icon.png",
   "./study/index.html",
   "./study/view.html",
+  "./docs/celta/index.html",
+  "./docs/money/index.html",
+  "./docs/us/index.html",
   "./docs/index.html",
   "./docs/view.html"
 ];

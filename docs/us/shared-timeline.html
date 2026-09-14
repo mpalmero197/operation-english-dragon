@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shared timeline</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2332; --border:#2d3a4f; --text:#e8eef7; --muted:#8b9bb4; --accent:#d48cf0; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:1.25rem; max-width:720px; margin-inline:auto; line-height:1.45; }
+  a { color:var(--accent); }
+  h1 { font-size:1.15rem; margin:0 0 .35rem; }
+  h2 { font-size:.95rem; margin:1.1rem 0 .4rem; color:var(--accent); }
+  .sub { color:var(--muted); font-size:.9rem; margin:0 0 1rem; }
+  .back { display:inline-block; margin-bottom:1rem; color:var(--muted); text-decoration:none; }
+  label { display:block; font-size:.85rem; color:var(--muted); margin:.65rem 0 .2rem; }
+  input, textarea, select { width:100%; background:#141c28; border:1px solid var(--border); border-radius:8px; color:var(--text); padding:.55rem .65rem; font:inherit; }
+  textarea { min-height:4.5rem; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:.9rem 1rem; margin:.55rem 0; }
+  .tip { font-size:.85rem; color:var(--muted); border-left:3px solid var(--accent); padding:.55rem .75rem; background:#1a2838; border-radius:0 8px 8px 0; margin-top:1rem; }
+  pre { white-space:pre-wrap; background:#141c28; border:1px solid var(--border); border-radius:10px; padding:.75rem .85rem; font-size:.88rem; }
+  button { background:#243044; color:var(--text); border:1px solid var(--border); border-radius:999px; padding:.45rem .85rem; font:inherit; cursor:pointer; margin:.35rem 0 .75rem; }
+  ul.check { padding-left:1.1rem; } li { margin:.35rem 0; }
+  @media print { body { background:#fff; color:#000; } input, textarea { border:1px solid #999; } a { color:#000; } }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← Us docs</a>
+<h1>Shared “soon” timeline</h1>
+<p class="sub">Agree one window with Coco so “ASAP” means the same thing to both of you.</p>
+
+<label>Target: CELTA certificate in hand by</label>
+<input placeholder="e.g. Month ____ 202_" />
+
+<label>Target: job offer + Z sponsor by</label>
+<input placeholder="e.g. within __ weeks of CELTA / overlapping" />
+
+<label>Target: land CAN / live together by</label>
+<input placeholder="e.g. Month ____ 202_" />
+
+<label>Hard constraints (hers)</label>
+<textarea placeholder="L’Oréal busy season, lease end, family events, travel bans…"></textarea>
+
+<label>Hard constraints (his)</label>
+<textarea placeholder="Money buffer, $70k job decision, US wind-down…"></textarea>
+
+<label>If we slip 4 weeks, we will…</label>
+<textarea placeholder="e.g. keep weekly pulse, reset target month together, don’t go quiet"></textarea>
+
+<label>Both agree? (date + initials)</label>
+<input placeholder="2026-__-__  MP / Coco" />
+
+<p class="tip">Screenshot this page after you fill it and send once — then only update if the window moves.</p>
+</body>
+</html>

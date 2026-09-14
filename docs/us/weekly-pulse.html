@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Weekly pulse</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2332; --border:#2d3a4f; --text:#e8eef7; --muted:#8b9bb4; --accent:#d48cf0; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:1.25rem; max-width:720px; margin-inline:auto; line-height:1.45; }
+  a { color:var(--accent); }
+  h1 { font-size:1.15rem; margin:0 0 .35rem; }
+  h2 { font-size:.95rem; margin:1.1rem 0 .4rem; color:var(--accent); }
+  .sub { color:var(--muted); font-size:.9rem; margin:0 0 1rem; }
+  .back { display:inline-block; margin-bottom:1rem; color:var(--muted); text-decoration:none; }
+  label { display:block; font-size:.85rem; color:var(--muted); margin:.65rem 0 .2rem; }
+  input, textarea, select { width:100%; background:#141c28; border:1px solid var(--border); border-radius:8px; color:var(--text); padding:.55rem .65rem; font:inherit; }
+  textarea { min-height:4.5rem; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:.9rem 1rem; margin:.55rem 0; }
+  .tip { font-size:.85rem; color:var(--muted); border-left:3px solid var(--accent); padding:.55rem .75rem; background:#1a2838; border-radius:0 8px 8px 0; margin-top:1rem; }
+  pre { white-space:pre-wrap; background:#141c28; border:1px solid var(--border); border-radius:10px; padding:.75rem .85rem; font-size:.88rem; }
+  button { background:#243044; color:var(--text); border:1px solid var(--border); border-radius:999px; padding:.45rem .85rem; font:inherit; cursor:pointer; margin:.35rem 0 .75rem; }
+  ul.check { padding-left:1.1rem; } li { margin:.35rem 0; }
+  @media print { body { background:#fff; color:#000; } input, textarea { border:1px solid #999; } a { color:#000; } }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← Us docs</a>
+<h1>Weekly WeChat pulse</h1>
+<p class="sub">One win · one next step · study minutes. Or tap Copy progress summary in the app and paste.</p>
+
+<label>This week’s win (one sentence)</label>
+<textarea id="win" placeholder="Ordered Parchment sealed transcripts / Finished CELTA Week 1 quiz"></textarea>
+<label>Next step + day</label>
+<textarea id="next" placeholder="TN notary Tue · then SOS packet"></textarea>
+<label>Study minutes this week (from Study Clock)</label>
+<input id="mins" placeholder="e.g. 420" />
+<label>Streak (days)</label>
+<input id="streak" placeholder="e.g. 5" />
+<label>Optional ask for Coco</label>
+<textarea id="ask" placeholder="none / help read Chinese HR email"></textarea>
+
+<h2>English (copy)</h2>
+<pre id="en"></pre>
+<button type="button" onclick="build(); copy('en')">Copy English</button>
+
+<h2>中英 (copy)</h2>
+<pre id="bi"></pre>
+<button type="button" onclick="build(); copy('bi')">Copy bilingual</button>
+
+<p class="tip">Rules: no daily dump · own misses · one ask max. Fixed day beats random updates.</p>
+
+<script>
+function build(){
+  const win = document.getElementById('win').value.trim() || '[win]';
+  const next = document.getElementById('next').value.trim() || '[next step]';
+  const mins = document.getElementById('mins').value.trim() || '—';
+  const streak = document.getElementById('streak').value.trim() || '—';
+  const ask = document.getElementById('ask').value.trim() || 'none';
+  document.getElementById('en').textContent =
+`Weekly pulse — Michael
+
+✅ This week’s win: ${win}
+➡️ Next step: ${next}
+📚 Study: ${mins} min this week · streak ${streak} days
+❓ Need from you: ${ask}
+
+Miss you — see you in GZ.`;
+  document.getElementById('bi').textContent =
+`本周进展 Weekly — Michael
+✅ 完成：${win}
+➡️ 下一步：${next}
+📚 学习：本周 ${mins} 分钟 · 连续 ${streak} 天
+❓ 需要你：${ask}`;
+}
+async function copy(id){
+  build();
+  const t = document.getElementById(id).textContent;
+  try { await navigator.clipboard.writeText(t); alert('Copied — paste to WeChat.'); }
+  catch { prompt('Copy:', t); }
+}
+build();
+['win','next','mins','streak','ask'].forEach(id => document.getElementById(id).addEventListener('input', build));
+</script>
+</body>
+</html>

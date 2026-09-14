@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Housing talk</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2332; --border:#2d3a4f; --text:#e8eef7; --muted:#8b9bb4; --accent:#d48cf0; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:1.25rem; max-width:720px; margin-inline:auto; line-height:1.45; }
+  a { color:var(--accent); }
+  h1 { font-size:1.15rem; margin:0 0 .35rem; }
+  h2 { font-size:.95rem; margin:1.1rem 0 .4rem; color:var(--accent); }
+  .sub { color:var(--muted); font-size:.9rem; margin:0 0 1rem; }
+  .back { display:inline-block; margin-bottom:1rem; color:var(--muted); text-decoration:none; }
+  label { display:block; font-size:.85rem; color:var(--muted); margin:.65rem 0 .2rem; }
+  input, textarea, select { width:100%; background:#141c28; border:1px solid var(--border); border-radius:8px; color:var(--text); padding:.55rem .65rem; font:inherit; }
+  textarea { min-height:4.5rem; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:.9rem 1rem; margin:.55rem 0; }
+  .tip { font-size:.85rem; color:var(--muted); border-left:3px solid var(--accent); padding:.55rem .75rem; background:#1a2838; border-radius:0 8px 8px 0; margin-top:1rem; }
+  pre { white-space:pre-wrap; background:#141c28; border:1px solid var(--border); border-radius:10px; padding:.75rem .85rem; font-size:.88rem; }
+  button { background:#243044; color:var(--text); border:1px solid var(--border); border-radius:999px; padding:.45rem .85rem; font:inherit; cursor:pointer; margin:.35rem 0 .75rem; }
+  ul.check { padding-left:1.1rem; } li { margin:.35rem 0; }
+  @media print { body { background:#fff; color:#000; } input, textarea { border:1px solid #999; } a { color:#000; } }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← Us docs</a>
+<h1>Housing talk sheet</h1>
+<p class="sub">Fill this before you call Coco. Goal: one clear decision, not a maybe.</p>
+
+<label>Option A — move into Coco’s place</label>
+<textarea placeholder="Pros for us: cheaper landing, faster together…
+Cons / constraints: space, lease, privacy, her commute…"></textarea>
+
+<label>Option B — find a place together after Z</label>
+<textarea placeholder="Pros: fresh start…
+Cons: deposit shock, delay, two searches…"></textarea>
+
+<label>Our decision (circle one after the talk)</label>
+<select>
+  <option>Not decided yet</option>
+  <option>Her place first (revisit after 3 months)</option>
+  <option>Her place long-term</option>
+  <option>Find together after Z / residence permit</option>
+</select>
+
+<label>What she needs from me before I arrive</label>
+<textarea placeholder="e.g. passport scan, arrival window, what I’m bringing…"></textarea>
+
+<label>What I need from her</label>
+<textarea placeholder="e.g. address for police registration, keys plan, neighborhood reality…"></textarea>
+
+<label>Date we talked</label>
+<input type="date" />
+
+<p class="tip">After you decide: tick Us lane u1a in the app and mention it in that week’s pulse.</p>
+</body>
+</html>
