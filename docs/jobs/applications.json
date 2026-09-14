@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T07:27:00Z",
+  "updated": "2026-09-14T09:35:40Z",
   "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified.",
   "applications": [
     {
@@ -13,7 +13,7 @@
       "certRequiredFirst": false,
       "url": "https://www.english1.com/tefl-jobs/apply-now/",
       "appliedAt": "2026-09-14T07:02:41Z",
-      "status": "Submitted \u2014 awaiting recruiter reply",
+      "status": "Submitted — awaiting recruiter reply",
       "emailWatch": [
         "english1.com",
         "ef.com",
@@ -38,13 +38,13 @@
       "school": "Shijiazhuang Yingli (eChinacities training center)",
       "city": "Guangzhou",
       "role": "Training Center ESL / Literature Teacher",
-      "pay": "negotiable / ~20\u201325k band",
+      "pay": "negotiable / ~20–25k band",
       "zSponsor": "Yes (Work Permit stated)",
       "mandarinRequired": false,
       "certRequiredFirst": false,
       "url": "https://jobs.echinacities.com/jobchapter/1355113647",
       "appliedAt": null,
-      "status": "Skipped \u2014 listing expired",
+      "status": "Skipped — listing expired",
       "emailWatch": [
         "echinacities.com"
       ],
@@ -67,13 +67,13 @@
       "school": "Elevate-7",
       "city": "Guangzhou",
       "role": "English ESL Teacher",
-      "pay": "\u00a517\u201321k + housing allowance \u00a52\u20132.5k",
+      "pay": "¥17–21k + housing allowance ¥2–2.5k",
       "zSponsor": "Yes (Legal Work Visa stated)",
       "mandarinRequired": false,
       "certRequiredFirst": true,
       "url": "https://apply.workable.com/j/73388F66D4",
       "appliedAt": "2026-09-14T07:15:51Z",
-      "status": "Submitted \u2014 awaiting recruiter email",
+      "status": "Submitted — awaiting recruiter email",
       "emailWatch": [
         "elevate-7",
         "workable.com"
@@ -97,13 +97,13 @@
       "school": "New Peak Recruitment (GZ ESL listing)",
       "city": "Guangzhou",
       "role": "ESL Teacher",
-      "pay": "\u00a520\u201323k package",
+      "pay": "¥20–23k package",
       "zSponsor": "Yes (stated on listing)",
       "mandarinRequired": false,
       "certRequiredFirst": false,
       "url": "https://jobs.echinacities.com/jobchapter/1355115039",
       "appliedAt": null,
-      "status": "Skipped \u2014 listing expired",
+      "status": "Skipped — listing expired",
       "emailWatch": [
         "echinacities.com",
         "newpeak"
@@ -122,21 +122,21 @@
       "id": "airuike-1355121035",
       "school": "AiRuiKe International Institute of Education",
       "city": "Guangzhou",
-      "role": "ESL (Work visa tagged)",
+      "role": "Homeroom Teacher in Guangzhou",
       "pay": "ask",
       "zSponsor": "Yes (Work visa tagged)",
       "mandarinRequired": false,
       "certRequiredFirst": false,
       "url": "https://jobs.echinacities.com/jobchapter/1355121035",
-      "appliedAt": null,
-      "status": "Blocked \u2014 eChinacities code 9920 rejected (need fresh code)",
+      "appliedAt": "2026-09-14T07:46:26Z",
+      "status": "Submitted — awaiting recruiter reply",
       "emailWatch": [
         "echinacities.com",
         "airuike"
       ],
       "lastEmailAt": null,
       "lastEmailSubject": null,
-      "notes": "Code error on 9920. Need a new email auth code from Michael, or skip this listing.",
+      "notes": "Submitted on eChinacities. Confirmation: You’ve successfully applied for this job! DOCX rejected so PDF resume used.",
       "history": [
         {
           "at": "2026-09-14T07:15:51Z",
@@ -145,6 +145,152 @@
         {
           "at": "2026-09-14T07:27:00Z",
           "event": "Auth code 9920 rejected: Code error, please re-try"
+        },
+        {
+          "at": "2026-09-14T07:41:57Z",
+          "event": "Fresh code 5757 retrieved from Gmail; submit in progress"
+        },
+        {
+          "at": "2026-09-14T07:44:23Z",
+          "event": "5757 rejected; retrying with newer code 1107 from Gmail"
+        },
+        {
+          "at": "2026-09-14T07:46:26Z",
+          "event": "Submitted successfully as Homeroom Teacher in Guangzhou (PDF resume)"
+        }
+      ]
+    },
+    {
+      "id": "goldstar-gz-2026-09-14",
+      "school": "Goldstar (Guangzhou)",
+      "city": "Guangzhou",
+      "role": "ESL / teaching (Z path)",
+      "pay": "ask",
+      "zSponsor": "Yes (applied as licensed Z path)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "ask",
+      "appliedAt": "2026-09-14T07:41:57Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "goldstar",
+        "echinacities.com"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted overnight batch 2026-09-14. Wall Street English skipped (no GZ option). SIE expired.",
+      "history": [
+        {
+          "at": "2026-09-14T07:41:57Z",
+          "event": "Application submitted successfully"
+        }
+      ]
+    },
+    {
+      "id": "houhai-gz-2026-09-14",
+      "school": "Houhai English",
+      "city": "Guangzhou",
+      "role": "ESL Teacher (young learners 6–16; GZ preferred)",
+      "pay": "¥18k base / 60 hrs + ¥150 overtime (Teach Away band ~$2.6–4.4k)",
+      "zSponsor": "Yes (Z Visa, Work Permit, Residence Permit stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://www.teachaway.com/teaching-jobs-abroad/teach-english-with-houhai-english-in-chinas-major-cities",
+      "appliedAt": "2026-09-14T09:35:40Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "houhaienglish.com",
+        "houhai",
+        "recruitment@houhaienglish.com",
+        "teachaway.com"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted 2026-09-14 via official email recruitment@houhaienglish.com (Gmail send id 1a09f45baeade05f). GZ among city options; CELTA-in-progress disclosed; prefer cash housing stipend. Resume DOCX link included. Browser form/Teach Away account not used this run (executor lacked browserUse).",
+      "history": [
+        {
+          "at": "2026-09-14T09:35:40Z",
+          "event": "Application email sent to recruitment@houhaienglish.com with resume link; CELTA-in-progress noted"
+        }
+      ]
+    },
+    {
+      "id": "peizheng-gz-2026-09-14",
+      "school": "Guangdong Pei Zheng College",
+      "city": "Guangzhou",
+      "role": "University ESL / Oral English Teacher (Huadu)",
+      "pay": "¥164,584–202,232 / year pre-tax + on-campus housing",
+      "zSponsor": "Yes (full Work Permit / Z visa support stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "http://international.peizheng.edu.cn/docs/2025-09/33f52635b106481da7d752bad977770a.pdf",
+      "appliedAt": "2026-09-14T09:35:40Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "peizheng.edu.cn",
+        "hechuhong@peizheng.edu.cn",
+        "Alice Ho",
+        "IECO"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted 2026-09-14 via hechuhong@peizheng.edu.cn (Gmail send id 1a09f45bc4a4469c). Employer (not agent). Req: BA + (2 yrs teaching OR TEFL/CELTA); CELTA-in-progress + instructor experience disclosed. Housing is on-campus (not cash stipend). Resume DOCX link included.",
+      "history": [
+        {
+          "at": "2026-09-14T09:35:40Z",
+          "event": "Application email sent to hechuhong@peizheng.edu.cn with resume link"
+        }
+      ]
+    },
+    {
+      "id": "echina-yingli-1355119825",
+      "school": "Shijiazhuang Yingli (eChinacities training center)",
+      "city": "Guangzhou",
+      "role": "Training center ESL Teacher",
+      "pay": "¥20–25k",
+      "zSponsor": "Yes (Work Permit / Residence Permit stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jobs.echinacities.com/jobchapter/1355119825",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — live listing but eChinacities Apply needs logged-in browser; this executor had no Task/browserUse/computerUse",
+      "emailWatch": [
+        "echinacities.com",
+        "yingli"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Listing live as of 2026-09-14 (Apply button present; not expired). Same Yingli agent family as prior expired 1355113647. Queue for parent/browserUse re-run; do not treat as submitted.",
+      "history": [
+        {
+          "at": "2026-09-14T09:35:40Z",
+          "event": "Verified live on eChinacities; blocked — no browserUse in overnight executor"
+        }
+      ]
+    },
+    {
+      "id": "echina-meiji-1355120122",
+      "school": "Shanghai Meiji Culture Communications (GZ training center)",
+      "city": "Guangzhou",
+      "role": "English Teacher (Fresh Grads Welcome)",
+      "pay": "¥15–16k after tax",
+      "zSponsor": "Yes (work visa sponsored stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://jobs.echinacities.com/jobchapter/1355120122",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — hard TEFL/TESOL wall (apostilled cert + docs ready required before apply)",
+      "emailWatch": [
+        "echinacities.com",
+        "meiji"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Agent recruiter. Requires TEFL/TESOL and all docs apostilled and ready. CELTA still in progress → skip per criteria.",
+      "history": [
+        {
+          "at": "2026-09-14T09:35:40Z",
+          "event": "Skipped — hard completed-cert / apostille wall"
         }
       ]
     }
