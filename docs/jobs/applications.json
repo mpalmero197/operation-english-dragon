@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T09:35:40Z",
+  "updated": "2026-09-14T15:03:00Z",
   "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified.",
   "applications": [
     {
@@ -13,14 +13,14 @@
       "certRequiredFirst": false,
       "url": "https://www.english1.com/tefl-jobs/apply-now/",
       "appliedAt": "2026-09-14T07:02:41Z",
-      "status": "Submitted — awaiting recruiter reply",
+      "status": "Received — English 1 thank-you; shortlist contact within 5 working days if selected",
       "emailWatch": [
         "english1.com",
         "ef.com",
         "English 1"
       ],
-      "lastEmailAt": null,
-      "lastEmailSubject": null,
+      "lastEmailAt": "2026-09-14T07:40:04Z",
+      "lastEmailSubject": "English 1 / Thank You for Your Application",
       "notes": "Submitted 2026-09-14 via english1.com/tefl-jobs/apply-now/. Confirmation: Thank you. Your application has been submitted. No reference number shown. Prefer housing stipend in cash.",
       "history": [
         {
@@ -30,6 +30,10 @@
         {
           "at": "2026-09-14T07:02:41Z",
           "event": "Submitted successfully. Confirmation shown. No reference number."
+        },
+        {
+          "at": "2026-09-14T07:40:04Z",
+          "event": "Gmail: e1recruitment@english1.com thank-you. App under review; only shortlisted contacted within 5 working days."
         }
       ]
     },
@@ -73,13 +77,13 @@
       "certRequiredFirst": true,
       "url": "https://apply.workable.com/j/73388F66D4",
       "appliedAt": "2026-09-14T07:15:51Z",
-      "status": "Submitted — awaiting recruiter email",
+      "status": "Received — Workable confirmation email",
       "emailWatch": [
         "elevate-7",
         "workable.com"
       ],
-      "lastEmailAt": null,
-      "lastEmailSubject": null,
+      "lastEmailAt": "2026-09-14T07:11:24Z",
+      "lastEmailSubject": "Thanks for applying to Elevate",
       "notes": "Housing allowance fits Coco housing. Cert required on posting; try CELTA-in-progress, skip if blocked.",
       "history": [
         {
@@ -89,6 +93,10 @@
         {
           "at": "2026-09-14T07:15:51Z",
           "event": "Submitted on Workable. Confirmation: Your application has been submitted successfully. Email copy promised."
+        },
+        {
+          "at": "2026-09-14T07:11:24Z",
+          "event": "Gmail: noreply@candidates.workablemail.com confirmation — English ESL Teacher application copy received."
         }
       ]
     },
@@ -169,20 +177,35 @@
       "zSponsor": "Yes (applied as licensed Z path)",
       "mandarinRequired": false,
       "certRequiredFirst": false,
-      "url": "ask",
+      "url": "https://goldstarteachers.com/job/kindergarten-teaching-positions-guangzhou/",
       "appliedAt": "2026-09-14T07:41:57Z",
-      "status": "Submitted — awaiting recruiter reply",
+      "status": "Recruiter reply — need 120hr TEFL before they will consider / sponsor (Jim Althans / Gold Star)",
       "emailWatch": [
         "goldstar",
-        "echinacities.com"
+        "echinacities.com",
+        "goldstarteachers.com",
+        "jim.althans@goldstarteachers.com",
+        "jim@goldstarteachers.com"
       ],
-      "lastEmailAt": null,
-      "lastEmailSubject": null,
-      "notes": "Submitted overnight batch 2026-09-14. Wall Street English skipped (no GZ option). SIE expired.",
+      "lastEmailAt": "2026-09-14T14:39:03Z",
+      "lastEmailSubject": "Re: Job Board - Michael Palmero - Kindergarten Teaching Positions in Shenzhen & Guangzhou - 14/09/2026",
+      "notes": "Submitted overnight 2026-09-14 via Gold Star job board (Kindergarten Shenzhen & Guangzhou, listing 21378). Jim Althans (Director of Recruitment) replied 2026-09-14 ~9:39am CDT: schools require 120-hour TEFL for Work Permit; recommended INTESOL 120hr online (goldstarteachers.com/intesol-online-tesol-courses-main/). Michael replied he will look over the info. CELTA still in progress — this is a soft block, not a hard rejection. Prefer cash housing stipend.",
       "history": [
         {
           "at": "2026-09-14T07:41:57Z",
           "event": "Application submitted successfully"
+        },
+        {
+          "at": "2026-09-14T07:33:53Z",
+          "event": "Gmail: jim@goldstarteachers.com Application Received — reviewing; interviews Oct 2026–Apr 2027 starts."
+        },
+        {
+          "at": "2026-09-14T14:39:03Z",
+          "event": "Gmail: jim.althans@goldstarteachers.com — need 120hr TEFL before schools consider / sponsor Work Permit; recommended INTESOL. WeChat jimgoldstar."
+        },
+        {
+          "at": "2026-09-14T14:52:48Z",
+          "event": "Michael replied to Jim: will look over the INTESOL / TEFL info."
         }
       ]
     },
@@ -260,11 +283,15 @@
       ],
       "lastEmailAt": null,
       "lastEmailSubject": null,
-      "notes": "Listing live as of 2026-09-14 (Apply button present; not expired). Same Yingli agent family as prior expired 1355113647. Queue for parent/browserUse re-run; do not treat as submitted.",
+      "notes": "Listing live as of 2026-09-14 (Apply button present; not expired). Same Yingli agent family as prior expired 1355113647. Queue for parent/browserUse re-run; do not treat as submitted. Morning queue 2026-09-14: apply when Michael awake / daytime run.",
       "history": [
         {
           "at": "2026-09-14T09:35:40Z",
           "event": "Verified live on eChinacities; blocked — no browserUse in overnight executor"
+        },
+        {
+          "at": "2026-09-14T11:32:03Z",
+          "event": "Morning wrap: still blocked for overnight; queued for daytime browser apply"
         }
       ]
     },
@@ -294,5 +321,36 @@
         }
       ]
     }
-  ]
+  ],
+  "morningSummary": {
+    "at": "2026-09-14T11:32:03Z",
+    "chicago": "2026-09-14 ~6:31am CDT",
+    "text": "Morning wrap (2026-09-14 ~6:31am CDT). Overnight aggressive applying stopped at ~6am Chicago. Submitted awaiting reply (6): English 1, Elevate-7, AiRuiKe International Institute of Education, Goldstar (Guangzhou), Houhai English, Guangdong Pei Zheng College. Skipped/blocked: Yingli 1355113647 expired; New Peak expired; Meiji hard TEFL/apostille wall; Yingli 1355119825 still live but needs logged-in browser apply (queue for daytime). No new applications this 6:30am run — cutoff. Review queue: finish Yingli eChinacities 1355119825 in browser when awake; watch Gmail for English 1, Elevate-7, AiRuiKe, Goldstar, Houhai, Pei Zheng.",
+    "submittedCount": 6,
+    "submittedSchools": [
+      "English 1",
+      "Elevate-7",
+      "AiRuiKe International Institute of Education",
+      "Goldstar (Guangzhou)",
+      "Houhai English",
+      "Guangdong Pei Zheng College"
+    ],
+    "nextActions": [
+      "Daytime browser apply: Shijiazhuang Yingli eChinacities https://jobs.echinacities.com/jobchapter/1355119825 (logged-in Apply)",
+      "Gmail watch: english1.com, elevate-7/workable, airuike/echinacities, goldstar, houhaienglish.com, peizheng.edu.cn",
+      "Do not re-apply to Submitted schools"
+    ],
+    "newSubmitsThisRun": 0
+  },
+  "pendingPublish": false,
+  "emailWatchRun": {
+    "at": "2026-09-14T15:03:00Z",
+    "material": true,
+    "summary": "Goldstar: Jim Althans recruiter reply — 120hr TEFL required before proceed (INTESOL pitch). English 1 + Elevate-7 auto acknowledgments recorded. Houhai / Pei Zheng / AiRuiKe: no recruiter reply yet.",
+    "changedIds": [
+      "goldstar-gz-2026-09-14",
+      "english1-gz-2026-09-14",
+      "elevate7-workable-73388F66D4"
+    ]
+  }
 }
