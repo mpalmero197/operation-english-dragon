@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T06:55:00Z",
+  "updated": "2026-09-14T07:02:41Z",
   "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified.",
   "applications": [
     {
@@ -12,14 +12,25 @@
       "mandarinRequired": false,
       "certRequiredFirst": false,
       "url": "https://www.english1.com/tefl-jobs/apply-now/",
-      "appliedAt": null,
-      "status": "Blocked: needs date of birth to submit",
-      "emailWatch": ["english1.com", "ef.com", "English 1"],
+      "appliedAt": "2026-09-14T07:02:41Z",
+      "status": "Submitted \u2014 awaiting recruiter reply",
+      "emailWatch": [
+        "english1.com",
+        "ef.com",
+        "English 1"
+      ],
       "lastEmailAt": null,
       "lastEmailSubject": null,
-      "notes": "Form filled + resume uploaded 2026-09-14. Waiting on Michael DOB. Prefer housing stipend in cash.",
+      "notes": "Submitted 2026-09-14 via english1.com/tefl-jobs/apply-now/. Confirmation: Thank you. Your application has been submitted. No reference number shown. Prefer housing stipend in cash.",
       "history": [
-        { "at": "2026-09-14T06:50:00Z", "event": "Application form filled; resume uploaded; blocked on DOB" }
+        {
+          "at": "2026-09-14T06:50:00Z",
+          "event": "Application form filled; resume uploaded; blocked on DOB"
+        },
+        {
+          "at": "2026-09-14T07:02:41Z",
+          "event": "Submitted successfully. Confirmation shown. No reference number."
+        }
       ]
     }
   ]

@@ -1,3 +1,7 @@
+## Filled from chat
+
+- Date of birth: October 19, 1987
+
 # 02 — Personal Data Sheet (fill once, reuse everywhere)
 
 Fill offline. Keep a private copy on your phone. Never post passport numbers publicly.
@@ -10,7 +14,7 @@ Fill offline. Keep a private copy on your phone. Never post passport numbers pub
 |-------|-----------|
 | Full legal name (as on passport) | Michael _________________ Palmero |
 | Other names / aliases used | |
-| Date of birth (YYYY-MM-DD) | |
+| Date of birth (YYYY-MM-DD) | 1987-10-19 |
 | Place of birth (city, state, country) | |
 | Sex / gender (as on passport) | |
 | Nationality | United States of America |
@@ -121,7 +125,7 @@ Fill offline. Keep a private copy on your phone. Never post passport numbers pub
 
 ```
 Name:
-DOB:
+DOB: 1987-10-19 / October 19, 1987
 Passport #:
 Passport expiry:
 US address:
