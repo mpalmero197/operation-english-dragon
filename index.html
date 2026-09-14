@@ -347,7 +347,7 @@
         <a class="coco-pulse" href="https://mpalmero197.github.io/operation-english-dragon/docs/us/weekly-pulse.html" target="_blank" rel="noopener noreferrer">Weekly pulse guide</a>
       </div>
     </div>
-    <p class="tip">Show Coco once a week: <strong>1 win + next step</strong>, plus this week’s study minutes. Tap <strong>Write Coco this week</strong> for a plain WeChat draft (no jargon).</p>
+    <p class="tip">Show Coco once a week: <strong>1 win + next step</strong>, plus this week’s study minutes. Tap <strong>Write Coco this week</strong> for a normal WeChat text she can understand.</p>
   </section>
 
   <div class="lanes" id="lanes"></div>
@@ -1420,8 +1420,8 @@ function formatStudyHm(mins) {
 /* Fresh-win lines: only ids listed here can appear. Order = preference. */
 const COCO_WIN_LINES = {
   // CELTA / study (plain talk for Coco)
-  c1a: { lane: "CELTA", line: "I locked in a regular time to study for the English teaching course" },
-  c1b: { lane: "CELTA", line: "I told my study buddy my lunch study time so I stay accountable" },
+  c1a: { lane: "CELTA", line: "I set a regular lunch time to study for the teaching certificate" },
+  c1b: { lane: "CELTA", line: "I locked my lunch study time so I actually stick with it" },
   c2a: { lane: "CELTA", line: "I started the first lesson for the English teaching certificate" },
   c2b: { lane: "CELTA", line: "I kept going on the grammar lesson for teachers" },
   c2c: { lane: "CELTA", line: "I finished this week's study quiz" },
@@ -1464,7 +1464,7 @@ const COCO_WIN_LINES = {
   j6a: { lane: "Jobs", line: "I got a written job offer from a school" },
   j6c: { lane: "Jobs", line: "I signed the teaching contract and can share it with you" },
   // Money (never m0*)
-  m2a: { lane: "Money", line: "I cut the Verizon phone bill" },
+  m2a: { lane: "Money", line: "I finally cut that expensive Verizon phone bill" },
   m10a: { lane: "Money", line: "I canceled some junk Google Play subscriptions" },
   m10b: { lane: "Money", line: "I canceled a junk auto-ship" },
   m10c: { lane: "Money", line: "I canceled another junk auto-ship" },
@@ -1489,16 +1489,16 @@ const COCO_WIN_LINES = {
   v5a: { lane: "Move", line: "I looked at flights to Guangzhou" },
   v5e: { lane: "Move", line: "I installed WeChat for when I land" },
   // Us
-  u1a: { lane: "Us", line: "We talked about housing (your place vs finding a place together)" },
+  u1a: { lane: "Us", line: "We talked about whether I'll move into your place or we'll find something together" },
   u1b: { lane: "Us", line: "We agreed on a rough timeline for me to get there" },
   uDocs2: { lane: "Us", line: "We opened our shared timeline" },
-  u2e: { lane: "Us", line: "I sent you a weekly update on purpose" },
+  u2e: { lane: "Us", line: "I started sending you these weekly updates on purpose" },
   u3e: { lane: "Us", line: "We did a Mandarin check-in together" }
 };
 
 const COCO_NEXT_CANDIDATES = [
-  { id: "c1c", line: "put real time into the English teaching course this week" },
-  { id: "c2a", line: "start the first teaching-course lesson" },
+  { id: "c1c", line: "study for the teaching certificate over lunch" },
+  { id: "c2a", line: "start the first lesson for the teaching certificate" },
   { id: "c2c", line: "finish this week's study quiz" },
   { id: "v1d", line: "order the official sealed school transcripts" },
   { id: "v2d", line: "submit the Tennessee stamp paperwork for my degree" },
@@ -1506,8 +1506,8 @@ const COCO_NEXT_CANDIDATES = [
   { id: "j1c", line: "save the China teaching resume as a PDF ready to send" },
   { id: "j3d", line: "apply to English 1 in Guangzhou" },
   { id: "m2a", line: "cut the Verizon phone bill" },
-  { id: "u1a", line: "talk with you about housing so we're on the same page" },
-  { id: "u2e", line: "send you this update on WeChat" },
+  { id: "u1a", line: "talk with you about housing so we're both clear" },
+  { id: "u2e", line: "keep sending you these updates" },
   { id: "c10e", line: "pick a teaching-course school and reserve the deposit" }
 ];
 
@@ -1535,7 +1535,7 @@ function pickNextStep(weekKeys) {
 }
 
 function buildCocoMessage() {
-  // Mon-Sun CT week only. Plain talk for Coco. Never use em dashes.
+  // Mon-Sun CT week only. Sounds like a normal WeChat text. Never use em dashes.
   const weekKeys = monSunWeekKeys();
   const weekMins = totalMinutesForKeys(weekKeys);
   const streak = calcStreak();
@@ -1566,37 +1566,37 @@ function buildCocoMessage() {
   chunks.push("");
 
   if (!hasStudy && !hasWins) {
-    chunks.push("This week was quieter than I wanted on getting over there with you. I still care about this a lot.");
+    chunks.push("Didn't get as much done this week as I wanted on the move. Still working on it.");
     chunks.push("");
     chunks.push("Next I'm going to " + next + ".");
     chunks.push("");
-    chunks.push("Miss you. Can't wait to see you in Guangzhou.");
-    chunks.push("Love you.");
-    return chunks.join("
-").replace(/\u2014/g, "-").replace(/-/g, "-");
+    chunks.push("Miss you. Love you.");
+    return sanitizeCocoText(chunks.join("\n"));
   }
 
-  const story = [];
   if (hasStudy) {
-    let s = "I studied about " + formatStudyHm(weekMins) + " this week for the English teaching certificate so I can get a job in Guangzhou with you";
-    if (streak >= 2) s += " (I've shown up " + streak + " days in a row)";
+    let s = "I studied about " + formatStudyHm(weekMins) + " this week for that English teaching certificate";
+    if (streak >= 2) s += ". Showed up " + streak + " days in a row";
     s += ".";
-    story.push(s);
+    chunks.push(s);
   }
   for (const line of lines) {
-    // lines already start with I/We
     let L = line.trim();
     if (!/[.!?]$/.test(L)) L += ".";
-    story.push(L);
+    chunks.push(L);
   }
-  chunks.push(story.join(" "));
   chunks.push("");
   chunks.push("Next I'm going to " + next + ".");
   chunks.push("");
-  chunks.push("Miss you. Can't wait to see you in Guangzhou.");
-  chunks.push("Love you.");
-  return chunks.join("
-").replace(/-/g, "-").replace(/-/g, "-");
+  chunks.push("Miss you. Love you.");
+  return sanitizeCocoText(chunks.join("\n"));
+}
+
+function sanitizeCocoText(text) {
+  return String(text)
+    .replace(/\u2014/g, ",")
+    .replace(/\u2013/g, "-")
+    .replace(/ -- /g, ". ");
 }
 
 function showCocoCard(text) {
@@ -1618,7 +1618,7 @@ document.getElementById("cocoCopyBtn").addEventListener("click", async () => {
   const text = ta ? ta.value : "";
   try {
     await navigator.clipboard.writeText(text);
-    alert("Copied — paste to Coco on WeChat.");
+    alert("Copied. Paste to Coco on WeChat.");
   } catch {
     if (ta) { ta.focus(); ta.select(); }
     prompt("Copy this message:", text);
