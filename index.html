@@ -347,7 +347,7 @@
         <a class="coco-pulse" href="https://mpalmero197.github.io/operation-english-dragon/docs/us/weekly-pulse.html" target="_blank" rel="noopener noreferrer">Weekly pulse guide</a>
       </div>
     </div>
-    <p class="tip">Show Coco once a week: <strong>1 win + next step</strong> — plus this week’s study minutes from the clock. Use <strong>Write Coco this week</strong> for a WeChat-ready draft.</p>
+    <p class="tip">Show Coco once a week: <strong>1 win + next step</strong>, plus this week’s study minutes. Tap <strong>Write Coco this week</strong> for a plain WeChat draft (no jargon).</p>
   </section>
 
   <div class="lanes" id="lanes"></div>
@@ -1368,76 +1368,36 @@ setInterval(() => {
    Only ticks with tickMeta ISO timestamps inside this week count as wins.
    Existing checked items without timestamps are never grandfathered. */
 function monSunWeekKeys(now = new Date()) {
+  /* Week window for Message for Coco: Monday–Sunday America/Chicago (CT). */
   const p = partsInTZ(now);
   const dayIdx = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[p.weekday];
   const daysSinceMon = dayIdx === 0 ? 6 : dayIdx - 1;
-  // Walk back hour-by-hour to Monday dateKey, then collect Mon→Sun
-  let t = Date.now();
+  // Walk back unique CT dateKeys: [today, yesterday, ..., Monday]
+  let t = now.getTime();
   let last = null;
-  const seen = [];
-  while (seen.length <= daysSinceMon) {
-    const k = partsInTZ(new Date(t)).dateKey;
-    if (k !== last) { seen.push(k); last = k; }
-    t -= 3600000;
-  }
-  const mondayKey = seen[daysSinceMon];
-  // Collect 7 consecutive keys starting at Monday
-  const keys = [];
-  t = Date.now();
-  // Find a timestamp that lands on mondayKey at noon-ish CT, then walk forward
-  // Simpler: walk back until monday, then walk forward collecting unique keys
-  t = Date.now();
-  last = null;
   const back = [];
-  while (back.length < 14) {
+  while (back.length <= daysSinceMon) {
     const k = partsInTZ(new Date(t)).dateKey;
     if (k !== last) { back.push(k); last = k; }
     t -= 3600000;
   }
-  const monIdx = back.indexOf(mondayKey);
-  // back[0]=today ... back[monIdx]=monday. Need Mon..Sun = reverse of back[monIdx].. and continue to Sun
-  const fromMonBack = back.slice(0, monIdx + 1).reverse(); // Mon .. today
-  keys.push(...fromMonBack);
-  // If today is before Sunday, add remaining forward days up to Sun (empty future — only past+today matter)
-  // For win filtering we only need Mon through today (and rest of week keys for study dates this week)
-  // Rebuild full Mon-Sun by walking forward from Monday key
-  const full = [];
-  // Locate Monday timestamp
-  t = Date.now();
-  last = null;
-  let mondayTs = null;
-  while (mondayTs === null) {
-    const pp = partsInTZ(new Date(t));
-    if (pp.dateKey === mondayKey && (last === null || last !== mondayKey)) {
-      // keep going to middle of that day
-      mondayTs = t;
-      break;
-    }
-    last = pp.dateKey;
-    t -= 3600000;
-    if (Date.now() - t > 20 * 86400000) break;
-  }
-  if (mondayTs != null) {
-    // nudge toward midday on Monday
-    let probe = mondayTs;
-    for (let i = 0; i < 24; i++) {
-      if (partsInTZ(new Date(probe)).dateKey === mondayKey) mondayTs = probe;
-      else break;
-      probe += 3600000;
-    }
-    last = null;
-    let cursor = mondayTs - 6 * 3600000;
-    while (full.length < 7) {
-      const k = partsInTZ(new Date(cursor)).dateKey;
-      if (k !== last) {
-        if (full.length === 0 && k !== mondayKey) { cursor += 3600000; continue; }
-        full.push(k);
-        last = k;
-      }
-      cursor += 3600000;
+  const mondayToToday = back.slice(0, daysSinceMon + 1).reverse();
+  // Extend forward to Sunday so study sessions later this week still match
+  const keys = mondayToToday.slice();
+  const need = 7 - keys.length;
+  if (need > 0) {
+    // Find a timestamp on today, then walk forward
+    t = now.getTime();
+    last = keys[keys.length - 1];
+    let guard = 0;
+    while (keys.length < 7 && guard < 200) {
+      guard++;
+      t += 3600000;
+      const k = partsInTZ(new Date(t)).dateKey;
+      if (k !== last) { keys.push(k); last = k; }
     }
   }
-  return full.length === 7 ? full : fromMonBack;
+  return keys.slice(0, 7);
 }
 
 function isoInWeek(iso, weekKeys) {
@@ -1459,97 +1419,96 @@ function formatStudyHm(mins) {
 
 /* Fresh-win lines: only ids listed here can appear. Order = preference. */
 const COCO_WIN_LINES = {
-  // CELTA — lesson / enrol progress
-  c2a: { lane: "CELTA", line: "Started CELTA Week 1 (learners & context)" },
-  c2b: { lane: "CELTA", line: "Started CELTA grammar lesson" },
-  c2c: { lane: "CELTA", line: "Finished Week 1 quiz" },
-  c2d: { lane: "CELTA", line: "Week 1 win: class profile + CCQs" },
-  c3a: { lane: "CELTA", line: "Finished CELTA grammar lesson" },
-  c3b: { lane: "CELTA", line: "Finished Week 2 quiz" },
-  c3c: { lane: "CELTA", line: "Week 2 win: analysed TL (meaning/form/CCQs)" },
-  c4a: { lane: "CELTA", line: "Finished CELTA lexis lesson" },
-  c4b: { lane: "CELTA", line: "Finished CELTA phonology lesson" },
-  c4c: { lane: "CELTA", line: "Finished Week 3 quiz" },
-  c4d: { lane: "CELTA", line: "Week 3 win: stress + collocations" },
-  c5a: { lane: "CELTA", line: "Finished receptive skills lesson" },
-  c5b: { lane: "CELTA", line: "Finished Week 4 quiz" },
-  c5c: { lane: "CELTA", line: "Took CELTA midterm practice" },
-  c5d: { lane: "CELTA", line: "Week 4 win: staged a receptive lesson" },
-  c6a: { lane: "CELTA", line: "Finished productive skills lesson" },
-  c6b: { lane: "CELTA", line: "Finished Week 5 quiz" },
-  c6c: { lane: "CELTA", line: "Week 5 win: speaking + writing sequence" },
-  c7a: { lane: "CELTA", line: "Finished lesson-planning lesson" },
-  c7b: { lane: "CELTA", line: "Drafted a mini lesson plan" },
-  c7c: { lane: "CELTA", line: "Finished Week 6 quiz" },
-  c8a: { lane: "CELTA", line: "Finished classroom management lesson" },
-  c8b: { lane: "CELTA", line: "Finished error-correction / CCQs lesson" },
-  c8c: { lane: "CELTA", line: "Finished Week 7 quiz" },
-  c9a: { lane: "CELTA", line: "Finished written-assignments guide" },
-  c9b: { lane: "CELTA", line: "Finished Week 8 quiz" },
-  c9c: { lane: "CELTA", line: "Did final CELTA practice" },
-  c9d: { lane: "CELTA", line: "Week 8 win: practice drafts for all 4 genres" },
-  c10e: { lane: "CELTA", line: "Chose CELTA centre + paid / reserved deposit" },
-  c10f: { lane: "CELTA", line: "CELTA certificate in hand" },
-  // Jobs — CV, applications, interview, offer only
-  j1a: { lane: "Jobs", line: "Drafted China teaching CV" },
-  j1b: { lane: "Jobs", line: "Got a professional headshot for applications" },
-  j1c: { lane: "Jobs", line: "Saved China CV (PDF + docx)" },
-  j1d: { lane: "Jobs", line: "CV filed in Jobs folder" },
-  j3d: { lane: "Jobs", line: "Sent English 1 application" },
-  j4d: { lane: "Jobs", line: "Applied to licensed GZ centers" },
-  j5c: { lane: "Jobs", line: "Practiced demo lesson on camera" },
-  j5d: { lane: "Jobs", line: "Completed interview / demo round" },
-  j6a: { lane: "Jobs", line: "Got a written job offer" },
-  j6c: { lane: "Jobs", line: "Signed contract — shared with you" },
-  // Money — ONLY these (never m0* snapshots)
-  m2a: { lane: "Money", line: "Cut Verizon (phone bill down)" },
-  m10a: { lane: "Money", line: "Canceled Google Play junk subs" },
-  m10b: { lane: "Money", line: "Canceled DEOS auto-ship" },
-  m10c: { lane: "Money", line: "Canceled Eurae auto-ship" },
-  m10d: { lane: "Money", line: "Canceled Jay Cutler auto-ship" },
-  m10e: { lane: "Money", line: "Canceled Physician’s Choice auto-ship" },
-  m10f: { lane: "Money", line: "Canceled ChatGPT / Microsoft / Garmin subs" },
-  m10g: { lane: "Money", line: "Cut more junk subscriptions" },
-  m4c: { lane: "Money", line: "Started free CELTA pre-course warm-up" },
-  m4e: { lane: "Money", line: "Funded / paid CELTA deposit" },
-  m5d: { lane: "Money", line: "Named Landing pot (metals reserved)" },
-  m5e: { lane: "Money", line: "Landing buffer funded" },
-  // Move — paper trail
-  v0a: { lane: "Move", line: "Opened the Move docs pack" },
-  v0b: { lane: "Move", line: "Opened the Move folder" },
-  v0f: { lane: "Move", line: "Opened Parchment checklist" },
-  v1b: { lane: "Move", line: "Started Parchment / ITT credentials order" },
-  v1d: { lane: "Move", line: "Ordered sealed transcripts + degree verification" },
-  v2c: { lane: "Move", line: "Notarized degree docs for apostille" },
-  v2d: { lane: "Move", line: "Submitted TN apostille for degree docs" },
-  v3a: { lane: "Move", line: "Ordered FBI Identity History (EDO)" },
-  v3c: { lane: "Move", line: "Apostilled FBI background check" },
-  v4a: { lane: "Move", line: "Got Work Permit Notification (PU)" },
-  v4d: { lane: "Move", line: "Filled COVA / Z visa form" },
-  v4g: { lane: "Move", line: "Z visa sticker in passport" },
-  v5a: { lane: "Move", line: "Compared flights to Guangzhou CAN" },
-  v5e: { lane: "Move", line: "Installed WeChat for landing" },
-  // Us — housing, pulse, Mandarin, timeline
-  u1a: { lane: "Us", line: "Talked housing (your place vs find together)" },
-  u1b: { lane: "Us", line: "Agreed a shared “soon” window" },
-  uDocs2: { lane: "Us", line: "Opened our shared timeline" },
-  u2e: { lane: "Us", line: "Sent you the first weekly pulse" },
-  u3e: { lane: "Us", line: "Mandarin check-in together" }
+  // CELTA / study (plain talk for Coco)
+  c1a: { lane: "CELTA", line: "I locked in a regular time to study for the English teaching course" },
+  c1b: { lane: "CELTA", line: "I told my study buddy my lunch study time so I stay accountable" },
+  c2a: { lane: "CELTA", line: "I started the first lesson for the English teaching certificate" },
+  c2b: { lane: "CELTA", line: "I kept going on the grammar lesson for teachers" },
+  c2c: { lane: "CELTA", line: "I finished this week's study quiz" },
+  c2d: { lane: "CELTA", line: "I finished a solid first week of teaching-course study" },
+  c3a: { lane: "CELTA", line: "I finished the grammar-for-teachers lesson" },
+  c3b: { lane: "CELTA", line: "I finished another study quiz" },
+  c3c: { lane: "CELTA", line: "I hit a real study win on teaching grammar" },
+  c4a: { lane: "CELTA", line: "I finished the vocabulary lesson" },
+  c4b: { lane: "CELTA", line: "I finished the pronunciation lesson" },
+  c4c: { lane: "CELTA", line: "I finished another study quiz" },
+  c4d: { lane: "CELTA", line: "I got through a harder chunk of the teaching course" },
+  c5a: { lane: "CELTA", line: "I finished the reading/listening teaching lesson" },
+  c5b: { lane: "CELTA", line: "I finished another study quiz" },
+  c5c: { lane: "CELTA", line: "I took a practice midterm for the teaching course" },
+  c5d: { lane: "CELTA", line: "I practiced building a full listening/reading lesson" },
+  c6a: { lane: "CELTA", line: "I finished the speaking/writing teaching lesson" },
+  c6b: { lane: "CELTA", line: "I finished another study quiz" },
+  c6c: { lane: "CELTA", line: "I designed practice speaking and writing activities" },
+  c7a: { lane: "CELTA", line: "I finished the lesson-planning section" },
+  c7b: { lane: "CELTA", line: "I drafted a mini lesson plan" },
+  c7c: { lane: "CELTA", line: "I finished another study quiz" },
+  c8a: { lane: "CELTA", line: "I finished the classroom management section" },
+  c8b: { lane: "CELTA", line: "I finished the error-correction section" },
+  c8c: { lane: "CELTA", line: "I finished another study quiz" },
+  c9a: { lane: "CELTA", line: "I finished the written-assignments guide" },
+  c9b: { lane: "CELTA", line: "I finished another study quiz" },
+  c9c: { lane: "CELTA", line: "I did final practice for the teaching course" },
+  c9d: { lane: "CELTA", line: "I practiced all the written assignment types" },
+  c10e: { lane: "CELTA", line: "I picked a real teaching-course school and put down a deposit" },
+  c10f: { lane: "CELTA", line: "I got the English teaching certificate" },
+  // Jobs
+  j1a: { lane: "Jobs", line: "I drafted my China teaching resume" },
+  j1b: { lane: "Jobs", line: "I got a proper photo for school applications" },
+  j1c: { lane: "Jobs", line: "I saved the China teaching resume as a PDF ready to send" },
+  j1d: { lane: "Jobs", line: "I filed the teaching resume in my job folder" },
+  j3d: { lane: "Jobs", line: "I applied to English 1 in Guangzhou" },
+  j4d: { lane: "Jobs", line: "I applied to a few licensed schools in Guangzhou" },
+  j5c: { lane: "Jobs", line: "I practiced a demo lesson on camera" },
+  j5d: { lane: "Jobs", line: "I finished a school interview / demo lesson" },
+  j6a: { lane: "Jobs", line: "I got a written job offer from a school" },
+  j6c: { lane: "Jobs", line: "I signed the teaching contract and can share it with you" },
+  // Money (never m0*)
+  m2a: { lane: "Money", line: "I cut the Verizon phone bill" },
+  m10a: { lane: "Money", line: "I canceled some junk Google Play subscriptions" },
+  m10b: { lane: "Money", line: "I canceled a junk auto-ship" },
+  m10c: { lane: "Money", line: "I canceled another junk auto-ship" },
+  m10d: { lane: "Money", line: "I canceled another junk auto-ship" },
+  m10e: { lane: "Money", line: "I canceled another junk auto-ship" },
+  m10f: { lane: "Money", line: "I canceled more leftover subscriptions" },
+  m10g: { lane: "Money", line: "I cut more junk spending" },
+  m4c: { lane: "Money", line: "I started the free warm-up for the teaching course" },
+  m4e: { lane: "Money", line: "I put money toward the teaching-course deposit" },
+  m5d: { lane: "Money", line: "I set aside metals/cash for the landing fund" },
+  m5e: { lane: "Money", line: "I funded the landing buffer for the move" },
+  // Move (real paper only, not "opened a link")
+  v1b: { lane: "Move", line: "I started ordering official school transcripts" },
+  v1d: { lane: "Move", line: "I ordered the sealed transcripts the work visa needs" },
+  v2c: { lane: "Move", line: "I got degree papers notarized" },
+  v2d: { lane: "Move", line: "I submitted the Tennessee stamp paperwork for my degree" },
+  v3a: { lane: "Move", line: "I ordered the FBI background check" },
+  v3c: { lane: "Move", line: "I got the background check stamped for China" },
+  v4a: { lane: "Move", line: "The school started my work permit paperwork" },
+  v4d: { lane: "Move", line: "I filled out the China work visa form" },
+  v4g: { lane: "Move", line: "I got the work visa in my passport" },
+  v5a: { lane: "Move", line: "I looked at flights to Guangzhou" },
+  v5e: { lane: "Move", line: "I installed WeChat for when I land" },
+  // Us
+  u1a: { lane: "Us", line: "We talked about housing (your place vs finding a place together)" },
+  u1b: { lane: "Us", line: "We agreed on a rough timeline for me to get there" },
+  uDocs2: { lane: "Us", line: "We opened our shared timeline" },
+  u2e: { lane: "Us", line: "I sent you a weekly update on purpose" },
+  u3e: { lane: "Us", line: "We did a Mandarin check-in together" }
 };
 
 const COCO_NEXT_CANDIDATES = [
-  { id: "c1c", line: "open the study pack and do today’s CELTA block" },
-  { id: "c2a", line: "start CELTA Lesson 01" },
-  { id: "c2c", line: "take the Week 1 quiz" },
-  { id: "v1d", line: "order sealed transcripts on Parchment" },
-  { id: "v2d", line: "submit the TN apostille packet" },
-  { id: "v3a", line: "order the FBI EDO background check" },
-  { id: "j1c", line: "export the China CV as PDF + docx" },
-  { id: "j3d", line: "submit the English 1 application" },
-  { id: "m2a", line: "cut Verizon down (first visible money win)" },
-  { id: "u1a", line: "talk housing with you" },
-  { id: "u2e", line: "send this pulse on WeChat" },
-  { id: "c10e", line: "pick a CELTA centre and reserve the deposit" }
+  { id: "c1c", line: "put real time into the English teaching course this week" },
+  { id: "c2a", line: "start the first teaching-course lesson" },
+  { id: "c2c", line: "finish this week's study quiz" },
+  { id: "v1d", line: "order the official sealed school transcripts" },
+  { id: "v2d", line: "submit the Tennessee stamp paperwork for my degree" },
+  { id: "v3a", line: "order the FBI background check" },
+  { id: "j1c", line: "save the China teaching resume as a PDF ready to send" },
+  { id: "j3d", line: "apply to English 1 in Guangzhou" },
+  { id: "m2a", line: "cut the Verizon phone bill" },
+  { id: "u1a", line: "talk with you about housing so we're on the same page" },
+  { id: "u2e", line: "send you this update on WeChat" },
+  { id: "c10e", line: "pick a teaching-course school and reserve the deposit" }
 ];
 
 function collectThisWeekWins(weekKeys) {
@@ -1576,62 +1535,68 @@ function pickNextStep(weekKeys) {
 }
 
 function buildCocoMessage() {
-  // Mon–Sun CT week only
+  // Mon-Sun CT week only. Plain talk for Coco. Never use em dashes.
   const weekKeys = monSunWeekKeys();
   const weekMins = totalMinutesForKeys(weekKeys);
   const streak = calcStreak();
   const wins = collectThisWeekWins(weekKeys);
 
-  // Cap 3, prefer 1–2 concrete bullets
-  const picked = wins.slice(0, 3);
-
-  // Merge Jobs application ticks into one line if both present
+  const picked = wins.slice(0, 2);
   const lines = [];
   const used = new Set();
-  const appIds = picked.filter(w => w.id === "j3d" || w.id === "j4d");
-  if (appIds.length) {
-    const n = appIds.length;
-    // Count how many application-ish ticks this week (not just in picked)
-    const allApp = wins.filter(w => w.id === "j3d" || w.id === "j4d");
-    lines.push("Applications sent: " + allApp.length);
-    allApp.forEach(w => used.add(w.id));
+  const appIds = wins.filter(w => w.id === "j3d" || w.id === "j4d");
+  if (appIds.length && picked.some(w => w.id === "j3d" || w.id === "j4d")) {
+    if (appIds.length === 1) lines.push(appIds[0].line);
+    else lines.push("I sent out " + appIds.length + " school applications in Guangzhou");
+    appIds.forEach(w => used.add(w.id));
   }
   for (const w of picked) {
     if (used.has(w.id)) continue;
-    if (lines.length >= 3) break;
+    if (lines.length >= 2) break;
     lines.push(w.line);
     used.add(w.id);
   }
 
   const next = pickNextStep(weekKeys);
-  const parts = ["Hey Coco — week update:"];
-
   const hasStudy = weekMins >= 1;
   const hasWins = lines.length > 0;
+  const chunks = [];
+
+  chunks.push("Hey Coco,");
+  chunks.push("");
 
   if (!hasStudy && !hasWins) {
-    parts.push("Study / progress was light this week.");
-    parts.push("Next: " + next);
-    parts.push("Miss you — see you in GZ.");
-    parts.push("Love you.");
-    return parts.join("\\n");
+    chunks.push("This week was quieter than I wanted on getting over there with you. I still care about this a lot.");
+    chunks.push("");
+    chunks.push("Next I'm going to " + next + ".");
+    chunks.push("");
+    chunks.push("Miss you. Can't wait to see you in Guangzhou.");
+    chunks.push("Love you.");
+    return chunks.join("
+").replace(/\u2014/g, "-").replace(/-/g, "-");
   }
 
+  const story = [];
   if (hasStudy) {
-    let studyLine = "Studied " + formatStudyHm(weekMins) + " (CELTA)";
-    if (streak >= 1) studyLine += " · streak " + streak + " day" + (streak === 1 ? "" : "s");
-    parts.push("• " + studyLine);
+    let s = "I studied about " + formatStudyHm(weekMins) + " this week for the English teaching certificate so I can get a job in Guangzhou with you";
+    if (streak >= 2) s += " (I've shown up " + streak + " days in a row)";
+    s += ".";
+    story.push(s);
   }
-
   for (const line of lines) {
-    if (parts.filter(p => p.startsWith("•")).length >= 3) break;
-    parts.push("• " + line);
+    // lines already start with I/We
+    let L = line.trim();
+    if (!/[.!?]$/.test(L)) L += ".";
+    story.push(L);
   }
-
-  parts.push("Next: " + next);
-  parts.push("Miss you — see you in GZ.");
-  parts.push("Love you.");
-  return parts.join("\\n");
+  chunks.push(story.join(" "));
+  chunks.push("");
+  chunks.push("Next I'm going to " + next + ".");
+  chunks.push("");
+  chunks.push("Miss you. Can't wait to see you in Guangzhou.");
+  chunks.push("Love you.");
+  return chunks.join("
+").replace(/-/g, "-").replace(/-/g, "-");
 }
 
 function showCocoCard(text) {
