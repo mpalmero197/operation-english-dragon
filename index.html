@@ -164,6 +164,72 @@
   .force-banner.show { display: block; }
   .force-banner h2 { margin: 0 0 0.35rem; font-size: 1.05rem; color: #ffb4b4; }
   .force-banner p { margin: 0 0 0.65rem; font-size: 0.9rem; color: #ffd0d0; }
+
+  /* Smart search */
+  .search-wrap {
+    position: sticky; top: 0; z-index: 15;
+    background: var(--bg);
+    padding: 0.15rem 0 0.85rem;
+    margin-bottom: 0.35rem;
+  }
+  .search-box {
+    display: flex; align-items: center; gap: 0.45rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 0.35rem 0.55rem 0.35rem 0.85rem;
+  }
+  .search-box:focus-within { border-color: var(--accent); }
+  .search-box input {
+    flex: 1; min-width: 0;
+    background: transparent; border: 0; outline: 0;
+    color: var(--text); font: inherit; font-size: 1.05rem;
+    padding: 0.7rem 0.2rem;
+  }
+  .search-box input::placeholder { color: var(--muted); font-size: 0.95rem; }
+  .search-clear {
+    flex-shrink: 0;
+    width: 2.4rem; height: 2.4rem; padding: 0;
+    border-radius: 999px; font-size: 1.15rem; line-height: 1;
+    background: #243044; color: var(--muted);
+    display: none; align-items: center; justify-content: center;
+  }
+  .search-clear.show { display: inline-flex; }
+  .search-tip {
+    margin: 0.45rem 0 0; font-size: 0.78rem; color: var(--muted);
+  }
+  .search-results {
+    display: none; margin-top: 0.55rem;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden;
+    max-height: min(70vh, 420px); overflow-y: auto;
+  }
+  .search-results.show { display: block; }
+  .search-hit {
+    display: block; padding: 0.75rem 0.9rem;
+    border-bottom: 1px solid #243044;
+    color: var(--text); text-decoration: none;
+  }
+  .search-hit:last-child { border-bottom: 0; }
+  .search-hit:hover, .search-hit:active { background: #141c28; }
+  .search-hit-top { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem; }
+  .search-lane {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em;
+    text-transform: uppercase; padding: 0.15rem 0.45rem;
+    border-radius: 999px; background: #243044; color: #b8c7de;
+    flex-shrink: 0;
+  }
+  .search-lane.Move { background: #3a1f24; color: #ffb4b4; }
+  .search-lane.Jobs { background: #2a2410; color: #f0d48a; }
+  .search-lane.CELTA { background: #1a2438; color: #a8bfff; }
+  .search-lane.Money { background: #1a2e24; color: #8fecc0; }
+  .search-lane.Us { background: #2a1a32; color: #e0b4f5; }
+  .search-lane.Hub { background: #243044; color: #c5d0e0; }
+  .search-hit-title { font-weight: 650; font-size: 0.95rem; }
+  .search-hit-blurb { font-size: 0.82rem; color: var(--muted); }
+  .search-empty {
+    padding: 0.9rem 1rem; font-size: 0.9rem; color: var(--muted);
+  }
 </style>
 </head>
 <body>
@@ -182,6 +248,17 @@
     <h1>Opération English Dragon</h1>
     <p class="sub">Michael + Coco · CELTA → GZ job (Z) → live together · works offline after install</p>
   </header>
+
+  <div class="search-wrap" id="searchWrap">
+    <div class="search-box">
+      <input type="search" id="smartSearch" enterkeyhint="search" autocomplete="off"
+        placeholder="Search in plain words… (diploma, job, money, Coco)"
+        aria-label="Search in plain words" />
+      <button type="button" class="search-clear" id="searchClear" aria-label="Clear search">×</button>
+    </div>
+    <p class="search-tip">Tip: use your words — diploma, visa, job, Coco…</p>
+    <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+  </div>
 
   <section class="clock-card" id="clockCard">
     <div class="clock-top">
@@ -1215,6 +1292,214 @@ setInterval(() => {
     }
   }
 }, 1000);
+
+
+/* ——— Plain-language smart search ——— */
+const SEARCH_INDEX = [
+  { id: "hub-docs", title: "Docs hub", blurb: "All free templates — CELTA, Jobs, Move, Us, Money", url: "https://mpalmero197.github.io/operation-english-dragon/docs/", aliases: ["docs", "hub", "templates", "folder", "papers", "documents"], lane: "Hub" },
+  { id: "move-folder", title: "Move / visa folder", blurb: "Parchment, apostille, FBI, Z stack, packing, resume", url: "https://mpalmero197.github.io/operation-english-dragon/docs/move/", aliases: ["move", "visa", "folder", "overseas", "guangzhou move"], lane: "Move" },
+  { id: "move-index", title: "Move INDEX — start here", blurb: "Order of docs for the Guangzhou Z path", url: "https://mpalmero197.github.io/operation-english-dragon/docs/view.html?f=move/INDEX.md", aliases: ["index", "start here", "roadmap", "what next", "move plan"], lane: "Move" },
+  { id: "move-01", title: "Document inventory", blurb: "What you have vs what you still need", url: "https://mpalmero197.github.io/operation-english-dragon/docs/view.html?f=move/01-document-inventory.md", aliases: ["inventory", "docs list", "what papers", "school papers", "checklist docs"], lane: "Move" },
+  { id: "move-02", title: "Personal data sheet", blurb: "Names, passport #, addresses — fill once, reuse", url: "https://mpalmero197.github.io/operation-english-dragon/docs/view.html?f=move/02-personal-data-sheet.md", aliases: ["personal data", "passport number", "address", "bio data", "info sheet"], lane: "Move" },
+  { id: "move-03", title: "Parchment order checklist", blurb: "Sealed transcripts + degree verification order", url: "https://mpalmero197.github.io/operation-english-dragon/docs/view.html?f=move/03-parchment-order-checklist.md", aliases: ["parchment", "diploma", "degree", "transcript", "school papers", "sealed", "itt", "credentials"], lane: "Move" },
+  { id: "move-04", title: "TN apostille packet", blurb: "Tennessee SOS stamp / authentication for China", url: "https://mpalmero197.github.io/operation-english-dragon/docs/view.html?f=move/04-tn-apostille-packet.md", aliases: ["apostille", "stamp", "notarize", "notary", "tennessee", "tn sos", "authentication", "sealed stamp"], lane: "Move" },
+  { id: "move-05", title: "FBI EDO checklist", blurb: "Background check + fingerprints path", url: "https://mpalmero197.github.io/operation-english-dragon/docs/view.html?f=move/05-fbi-edo-checklist.md", aliases: ["fbi", "background check", "fingerprints", "edo", "criminal record", "police check", "identity history"], lane: "Move" },
+  { id: "move-06", title: "Z visa doc stack", blurb: "Everything for the work / Z visa packet", url: "https://mpalmero197.github.io/operation-english-dragon/docs/view.html?f=move/06-z-visa-doc-stack.md", aliases: ["z visa", "visa", "work permit", "china visa", "pu letter", "invitation", "visa packet"], lane: "Move" },
+  { id: "move-07", title: "Photo specs", blurb: "Visa / residence permit photo size rules", url: "https://mpalmero197.github.io/operation-english-dragon/docs/view.html?f=move/07-photo-specs.md", aliases: ["photos", "photo", "passport photo", "visa photo", "headshot", "picture"], lane: "Move" },
+  { id: "move-08", title: "Packing + docs pouch", blurb: "What to pack + pouch for airport / landing", url: "https://mpalmero197.github.io/operation-english-dragon/docs/view.html?f=move/08-packing-and-docs-pouch.md", aliases: ["packing", "pack", "docs pouch", "suitcase", "luggage", "airport", "can", "guangzhou", "flight", "plane", "carry on"], lane: "Move" },
+  { id: "move-09", title: "Coco share one-pager", blurb: "Pulse sheet to send Coco — status + next step", url: "https://mpalmero197.github.io/operation-english-dragon/docs/view.html?f=move/09-coco-share-one-pager.md", aliases: ["coco", "wechat", "pulse", "share", "one pager", "update coco", "tell coco"], lane: "Move" },
+  { id: "move-10", title: "Cover letter — apostille request", blurb: "Letter template for TN apostille request", url: "https://mpalmero197.github.io/operation-english-dragon/docs/view.html?f=move/10-cover-letter-apostille-request.md", aliases: ["cover letter", "apostille letter", "request letter", "sos letter"], lane: "Move" },
+  { id: "move-resume", title: "Resume (docx) — Move copy", blurb: "Michael Palmero resume for visa / school packets", url: "https://mpalmero197.github.io/operation-english-dragon/docs/move/michael-palmero-resume.docx", aliases: ["resume", "cv", "docx", "curriculum vitae"], lane: "Move" },
+  { id: "jobs-folder", title: "Jobs folder", blurb: "China CV, tracker, interview, offer, recruiter templates", url: "https://mpalmero197.github.io/operation-english-dragon/docs/jobs/", aliases: ["jobs", "job", "teaching job", "work", "hire", "english 1", "echinacities", "tefl", "apply", "job board"], lane: "Jobs" },
+  { id: "jobs-cv", title: "China teaching CV", blurb: "HTML CV draft aimed at GZ schools", url: "https://mpalmero197.github.io/operation-english-dragon/docs/jobs/china-teaching-cv.html", aliases: ["china cv", "teaching cv", "resume china", "cv draft"], lane: "Jobs" },
+  { id: "jobs-tracker", title: "Application tracker", blurb: "Where you applied + status", url: "https://mpalmero197.github.io/operation-english-dragon/docs/jobs/application-tracker.html", aliases: ["applications", "applied", "tracker", "job applications"], lane: "Jobs" },
+  { id: "jobs-interview", title: "Interview + demo prep", blurb: "Talking points and demo lesson prep", url: "https://mpalmero197.github.io/operation-english-dragon/docs/jobs/interview-demo-prep.html", aliases: ["interview", "demo", "demo lesson", "teaching demo", "prep", "sample lesson"], lane: "Jobs" },
+  { id: "jobs-offer", title: "Offer / Z checklist", blurb: "Offer → contract → Z handoff", url: "https://mpalmero197.github.io/operation-english-dragon/docs/jobs/offer-checklist.html", aliases: ["offer", "contract", "job offer", "accept offer", "z sponsor", "sponsor", "licensed sponsor", "grey agent"], lane: "Jobs" },
+  { id: "jobs-email", title: "Recruiter email / WeChat templates", blurb: "Cold outreach templates", url: "https://mpalmero197.github.io/operation-english-dragon/docs/jobs/recruiter-email.html", aliases: ["recruiter", "email", "wechat template", "outreach", "message school"], lane: "Jobs" },
+  { id: "jobs-resume", title: "Resume (docx) — Jobs copy", blurb: "Source resume for applications", url: "https://mpalmero197.github.io/operation-english-dragon/docs/jobs/michael-palmero-resume.docx", aliases: ["resume", "cv", "docx", "source resume"], lane: "Jobs" },
+  { id: "celta-folder", title: "CELTA docs folder", blurb: "Study log, week wins, enrolment, centre compare", url: "https://mpalmero197.github.io/operation-english-dragon/docs/celta/", aliases: ["celta", "cambridge", "certificate", "tefl", "quiz", "quizzes", "test", "exam", "study docs"], lane: "CELTA" },
+  { id: "celta-study", title: "Study pack (app)", blurb: "In-app CELTA study home — lessons + schedule", url: "https://mpalmero197.github.io/operation-english-dragon/study/index.html", aliases: ["study", "study pack", "lessons", "clock in", "lunch", "noon", "learn", "lesson", "quiz", "homework"], lane: "CELTA" },
+  { id: "celta-schedule", title: "8-week schedule", blurb: "Week-by-week CELTA prep checklist", url: "https://mpalmero197.github.io/operation-english-dragon/study/view.html?f=schedule.md", aliases: ["schedule", "8 week", "week plan", "syllabus timing", "quiz", "week 1", "week 2", "checklist"], lane: "CELTA" },
+  { id: "celta-log", title: "Daily study log", blurb: "Log minutes + wins by day", url: "https://mpalmero197.github.io/operation-english-dragon/docs/celta/daily-study-log.html", aliases: ["study log", "daily log", "minutes", "wins", "timer", "session log"], lane: "CELTA" },
+  { id: "celta-enrol", title: "Enrolment prep checklist", blurb: "Centre + deposit + paperwork", url: "https://mpalmero197.github.io/operation-english-dragon/docs/celta/enrolment-prep.html", aliases: ["enrol", "enrolment", "enroll", "deposit", "centre", "center"], lane: "CELTA" },
+  { id: "celta-centre", title: "Centre compare", blurb: "Compare CELTA centres side by side", url: "https://mpalmero197.github.io/operation-english-dragon/docs/celta/centre-compare.html", aliases: ["centre compare", "center compare", "which centre", "school choice"], lane: "CELTA" },
+  { id: "celta-week", title: "Week win sheet", blurb: "One win + next step for the week", url: "https://mpalmero197.github.io/operation-english-dragon/docs/celta/week-win-sheet.html", aliases: ["week win", "win sheet", "weekly win"], lane: "CELTA" },
+  { id: "celta-assign", title: "Assignment tracker", blurb: "Track written assignments", url: "https://mpalmero197.github.io/operation-english-dragon/docs/celta/assignment-tracker.html", aliases: ["assignments", "written assignment", "homework"], lane: "CELTA" },
+  { id: "celta-l01", title: "Lesson 01 — Learners & context", blurb: "Who learners are + context for teaching", url: "https://mpalmero197.github.io/operation-english-dragon/study/view.html?f=lessons/01-learners-and-context.md", aliases: ["learners", "context", "lesson 1", "lesson 01"], lane: "CELTA" },
+  { id: "celta-l02", title: "Lesson 02 — Grammar for teachers", blurb: "Teacher grammar essentials", url: "https://mpalmero197.github.io/operation-english-dragon/study/view.html?f=lessons/02-grammar-for-teachers.md", aliases: ["grammar", "lesson 2", "tenses"], lane: "CELTA" },
+  { id: "celta-l07", title: "Lesson 07 — Lesson planning", blurb: "Plan a CELTA-style lesson", url: "https://mpalmero197.github.io/operation-english-dragon/study/view.html?f=lessons/07-lesson-planning.md", aliases: ["lesson planning", "plan", "lesson plan", "ppp"], lane: "CELTA" },
+  { id: "money-folder", title: "Money folder", blurb: "Burns, stretch, pots, fees, offer math", url: "https://mpalmero197.github.io/operation-english-dragon/docs/money/", aliases: ["money", "cash", "budget", "bank", "bills"], lane: "Money" },
+  { id: "money-ceal", title: "CEAL snapshot", blurb: "Where the money stands right now", url: "https://mpalmero197.github.io/operation-english-dragon/docs/money/ceal-snapshot.html", aliases: ["ceal", "snapshot", "balance", "where money", "cash", "bank", "metals", "gold", "silver", "how much money", "broke"], lane: "Money" },
+  { id: "money-stretch", title: "Stretch to payday", blurb: "Bridge cash until next payday", url: "https://mpalmero197.github.io/operation-english-dragon/docs/money/stretch-to-payday.html", aliases: ["stretch", "payday", "broke", "until friday", "cash bridge", "next check", "next paycheck", "sep 25", "until payday"], lane: "Money" },
+  { id: "money-burns", title: "Monthly burns", blurb: "Recurring bills & burn rate", url: "https://mpalmero197.github.io/operation-english-dragon/docs/money/monthly-burns.html", aliases: ["burns", "monthly", "bills", "phone bill", "verizon", "subscriptions", "recurring", "gas", "gas money", "insurance", "progressive", "broadband", "monthly bills"], lane: "Money" },
+  { id: "money-junk", title: "Junk-sub kill list", blurb: "Cut / freeze subscriptions (HOLD list)", url: "https://mpalmero197.github.io/operation-english-dragon/docs/money/junk-sub-kill-list.html", aliases: ["junk", "subscriptions", "cancel", "kill list", "gym", "planet fitness"], lane: "Money" },
+  { id: "money-pots", title: "CELTA + landing pots", blurb: "Save buckets for course + landing cash", url: "https://mpalmero197.github.io/operation-english-dragon/docs/money/pots-celta-landing.html", aliases: ["pots", "savings", "landing", "bucket", "metals"], lane: "Money" },
+  { id: "money-fees", title: "Paper-trail fees", blurb: "Parchment / apostille / FBI / visa fee budget", url: "https://mpalmero197.github.io/operation-english-dragon/docs/money/paper-trail-fees.html", aliases: ["fees", "paper trail", "cost", "how much", "visa fee"], lane: "Money" },
+  { id: "money-offer", title: "Offer math", blurb: "Salary / housing / take-home math", url: "https://mpalmero197.github.io/operation-english-dragon/docs/money/offer-math.html", aliases: ["offer math", "salary", "pay", "compensation", "housing stipend"], lane: "Money" },
+  { id: "money-wind", title: "US wind-down calendar", blurb: "Cancel / pause US bills before leave", url: "https://mpalmero197.github.io/operation-english-dragon/docs/money/us-wind-down.html", aliases: ["wind down", "cancel bills", "verizon", "progressive", "leaving us", "move out bills"], lane: "Money" },
+  { id: "us-folder", title: "Us folder (Michael + Coco)", blurb: "Housing, timeline, pulse, Mandarin, money talk", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/", aliases: ["us", "together", "couple", "michael and coco", "relationship", "girlfriend", "coco"], lane: "Us" },
+  { id: "us-housing", title: "Housing talk sheet", blurb: "Talk through GZ housing with Coco", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/housing-talk.html", aliases: ["housing", "apartment", "rent", "flat", "where to live", "her place", "move in", "live with coco", "housing talk"], lane: "Us" },
+  { id: "us-timeline", title: "Shared timeline", blurb: "Milestones on one page", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/shared-timeline.html", aliases: ["timeline", "milestones", "when", "dates", "soon", "shared soon"], lane: "Us" },
+  { id: "us-pulse", title: "Weekly WeChat pulse", blurb: "Copy-paste weekly update for Coco", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/weekly-pulse.html", aliases: ["pulse", "weekly pulse", "wechat", "coco update", "check in coco", "show progress", "update coco", "1 win", "wechat update"], lane: "Us" },
+  { id: "us-mandarin", title: "Mandarin together", blurb: "Study Mandarin as a couple", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/mandarin-together.html", aliases: ["mandarin", "chinese", "language", "duolingo", "hellotalk", "jumpspeak", "pleco"], lane: "Us" },
+  { id: "us-money", title: "Year-one money talk", blurb: "Money-as-couple conversation sheet", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/money-as-couple.html", aliases: ["money as couple", "couple money", "shared money", "finances together"], lane: "Us" },
+  { id: "us-first", title: "First month GZ", blurb: "Landing week + first 30 days in Guangzhou", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/first-month-gz.html", aliases: ["first month", "landing", "arrival", "guangzhou", "can", "airport", "police registration", "residence permit", "medical", "checkup"], lane: "Us" },
+  { id: "us-scripts", title: "Support / hard-talk scripts", blurb: "Words for hard conversations", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/support-scripts.html", aliases: ["scripts", "hard talk", "support", "what to say", "miss her", "long distance"], lane: "Us" },
+  { id: "ext-parchment-howto", title: "Parchment — ITT transcript how-to", blurb: "Official how-to for ITT sealed transcripts", url: "https://parchment.my.site.com/s/article/ITT-Technical-Institute-transcript-requests", aliases: ["parchment", "itt", "transcript", "diploma", "sealed", "degree order"], lane: "Move" },
+  { id: "ext-parchment-order", title: "Parchment — order ITT credentials", blurb: "Order portal (post-2001 ITT)", url: "https://www.parchment.com/u/registration/19405892/account", aliases: ["parchment order", "order transcript", "order diploma", "itt portal"], lane: "Move" },
+  { id: "ext-tn-apostille", title: "TN SOS apostille guide", blurb: "$2/doc Tennessee authentication guide", url: "https://sos.tn.gov/businesses/guides/apostille-authentication-guide", aliases: ["tn sos", "apostille", "stamp", "tennessee", "authentication", "notarize"], lane: "Move" },
+  { id: "ext-tn-sos", title: "TN SOS Business Services", blurb: "Tennessee Secretary of State hub", url: "https://sos.tn.gov/businesses", aliases: ["tn sos", "secretary of state", "tennessee"], lane: "Move" },
+  { id: "ext-fbi-edo", title: "FBI EDO — Identity History", blurb: "Electronic background check order", url: "https://www.edo.cjis.gov/", aliases: ["fbi", "edo", "background check", "fingerprints", "identity history"], lane: "Move" },
+  { id: "ext-fbi-help", title: "FBI fingerprint / EDO help", blurb: "Options if EDO path is confusing", url: "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/identity-history-summary-checks", aliases: ["fbi help", "fingerprints", "background"], lane: "Move" },
+  { id: "ext-passport", title: "US passport (State Dept)", blurb: "Renew only if under 6 months left", url: "https://travel.state.gov/content/travel/en/passports.html", aliases: ["passport", "renew passport", "state department", "travel.gov"], lane: "Move" },
+  { id: "ext-cova", title: "COVA — China visa form", blurb: "Online Z visa application form", url: "http://consular.mfa.gov.cn/VISA/", aliases: ["cova", "visa form", "china visa", "z visa apply", "embassy form"], lane: "Move" },
+  { id: "ext-cova-howto", title: "COVA how-to (Embassy)", blurb: "Embassy explainer for COVA / Z", url: "https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202509/t20250920_11712388.htm", aliases: ["cova how to", "embassy", "visa office", "washington dc"], lane: "Move" },
+  { id: "ext-echina", title: "eChinacities jobs", blurb: "Guangzhou teaching job board", url: "https://jobs.echinacities.com", aliases: ["echinacities", "job board", "teaching job", "guangzhou jobs"], lane: "Jobs" },
+  { id: "ext-e1-teach", title: "English 1 — teach in Guangzhou", blurb: "English 1 GZ teach/career page", url: "https://www.english1.com/teach-abroad/ppc/teaching-career-in-guangzhou/", aliases: ["english 1", "english1", "e1", "guangzhou teach"], lane: "Jobs" },
+  { id: "ext-e1-jobs", title: "English 1 — China jobs", blurb: "English 1 China teaching jobs overview", url: "https://www.english1.com/work-abroad/teaching-jobs-in-china/", aliases: ["english 1", "english1", "china jobs"], lane: "Jobs" },
+  { id: "ext-verizon", title: "Verizon account", blurb: "Phone bill — cut before GZ SIM", url: "https://www.verizon.com", aliases: ["verizon", "phone bill", "phone", "cell", "mobile bill", "cell phone", "sim", "cut phone"], lane: "Money" },
+  { id: "ext-wechat", title: "WeChat download", blurb: "Install WeChat for Coco + schools", url: "https://www.wechat.com/en/", aliases: ["wechat", "weixin", "chat", "coco"], lane: "Us" },
+  { id: "ext-flights", title: "Google Flights", blurb: "Search CAN / Guangzhou flights", url: "https://www.google.com/travel/flights", aliases: ["flight", "plane", "airfare", "can", "airport", "ticket"], lane: "Move" },
+  { id: "app-clock", title: "Study Clock (this app)", blurb: "Mandatory lunch clock-in — unlocks lanes", url: "https://mpalmero197.github.io/operation-english-dragon/index.html#clockCard", aliases: ["clock", "clock in", "lunch", "study clock", "check in", "noon", "clock out", "check-in", "mandatory"], lane: "CELTA" },
+];
+
+function searchNormalize(s) {
+  return String(s || "").toLowerCase().trim();
+}
+
+function searchTokens(q) {
+  return searchNormalize(q).split(/[^a-z0-9]+/).filter(Boolean);
+}
+
+/** Soft includes: exact substring, or 1-char typo tolerance for tokens >= 4 */
+function softIncludes(hay, needle) {
+  if (!needle) return false;
+  if (hay.includes(needle)) return true;
+  if (needle.length < 4) return false;
+  // startsWith tolerance / one-char skip in needle against hay words
+  const words = hay.split(/[^a-z0-9]+/).filter(w => w.length);
+  for (const w of words) {
+    if (w.startsWith(needle) || needle.startsWith(w) && w.length >= 4) return true;
+    if (Math.abs(w.length - needle.length) <= 1 && w.length >= 4) {
+      let i = 0, j = 0, miss = 0;
+      while (i < w.length && j < needle.length) {
+        if (w[i] === needle[j]) { i++; j++; }
+        else {
+          miss++;
+          if (miss > 1) break;
+          if (w.length > needle.length) i++;
+          else if (needle.length > w.length) j++;
+          else { i++; j++; }
+        }
+      }
+      miss += (w.length - i) + (needle.length - j);
+      if (miss <= 1) return true;
+    }
+  }
+  return false;
+}
+
+function scoreSearchItem(item, q, tokens) {
+  const title = searchNormalize(item.title);
+  const blurb = searchNormalize(item.blurb);
+  const url = searchNormalize(item.url);
+  const aliases = (item.aliases || []).map(searchNormalize);
+  const aliasBlob = aliases.join(" ");
+  const allBlob = title + " " + aliasBlob + " " + blurb;
+
+  let score = 0;
+
+  // Full-query substring bonuses
+  if (title.includes(q)) score += 100;
+  if (aliases.some(a => a.includes(q) || q.includes(a))) score += 70;
+  if (blurb.includes(q)) score += 35;
+  if (url.includes(q)) score += 15;
+
+  // Token coverage across title+aliases+blurb
+  if (tokens.length) {
+    let hitAll = true;
+    for (const t of tokens) {
+      const inTitle = softIncludes(title, t);
+      const inAlias = softIncludes(aliasBlob, t);
+      const inBlurb = softIncludes(blurb, t);
+      const inUrl = softIncludes(url, t);
+      if (inTitle) score += 28;
+      else if (inAlias) score += 20;
+      else if (inBlurb) score += 10;
+      else if (inUrl) score += 5;
+      else hitAll = false;
+    }
+    if (hitAll) score += 25;
+  }
+
+  return score;
+}
+
+function runSmartSearch(raw) {
+  const q = searchNormalize(raw);
+  const box = document.getElementById("searchResults");
+  const clearBtn = document.getElementById("searchClear");
+  if (!box) return;
+
+  if (clearBtn) clearBtn.classList.toggle("show", q.length > 0);
+
+  if (!q) {
+    box.classList.remove("show");
+    box.innerHTML = "";
+    return;
+  }
+
+  const tokens = searchTokens(q);
+  const ranked = SEARCH_INDEX
+    .map(item => ({ item, score: scoreSearchItem(item, q, tokens) }))
+    .filter(r => r.score > 0)
+    .sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title))
+    .slice(0, 8);
+
+  box.classList.add("show");
+  if (!ranked.length) {
+    box.innerHTML = `<div class="search-empty">Nothing close — try diploma, visa, job, phone bill, Coco</div>`;
+    return;
+  }
+
+  box.innerHTML = ranked.map(({ item }) => {
+    const lane = item.lane || "Hub";
+    const safeTitle = item.title.replace(/</g, "&lt;");
+    const safeBlurb = (item.blurb || "").replace(/</g, "&lt;");
+    return `<a class="search-hit" role="option" href="${item.url}" target="_blank" rel="noopener noreferrer">
+      <div class="search-hit-top">
+        <span class="search-lane ${lane}">${lane}</span>
+        <span class="search-hit-title">${safeTitle}</span>
+      </div>
+      <div class="search-hit-blurb">${safeBlurb}</div>
+    </a>`;
+  }).join("");
+}
+
+(function initSmartSearch() {
+  const input = document.getElementById("smartSearch");
+  const clearBtn = document.getElementById("searchClear");
+  if (!input) return;
+  let t = null;
+  input.addEventListener("input", () => {
+    clearTimeout(t);
+    t = setTimeout(() => runSmartSearch(input.value), 60);
+  });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      input.value = "";
+      runSmartSearch("");
+      input.blur();
+    }
+  });
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      input.value = "";
+      runSmartSearch("");
+      input.focus();
+    });
+  }
+})();
 
 // PWA install
 let deferredPrompt = null;
