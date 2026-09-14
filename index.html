@@ -227,6 +227,45 @@
   .search-lane.Hub { background: #243044; color: #c5d0e0; }
   .search-hit-title { font-weight: 650; font-size: 0.95rem; }
   .search-hit-blurb { font-size: 0.82rem; color: var(--muted); }
+  .coco-card {
+    display: none;
+    margin-top: 0.85rem;
+    padding: 0.85rem 0.95rem;
+    background: #141c28;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .coco-card.show { display: block; }
+  .coco-card h3 {
+    margin: 0 0 0.45rem;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+  .coco-card .coco-meta {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0 0 0.55rem;
+  }
+  .coco-card textarea {
+    width: 100%;
+    min-height: 9.5rem;
+    resize: vertical;
+    background: #0f1419;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.65rem 0.75rem;
+    font: inherit;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+  .coco-card .coco-actions {
+    display: flex; flex-wrap: wrap; gap: 0.45rem;
+    margin-top: 0.55rem; align-items: center;
+  }
+  .coco-card a.coco-pulse {
+    font-size: 0.8rem; color: #8eb6ff;
+  }
   .search-empty {
     padding: 0.9rem 1rem; font-size: 0.9rem; color: var(--muted);
   }
@@ -295,10 +334,20 @@
     </div>
     <div class="bar"><span id="overallBar"></span></div>
     <div class="actions">
+      <button type="button" class="primary" id="cocoMsgBtn">Write Coco this week</button>
       <button type="button" id="exportBtn">Copy progress summary</button>
       <button type="button" id="resetBtn">Reset checklist ticks</button>
     </div>
-    <p class="tip">Show Coco once a week: <strong>1 win + next step</strong> — plus this week’s study minutes from the clock.</p>
+    <div class="coco-card" id="cocoCard" hidden>
+      <h3>Message for Coco</h3>
+      <p class="coco-meta">This week’s wins only (Mon–Sun CT) · edit then paste to WeChat</p>
+      <textarea id="cocoMsgText" aria-label="WeChat message for Coco"></textarea>
+      <div class="coco-actions">
+        <button type="button" class="primary" id="cocoCopyBtn">Copy for WeChat</button>
+        <a class="coco-pulse" href="https://mpalmero197.github.io/operation-english-dragon/docs/us/weekly-pulse.html" target="_blank" rel="noopener noreferrer">Weekly pulse guide</a>
+      </div>
+    </div>
+    <p class="tip">Show Coco once a week: <strong>1 win + next step</strong> — plus this week’s study minutes from the clock. Use <strong>Write Coco this week</strong> for a WeChat-ready draft.</p>
   </section>
 
   <div class="lanes" id="lanes"></div>
@@ -870,6 +919,18 @@ function defaults() {
 
 let state = { ...defaults(), ...loadJSON(KEY, {}) };
 let study = loadJSON(STUDY_KEY, { sessions: [], active: null });
+/* tickMeta: id → ISO timestamp of first check-true. Companion to KEY.
+   Existing checked items without a timestamp are NOT this-week wins (no grandfathering). */
+const TICK_META_KEY = KEY + "-tickMeta";
+let tickMeta = loadJSON(TICK_META_KEY, {});
+function saveTickMeta() { saveJSON(TICK_META_KEY, tickMeta); }
+function markTick(id, checked) {
+  if (checked) {
+    if (!tickMeta[id]) tickMeta[id] = new Date().toISOString();
+  } else {
+    delete tickMeta[id];
+  }
+}
 
 function partsInTZ(date = new Date()) {
   const fmt = new Intl.DateTimeFormat("en-US", {
@@ -1205,20 +1266,25 @@ function render() {
 
   root.querySelectorAll('input[type="checkbox"]').forEach(cb => {
     cb.addEventListener("change", () => {
+      const was = !!state[cb.id];
       state[cb.id] = cb.checked;
+      if (cb.checked !== was) markTick(cb.id, cb.checked);
       for (const lane of DATA) {
         for (const step of lane.steps) {
           if (!step.subs || !step.subs.length) continue;
           if (step.subs.some(s => s.id === cb.id) || step.id === cb.id) {
             if (cb.id === step.id && cb.checked) {
-              step.subs.forEach(s => { state[s.id] = true; });
+              step.subs.forEach(s => {
+                if (!state[s.id]) { state[s.id] = true; markTick(s.id, true); }
+              });
             } else if (step.subs.every(s => state[s.id])) {
-              state[step.id] = true;
+              if (!state[step.id]) { state[step.id] = true; markTick(step.id, true); }
             }
           }
         }
       }
       saveJSON(KEY, state);
+      saveTickMeta();
       render();
       renderStudy();
     });
@@ -1232,7 +1298,9 @@ document.getElementById("forceClockIn").addEventListener("click", clockIn);
 document.getElementById("resetBtn").addEventListener("click", () => {
   if (!confirm("Reset checklist ticks on this device? Study log is kept.")) return;
   state = defaults();
+  tickMeta = {};
   saveJSON(KEY, state);
+  saveTickMeta();
   render();
 });
 
@@ -1294,6 +1362,305 @@ setInterval(() => {
 }, 1000);
 
 
+
+/* ——— Message for Coco (WeChat weekly pulse) ———
+   Week window: Monday–Sunday America/Chicago (CT).
+   Only ticks with tickMeta ISO timestamps inside this week count as wins.
+   Existing checked items without timestamps are never grandfathered. */
+function monSunWeekKeys(now = new Date()) {
+  const p = partsInTZ(now);
+  const dayIdx = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[p.weekday];
+  const daysSinceMon = dayIdx === 0 ? 6 : dayIdx - 1;
+  // Walk back hour-by-hour to Monday dateKey, then collect Mon→Sun
+  let t = Date.now();
+  let last = null;
+  const seen = [];
+  while (seen.length <= daysSinceMon) {
+    const k = partsInTZ(new Date(t)).dateKey;
+    if (k !== last) { seen.push(k); last = k; }
+    t -= 3600000;
+  }
+  const mondayKey = seen[daysSinceMon];
+  // Collect 7 consecutive keys starting at Monday
+  const keys = [];
+  t = Date.now();
+  // Find a timestamp that lands on mondayKey at noon-ish CT, then walk forward
+  // Simpler: walk back until monday, then walk forward collecting unique keys
+  t = Date.now();
+  last = null;
+  const back = [];
+  while (back.length < 14) {
+    const k = partsInTZ(new Date(t)).dateKey;
+    if (k !== last) { back.push(k); last = k; }
+    t -= 3600000;
+  }
+  const monIdx = back.indexOf(mondayKey);
+  // back[0]=today ... back[monIdx]=monday. Need Mon..Sun = reverse of back[monIdx].. and continue to Sun
+  const fromMonBack = back.slice(0, monIdx + 1).reverse(); // Mon .. today
+  keys.push(...fromMonBack);
+  // If today is before Sunday, add remaining forward days up to Sun (empty future — only past+today matter)
+  // For win filtering we only need Mon through today (and rest of week keys for study dates this week)
+  // Rebuild full Mon-Sun by walking forward from Monday key
+  const full = [];
+  // Locate Monday timestamp
+  t = Date.now();
+  last = null;
+  let mondayTs = null;
+  while (mondayTs === null) {
+    const pp = partsInTZ(new Date(t));
+    if (pp.dateKey === mondayKey && (last === null || last !== mondayKey)) {
+      // keep going to middle of that day
+      mondayTs = t;
+      break;
+    }
+    last = pp.dateKey;
+    t -= 3600000;
+    if (Date.now() - t > 20 * 86400000) break;
+  }
+  if (mondayTs != null) {
+    // nudge toward midday on Monday
+    let probe = mondayTs;
+    for (let i = 0; i < 24; i++) {
+      if (partsInTZ(new Date(probe)).dateKey === mondayKey) mondayTs = probe;
+      else break;
+      probe += 3600000;
+    }
+    last = null;
+    let cursor = mondayTs - 6 * 3600000;
+    while (full.length < 7) {
+      const k = partsInTZ(new Date(cursor)).dateKey;
+      if (k !== last) {
+        if (full.length === 0 && k !== mondayKey) { cursor += 3600000; continue; }
+        full.push(k);
+        last = k;
+      }
+      cursor += 3600000;
+    }
+  }
+  return full.length === 7 ? full : fromMonBack;
+}
+
+function isoInWeek(iso, weekKeys) {
+  if (!iso) return false;
+  try {
+    const k = partsInTZ(new Date(iso)).dateKey;
+    return weekKeys.includes(k);
+  } catch { return false; }
+}
+
+function formatStudyHm(mins) {
+  const m = Math.max(0, Math.round(mins));
+  const h = Math.floor(m / 60);
+  const r = m % 60;
+  if (h <= 0) return m + "m";
+  if (r === 0) return h + "h";
+  return h + "h " + r + "m";
+}
+
+/* Fresh-win lines: only ids listed here can appear. Order = preference. */
+const COCO_WIN_LINES = {
+  // CELTA — lesson / enrol progress
+  c2a: { lane: "CELTA", line: "Started CELTA Week 1 (learners & context)" },
+  c2b: { lane: "CELTA", line: "Started CELTA grammar lesson" },
+  c2c: { lane: "CELTA", line: "Finished Week 1 quiz" },
+  c2d: { lane: "CELTA", line: "Week 1 win: class profile + CCQs" },
+  c3a: { lane: "CELTA", line: "Finished CELTA grammar lesson" },
+  c3b: { lane: "CELTA", line: "Finished Week 2 quiz" },
+  c3c: { lane: "CELTA", line: "Week 2 win: analysed TL (meaning/form/CCQs)" },
+  c4a: { lane: "CELTA", line: "Finished CELTA lexis lesson" },
+  c4b: { lane: "CELTA", line: "Finished CELTA phonology lesson" },
+  c4c: { lane: "CELTA", line: "Finished Week 3 quiz" },
+  c4d: { lane: "CELTA", line: "Week 3 win: stress + collocations" },
+  c5a: { lane: "CELTA", line: "Finished receptive skills lesson" },
+  c5b: { lane: "CELTA", line: "Finished Week 4 quiz" },
+  c5c: { lane: "CELTA", line: "Took CELTA midterm practice" },
+  c5d: { lane: "CELTA", line: "Week 4 win: staged a receptive lesson" },
+  c6a: { lane: "CELTA", line: "Finished productive skills lesson" },
+  c6b: { lane: "CELTA", line: "Finished Week 5 quiz" },
+  c6c: { lane: "CELTA", line: "Week 5 win: speaking + writing sequence" },
+  c7a: { lane: "CELTA", line: "Finished lesson-planning lesson" },
+  c7b: { lane: "CELTA", line: "Drafted a mini lesson plan" },
+  c7c: { lane: "CELTA", line: "Finished Week 6 quiz" },
+  c8a: { lane: "CELTA", line: "Finished classroom management lesson" },
+  c8b: { lane: "CELTA", line: "Finished error-correction / CCQs lesson" },
+  c8c: { lane: "CELTA", line: "Finished Week 7 quiz" },
+  c9a: { lane: "CELTA", line: "Finished written-assignments guide" },
+  c9b: { lane: "CELTA", line: "Finished Week 8 quiz" },
+  c9c: { lane: "CELTA", line: "Did final CELTA practice" },
+  c9d: { lane: "CELTA", line: "Week 8 win: practice drafts for all 4 genres" },
+  c10e: { lane: "CELTA", line: "Chose CELTA centre + paid / reserved deposit" },
+  c10f: { lane: "CELTA", line: "CELTA certificate in hand" },
+  // Jobs — CV, applications, interview, offer only
+  j1a: { lane: "Jobs", line: "Drafted China teaching CV" },
+  j1b: { lane: "Jobs", line: "Got a professional headshot for applications" },
+  j1c: { lane: "Jobs", line: "Saved China CV (PDF + docx)" },
+  j1d: { lane: "Jobs", line: "CV filed in Jobs folder" },
+  j3d: { lane: "Jobs", line: "Sent English 1 application" },
+  j4d: { lane: "Jobs", line: "Applied to licensed GZ centers" },
+  j5c: { lane: "Jobs", line: "Practiced demo lesson on camera" },
+  j5d: { lane: "Jobs", line: "Completed interview / demo round" },
+  j6a: { lane: "Jobs", line: "Got a written job offer" },
+  j6c: { lane: "Jobs", line: "Signed contract — shared with you" },
+  // Money — ONLY these (never m0* snapshots)
+  m2a: { lane: "Money", line: "Cut Verizon (phone bill down)" },
+  m10a: { lane: "Money", line: "Canceled Google Play junk subs" },
+  m10b: { lane: "Money", line: "Canceled DEOS auto-ship" },
+  m10c: { lane: "Money", line: "Canceled Eurae auto-ship" },
+  m10d: { lane: "Money", line: "Canceled Jay Cutler auto-ship" },
+  m10e: { lane: "Money", line: "Canceled Physician’s Choice auto-ship" },
+  m10f: { lane: "Money", line: "Canceled ChatGPT / Microsoft / Garmin subs" },
+  m10g: { lane: "Money", line: "Cut more junk subscriptions" },
+  m4c: { lane: "Money", line: "Started free CELTA pre-course warm-up" },
+  m4e: { lane: "Money", line: "Funded / paid CELTA deposit" },
+  m5d: { lane: "Money", line: "Named Landing pot (metals reserved)" },
+  m5e: { lane: "Money", line: "Landing buffer funded" },
+  // Move — paper trail
+  v0a: { lane: "Move", line: "Opened the Move docs pack" },
+  v0b: { lane: "Move", line: "Opened the Move folder" },
+  v0f: { lane: "Move", line: "Opened Parchment checklist" },
+  v1b: { lane: "Move", line: "Started Parchment / ITT credentials order" },
+  v1d: { lane: "Move", line: "Ordered sealed transcripts + degree verification" },
+  v2c: { lane: "Move", line: "Notarized degree docs for apostille" },
+  v2d: { lane: "Move", line: "Submitted TN apostille for degree docs" },
+  v3a: { lane: "Move", line: "Ordered FBI Identity History (EDO)" },
+  v3c: { lane: "Move", line: "Apostilled FBI background check" },
+  v4a: { lane: "Move", line: "Got Work Permit Notification (PU)" },
+  v4d: { lane: "Move", line: "Filled COVA / Z visa form" },
+  v4g: { lane: "Move", line: "Z visa sticker in passport" },
+  v5a: { lane: "Move", line: "Compared flights to Guangzhou CAN" },
+  v5e: { lane: "Move", line: "Installed WeChat for landing" },
+  // Us — housing, pulse, Mandarin, timeline
+  u1a: { lane: "Us", line: "Talked housing (your place vs find together)" },
+  u1b: { lane: "Us", line: "Agreed a shared “soon” window" },
+  uDocs2: { lane: "Us", line: "Opened our shared timeline" },
+  u2e: { lane: "Us", line: "Sent you the first weekly pulse" },
+  u3e: { lane: "Us", line: "Mandarin check-in together" }
+};
+
+const COCO_NEXT_CANDIDATES = [
+  { id: "c1c", line: "open the study pack and do today’s CELTA block" },
+  { id: "c2a", line: "start CELTA Lesson 01" },
+  { id: "c2c", line: "take the Week 1 quiz" },
+  { id: "v1d", line: "order sealed transcripts on Parchment" },
+  { id: "v2d", line: "submit the TN apostille packet" },
+  { id: "v3a", line: "order the FBI EDO background check" },
+  { id: "j1c", line: "export the China CV as PDF + docx" },
+  { id: "j3d", line: "submit the English 1 application" },
+  { id: "m2a", line: "cut Verizon down (first visible money win)" },
+  { id: "u1a", line: "talk housing with you" },
+  { id: "u2e", line: "send this pulse on WeChat" },
+  { id: "c10e", line: "pick a CELTA centre and reserve the deposit" }
+];
+
+function collectThisWeekWins(weekKeys) {
+  const wins = [];
+  for (const [id, meta] of Object.entries(COCO_WIN_LINES)) {
+    if (!state[id]) continue;
+    if (!isoInWeek(tickMeta[id], weekKeys)) continue;
+    wins.push({ id, ts: tickMeta[id], ...meta });
+  }
+  // Prefer freshest; keep lane diversity lightly by stable sort on ts desc
+  wins.sort((a, b) => String(b.ts).localeCompare(String(a.ts)));
+  return wins;
+}
+
+function pickNextStep(weekKeys) {
+  for (const c of COCO_NEXT_CANDIDATES) {
+    if (!state[c.id]) return c.line;
+  }
+  // Fallback: first unchecked COCO_WIN_LINES id
+  for (const [id, meta] of Object.entries(COCO_WIN_LINES)) {
+    if (!state[id]) return meta.line.charAt(0).toLowerCase() + meta.line.slice(1);
+  }
+  return "keep the study streak going this week";
+}
+
+function buildCocoMessage() {
+  // Mon–Sun CT week only
+  const weekKeys = monSunWeekKeys();
+  const weekMins = totalMinutesForKeys(weekKeys);
+  const streak = calcStreak();
+  const wins = collectThisWeekWins(weekKeys);
+
+  // Cap 3, prefer 1–2 concrete bullets
+  const picked = wins.slice(0, 3);
+
+  // Merge Jobs application ticks into one line if both present
+  const lines = [];
+  const used = new Set();
+  const appIds = picked.filter(w => w.id === "j3d" || w.id === "j4d");
+  if (appIds.length) {
+    const n = appIds.length;
+    // Count how many application-ish ticks this week (not just in picked)
+    const allApp = wins.filter(w => w.id === "j3d" || w.id === "j4d");
+    lines.push("Applications sent: " + allApp.length);
+    allApp.forEach(w => used.add(w.id));
+  }
+  for (const w of picked) {
+    if (used.has(w.id)) continue;
+    if (lines.length >= 3) break;
+    lines.push(w.line);
+    used.add(w.id);
+  }
+
+  const next = pickNextStep(weekKeys);
+  const parts = ["Hey Coco — week update:"];
+
+  const hasStudy = weekMins >= 1;
+  const hasWins = lines.length > 0;
+
+  if (!hasStudy && !hasWins) {
+    parts.push("Study / progress was light this week.");
+    parts.push("Next: " + next);
+    parts.push("Miss you — see you in GZ.");
+    parts.push("Love you.");
+    return parts.join("\\n");
+  }
+
+  if (hasStudy) {
+    let studyLine = "Studied " + formatStudyHm(weekMins) + " (CELTA)";
+    if (streak >= 1) studyLine += " · streak " + streak + " day" + (streak === 1 ? "" : "s");
+    parts.push("• " + studyLine);
+  }
+
+  for (const line of lines) {
+    if (parts.filter(p => p.startsWith("•")).length >= 3) break;
+    parts.push("• " + line);
+  }
+
+  parts.push("Next: " + next);
+  parts.push("Miss you — see you in GZ.");
+  parts.push("Love you.");
+  return parts.join("\\n");
+}
+
+function showCocoCard(text) {
+  const card = document.getElementById("cocoCard");
+  const ta = document.getElementById("cocoMsgText");
+  if (!card || !ta) return;
+  ta.value = text;
+  card.hidden = false;
+  card.classList.add("show");
+  card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+document.getElementById("cocoMsgBtn").addEventListener("click", () => {
+  showCocoCard(buildCocoMessage());
+});
+
+document.getElementById("cocoCopyBtn").addEventListener("click", async () => {
+  const ta = document.getElementById("cocoMsgText");
+  const text = ta ? ta.value : "";
+  try {
+    await navigator.clipboard.writeText(text);
+    alert("Copied — paste to Coco on WeChat.");
+  } catch {
+    if (ta) { ta.focus(); ta.select(); }
+    prompt("Copy this message:", text);
+  }
+});
+
+
 /* ——— Plain-language smart search ——— */
 const SEARCH_INDEX = [
   { id: "hub-docs", title: "Docs hub", blurb: "All free templates — CELTA, Jobs, Move, Us, Money", url: "https://mpalmero197.github.io/operation-english-dragon/docs/", aliases: ["docs", "hub", "templates", "folder", "papers", "documents"], lane: "Hub" },
@@ -1340,7 +1707,7 @@ const SEARCH_INDEX = [
   { id: "us-folder", title: "Us folder (Michael + Coco)", blurb: "Housing, timeline, pulse, Mandarin, money talk", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/", aliases: ["us", "together", "couple", "michael and coco", "relationship", "girlfriend", "coco"], lane: "Us" },
   { id: "us-housing", title: "Housing talk sheet", blurb: "Talk through GZ housing with Coco", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/housing-talk.html", aliases: ["housing", "apartment", "rent", "flat", "where to live", "her place", "move in", "live with coco", "housing talk"], lane: "Us" },
   { id: "us-timeline", title: "Shared timeline", blurb: "Milestones on one page", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/shared-timeline.html", aliases: ["timeline", "milestones", "when", "dates", "soon", "shared soon"], lane: "Us" },
-  { id: "us-pulse", title: "Weekly WeChat pulse", blurb: "Copy-paste weekly update for Coco", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/weekly-pulse.html", aliases: ["pulse", "weekly pulse", "wechat", "coco update", "check in coco", "show progress", "update coco", "1 win", "wechat update"], lane: "Us" },
+  { id: "us-pulse", title: "Weekly WeChat pulse", blurb: "Copy-paste weekly update for Coco", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/weekly-pulse.html", aliases: ["pulse", "weekly pulse", "wechat", "coco update", "check in coco", "show progress", "update coco", "1 win", "wechat update", "coco message", "write coco"], lane: "Us" },
   { id: "us-mandarin", title: "Mandarin together", blurb: "Study Mandarin as a couple", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/mandarin-together.html", aliases: ["mandarin", "chinese", "language", "duolingo", "hellotalk", "jumpspeak", "pleco"], lane: "Us" },
   { id: "us-money", title: "Year-one money talk", blurb: "Money-as-couple conversation sheet", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/money-as-couple.html", aliases: ["money as couple", "couple money", "shared money", "finances together"], lane: "Us" },
   { id: "us-first", title: "First month GZ", blurb: "Landing week + first 30 days in Guangzhou", url: "https://mpalmero197.github.io/operation-english-dragon/docs/us/first-month-gz.html", aliases: ["first month", "landing", "arrival", "guangzhou", "can", "airport", "police registration", "residence permit", "medical", "checkup"], lane: "Us" },
@@ -1360,6 +1727,7 @@ const SEARCH_INDEX = [
   { id: "ext-verizon", title: "Verizon account", blurb: "Phone bill — cut before GZ SIM", url: "https://www.verizon.com", aliases: ["verizon", "phone bill", "phone", "cell", "mobile bill", "cell phone", "sim", "cut phone"], lane: "Money" },
   { id: "ext-wechat", title: "WeChat download", blurb: "Install WeChat for Coco + schools", url: "https://www.wechat.com/en/", aliases: ["wechat", "weixin", "chat", "coco"], lane: "Us" },
   { id: "ext-flights", title: "Google Flights", blurb: "Search CAN / Guangzhou flights", url: "https://www.google.com/travel/flights", aliases: ["flight", "plane", "airfare", "can", "airport", "ticket"], lane: "Move" },
+  { id: "app-coco-msg", title: "Write Coco this week", blurb: "Auto-draft WeChat weekly pulse from this week’s wins", url: "#cocoCard", aliases: ["coco message", "weekly pulse", "write coco", "message for coco", "wechat update", "pulse coco"], lane: "Us" },
   { id: "app-clock", title: "Study Clock (this app)", blurb: "Mandatory lunch clock-in — unlocks lanes", url: "https://mpalmero197.github.io/operation-english-dragon/index.html#clockCard", aliases: ["clock", "clock in", "lunch", "study clock", "check in", "noon", "clock out", "check-in", "mandatory"], lane: "CELTA" },
 ];
 
@@ -1466,7 +1834,10 @@ function runSmartSearch(raw) {
     const lane = item.lane || "Hub";
     const safeTitle = item.title.replace(/</g, "&lt;");
     const safeBlurb = (item.blurb || "").replace(/</g, "&lt;");
-    return `<a class="search-hit" role="option" href="${item.url}" target="_blank" rel="noopener noreferrer">
+    const isHash = String(item.url || "").startsWith("#");
+    const target = isHash ? "" : ` target="_blank" rel="noopener noreferrer"`;
+    const extra = item.id === "app-coco-msg" ? ` data-coco="1"` : "";
+    return `<a class="search-hit" role="option" href="${item.url}"${target}${extra}>
       <div class="search-hit-top">
         <span class="search-lane ${lane}">${lane}</span>
         <span class="search-hit-title">${safeTitle}</span>
@@ -1474,6 +1845,14 @@ function runSmartSearch(raw) {
       <div class="search-hit-blurb">${safeBlurb}</div>
     </a>`;
   }).join("");
+  box.querySelectorAll("a[data-coco]").forEach(a => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      showCocoCard(buildCocoMessage());
+      const input = document.getElementById("smartSearch");
+      if (input) { input.value = ""; runSmartSearch(""); }
+    });
+  });
 }
 
 (function initSmartSearch() {
