@@ -107,6 +107,10 @@
     accent-color: var(--ok); flex-shrink: 0;
   }
   .done label, .done .step-main label { color: var(--muted); text-decoration: line-through; }
+  .step a, .subs a {
+    color: #8eb6ff; word-break: break-all; text-decoration: underline;
+  }
+  .done a { color: #6a7f9e; }
   .lanes.locked { opacity: 0.45; pointer-events: none; filter: grayscale(0.3); }
   footer { margin-top: 1.25rem; color: var(--muted); font-size: 0.8rem; }
   .actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.85rem; }
@@ -232,7 +236,7 @@ const DATA = [
     id: "celta",
     className: "l1",
     title: "1 · CELTA / momentum",
-    goal: "8-week prep pack → authorised CELTA certificate (visible daily reps for Coco)",
+    goal: "8-week prep in this app → authorised Cambridge CELTA certificate → unlock GZ hire",
     steps: [
       {
         id: "c1",
@@ -240,17 +244,18 @@ const DATA = [
         subs: [
           { id: "c1a", label: "Study block locked: lunch noon US Central (America/Chicago)", doneDefault: true },
           { id: "c1b", label: "Weekday lunch check-in required in Study Clock (can’t skip)", doneDefault: true },
-          { id: "c1c", label: "Open study home (README in celta-study pack)" },
-          { id: "c1d", label: "Use schedule.md week checklists alongside this app" }
+          { id: "c1c", label: "Open study pack in this app: study/index.html" },
+          { id: "c1d", label: "8-week schedule checklist: study/view.html?f=schedule.md" },
+          { id: "c1e", label: "Enable reminders on the Study Clock (so noon CT isn’t optional)" }
         ]
       },
       {
         id: "c2",
         label: "Week 1 — Learners, context & grammar foundations",
         subs: [
-          { id: "c2a", label: "Lesson 01: /workspace/celta-study/lessons/01-learners-and-context.md" },
-          { id: "c2b", label: "Start Lesson 02 grammar: /workspace/celta-study/lessons/02-grammar-for-teachers.md" },
-          { id: "c2c", label: "Sun checkpoint: /workspace/celta-study/exams/quiz-week1.md" },
+          { id: "c2a", label: "Lesson 01: study/view.html?f=lessons/01-learners-and-context.md" },
+          { id: "c2b", label: "Start Lesson 02: study/view.html?f=lessons/02-grammar-for-teachers.md" },
+          { id: "c2c", label: "Sun quiz: study/view.html?f=exams/quiz-week1.md" },
           { id: "c2d", label: "Week 1 win: class profile + basic CCQs" }
         ]
       },
@@ -258,8 +263,8 @@ const DATA = [
         id: "c3",
         label: "Week 2 — Grammar for teachers (depth)",
         subs: [
-          { id: "c3a", label: "Finish Lesson 02 (tense/aspect, modals, MFP)" },
-          { id: "c3b", label: "Quiz: /workspace/celta-study/exams/quiz-week2.md" },
+          { id: "c3a", label: "Finish Lesson 02: study/view.html?f=lessons/02-grammar-for-teachers.md" },
+          { id: "c3b", label: "Quiz: study/view.html?f=exams/quiz-week2.md" },
           { id: "c3c", label: "Week 2 win: analyse TL for meaning, form, problems, CCQs" }
         ]
       },
@@ -267,9 +272,9 @@ const DATA = [
         id: "c4",
         label: "Week 3 — Lexis + phonology",
         subs: [
-          { id: "c4a", label: "Lesson 03 lexis: /workspace/celta-study/lessons/03-lexis.md" },
-          { id: "c4b", label: "Lesson 04 phonology: /workspace/celta-study/lessons/04-phonology.md" },
-          { id: "c4c", label: "Quiz: /workspace/celta-study/exams/quiz-week3.md" },
+          { id: "c4a", label: "Lesson 03: study/view.html?f=lessons/03-lexis.md" },
+          { id: "c4b", label: "Lesson 04: study/view.html?f=lessons/04-phonology.md" },
+          { id: "c4c", label: "Quiz: study/view.html?f=exams/quiz-week3.md" },
           { id: "c4d", label: "Week 3 win: mark stress + spot collocation problems" }
         ]
       },
@@ -277,9 +282,9 @@ const DATA = [
         id: "c5",
         label: "Week 4 — Receptive skills + midterm",
         subs: [
-          { id: "c5a", label: "Lesson 05: /workspace/celta-study/lessons/05-receptive-skills.md" },
-          { id: "c5b", label: "Quiz: /workspace/celta-study/exams/quiz-week4.md" },
-          { id: "c5c", label: "Midterm: /workspace/celta-study/exams/midterm.md" },
+          { id: "c5a", label: "Lesson 05: study/view.html?f=lessons/05-receptive-skills.md" },
+          { id: "c5b", label: "Quiz: study/view.html?f=exams/quiz-week4.md" },
+          { id: "c5c", label: "Midterm: study/view.html?f=exams/midterm.md" },
           { id: "c5d", label: "Week 4 win: stage a receptive skills lesson" }
         ]
       },
@@ -287,8 +292,8 @@ const DATA = [
         id: "c6",
         label: "Week 5 — Productive skills",
         subs: [
-          { id: "c6a", label: "Lesson 06: /workspace/celta-study/lessons/06-productive-skills.md" },
-          { id: "c6b", label: "Quiz: /workspace/celta-study/exams/quiz-week5.md" },
+          { id: "c6a", label: "Lesson 06: study/view.html?f=lessons/06-productive-skills.md" },
+          { id: "c6b", label: "Quiz: study/view.html?f=exams/quiz-week5.md" },
           { id: "c6c", label: "Week 5 win: one speaking + one writing sequence designed" }
         ]
       },
@@ -296,27 +301,27 @@ const DATA = [
         id: "c7",
         label: "Week 6 — Lesson planning & resources",
         subs: [
-          { id: "c7a", label: "Lesson 07: /workspace/celta-study/lessons/07-lesson-planning.md" },
+          { id: "c7a", label: "Lesson 07: study/view.html?f=lessons/07-lesson-planning.md" },
           { id: "c7b", label: "Draft one full mini lesson plan" },
-          { id: "c7c", label: "Quiz: /workspace/celta-study/exams/quiz-week6.md" }
+          { id: "c7c", label: "Quiz: study/view.html?f=exams/quiz-week6.md" }
         ]
       },
       {
         id: "c8",
         label: "Week 7 — Classroom management, CCQs, correction",
         subs: [
-          { id: "c8a", label: "Lesson 08: /workspace/celta-study/lessons/08-classroom-management.md" },
-          { id: "c8b", label: "Lesson 09: /workspace/celta-study/lessons/09-error-correction-and-ccqs.md" },
-          { id: "c8c", label: "Quiz: /workspace/celta-study/exams/quiz-week7.md" }
+          { id: "c8a", label: "Lesson 08: study/view.html?f=lessons/08-classroom-management.md" },
+          { id: "c8b", label: "Lesson 09: study/view.html?f=lessons/09-error-correction-and-ccqs.md" },
+          { id: "c8c", label: "Quiz: study/view.html?f=exams/quiz-week7.md" }
         ]
       },
       {
         id: "c9",
         label: "Week 8 — Written assignments + final mock",
         subs: [
-          { id: "c9a", label: "Lesson 10: /workspace/celta-study/lessons/10-written-assignments-guide.md" },
-          { id: "c9b", label: "Quiz: /workspace/celta-study/exams/quiz-week8.md" },
-          { id: "c9c", label: "Final practice: /workspace/celta-study/exams/final-practice.md" },
+          { id: "c9a", label: "Lesson 10: study/view.html?f=lessons/10-written-assignments-guide.md" },
+          { id: "c9b", label: "Quiz: study/view.html?f=exams/quiz-week8.md" },
+          { id: "c9c", label: "Final practice: study/view.html?f=exams/final-practice.md" },
           { id: "c9d", label: "Week 8 win: practice drafts of all 4 assignment genres" }
         ]
       },
@@ -325,63 +330,93 @@ const DATA = [
         label: "Enrol & finish authorised CELTA (the real certificate)",
         subs: [
           { id: "c10a", label: "Pre-course free warm-up: https://www.eltconcourse.com/training/initial/celta/celta_pre-course.html" },
-          { id: "c10b", label: "Syllabus PDF: https://www.cambridgeenglish.org/images/21816-celta-syllabus.pdf" },
-          { id: "c10c", label: "Choose authorised Cambridge centre + enrol / pay deposit" },
-          { id: "c10d", label: "CELTA certificate in hand" }
+          { id: "c10b", label: "Official syllabus PDF: https://www.cambridgeenglish.org/images/21816-celta-syllabus.pdf" },
+          { id: "c10c", label: "Find authorised centres: https://www.cambridgeenglish.org/teaching-english/teaching-qualifications/celta/" },
+          { id: "c10d", label: "US price check (Teaching House ~$2,995): https://www.teachinghouse.com/coursess/the-celta-course" },
+          { id: "c10e", label: "Choose centre + enrol / pay deposit (sync with Money lane)" },
+          { id: "c10f", label: "CELTA certificate in hand → Jobs applications go full send" }
         ]
       }
     ]
   },
+
   {
     id: "jobs",
     className: "l2",
     title: "2 · Jobs (Guangzhou)",
-    goal: "Language-center Z offer in ¥18–25k band, then climb to intl school",
+    goal: "Run the hire from this app: CV → boards → English 1 + licensed GZ centers → Z offer ¥18–25k → climb later",
     steps: [
       {
         id: "j0",
         label: "Bachelor’s gate cleared",
         doneDefault: true,
         subs: [
-          { id: "j0a", label: "ITT Digital Entertainment & Game Design (Nashville) confirmed", doneDefault: true }
+          { id: "j0a", label: "ITT Digital Entertainment & Game Design (Nashville) confirmed for Z", doneDefault: true },
+          { id: "j0b", label: "Keep diploma/transcripts path in sync with Move lane (Parchment)" }
         ]
       },
       {
         id: "j1",
-        label: "China teaching CV ready",
+        label: "China teaching CV ready (first Coco-visible Jobs win)",
         subs: [
-          { id: "j1a", label: "Draft China-format CV (photo, education, CELTA in progress, Part 107 optional)" },
-          { id: "j1b", label: "Add professional headshot (white/neutral background)" },
-          { id: "j1c", label: "1-page PDF + Word version for recruiters" }
+          { id: "j1a", label: "Draft China-format CV: photo, education, CELTA in progress, design background, Part 107 optional" },
+          { id: "j1b", label: "Professional headshot (white/neutral background, business casual)" },
+          { id: "j1c", label: "Export 1-page PDF + .docx for recruiters / WeChat HR" },
+          { id: "j1d", label: "Ask Job Finder to draft if stuck — then tick when file is in your Move/Jobs folder" }
         ]
       },
       {
         id: "j2",
-        label: "Profiles + boards live",
+        label: "Job boards + profiles (tap → apply)",
         subs: [
-          { id: "j2a", label: "eChinacities: https://jobs.echinacities.com (Guangzhou ESL filter)" },
-          { id: "j2b", label: "Dave’s ESL Cafe China: https://www.eslcafe.com" },
-          { id: "j2c", label: "LoveTEFL / similar board profile or saved GZ alerts" }
+          { id: "j2a", label: "eChinacities Guangzhou jobs: https://jobs.echinacities.com" },
+          { id: "j2b", label: "Filter ESL / English teacher + Guangzhou; save 5 listings that say Work Visa / Z" },
+          { id: "j2c", label: "Dave’s ESL Cafe (China jobs): https://www.eslcafe.com" },
+          { id: "j2d", label: "TEFL.com China search: https://www.tefl.com/job-seeker/" },
+          { id: "j2e", label: "LoveTEFL China jobs: https://www.lovetefl.com/tefl-jobs/asia/china" },
+          { id: "j2f", label: "Create alerts for Guangzhou + ESL so new posts hit your inbox" }
         ]
       },
       {
         id: "j3",
-        label: "Apply to licensed Z sponsors only",
+        label: "Apply English 1 (priority — first-timer friendly, Z sponsor)",
         subs: [
-          { id: "j3a", label: "English 1 careers / GZ openings (chain, first-timer friendly)" },
-          { id: "j3b", label: "3–5 licensed GZ training centers in ¥18–25k band" },
-          { id: "j3c", label: "Verify each offer lists Work Permit / Z sponsorship (no grey agents)" },
-          { id: "j3d", label: "Track applications (school · date · status) for Coco updates" }
+          { id: "j3a", label: "English 1 Guangzhou teach page: https://www.english1.com/teach-abroad/ppc/teaching-career-in-guangzhou/" },
+          { id: "j3b", label: "English 1 China jobs overview: https://www.english1.com/work-abroad/teaching-jobs-in-china/" },
+          { id: "j3c", label: "English 1 GZ city page: https://www.english1.com/locations/china/guangzhou/" },
+          { id: "j3d", label: "Submit application with CV (CELTA in progress is fine — note start date)" },
+          { id: "j3e", label: "Log date applied + recruiter name in app notes / tracker for Coco pulse" }
         ]
       },
       {
         id: "j4",
-        label: "Interview → offer → contract",
+        label: "Apply 3–5 more licensed GZ Z sponsors only",
         subs: [
-          { id: "j4a", label: "Demo lesson / interview prep done" },
-          { id: "j4b", label: "Interviews completed" },
-          { id: "j4c", label: "Written offer + Z sponsor docs from school" },
-          { id: "j4d", label: "Contract signed (prefer housing stipend in cash — already with Coco)" }
+          { id: "j4a", label: "Shortlist centers that explicitly list Work Permit / Z sponsorship" },
+          { id: "j4b", label: "Target package ¥18–25k + housing stipend in cash (you’re with Coco)" },
+          { id: "j4c", label: "Reject grey agents / “business visa then switch” — illegal, kills the plan" },
+          { id: "j4d", label: "Apply to at least 3 licensed training centers this wave" },
+          { id: "j4e", label: "Keep a simple sheet: school · city · pay · Z? · date · status" }
+        ]
+      },
+      {
+        id: "j5",
+        label: "Interview + demo lesson",
+        subs: [
+          { id: "j5a", label: "Prep 5–10 min demo (young learners or adults — ask which)" },
+          { id: "j5b", label: "CELTA-style stages: warmer → context → clarification → practice → feedback" },
+          { id: "j5c", label: "Practice on camera once; share win with Coco (not the whole video unless she asks)" },
+          { id: "j5d", label: "Complete interviews; note feedback + next round" }
+        ]
+      },
+      {
+        id: "j6",
+        label: "Offer → Z handoff to Move lane",
+        subs: [
+          { id: "j6a", label: "Written offer: base pay, housing stipend cash, flight, insurance, hours, start date" },
+          { id: "j6b", label: "Confirm employer will run Work Permit Notification (PU) — no Z without this" },
+          { id: "j6c", label: "Contract signed; send scans to Coco + Overseas Move lane" },
+          { id: "j6d", label: "Year-2 climb note: bilingual / intl school ¥25–40k after 1 year in-country" }
         ]
       }
     ]
@@ -477,53 +512,87 @@ const DATA = [
     id: "move",
     className: "l4",
     title: "4 · Move / visa (Guangzhou Z)",
-    goal: "Legal path: papers → Z → flight → GZ residence permit",
+    goal: "Do the paper trail from this app: degree → apostille → FBI → Z → CAN → residence permit with Coco",
     steps: [
       {
         id: "v1",
-        label: "Get degree paperwork (start now — closed school)",
+        label: "Get ITT degree paperwork (start NOW — closed school)",
         subs: [
-          { id: "v1a", label: "Find where ITT records live now (transcript service / school successor)" },
-          { id: "v1b", label: "Order official diploma copy / confirmation" },
-          { id: "v1c", label: "Order official sealed transcripts" },
-          { id: "v1d", label: "Keep scans + tracking numbers" }
+          { id: "v1a", label: "BACKUP — ITT transcript how-to (Parchment): https://parchment.my.site.com/s/article/ITT-Technical-Institute-transcript-requests" },
+          { id: "v1b", label: "BACKUP — Order ITT credentials on Parchment (post-2001): https://www.parchment.com/u/registration/19405892/account" },
+          { id: "v1c", label: "BACKUP — Alt Parchment ITT portal: https://www.parchment.com/u/registration/26634911/account" },
+          { id: "v1c2", label: "Physical ITT diploma / degree docs already available", doneDefault: true },
+          { id: "v1d", label: "Physical diploma in hand — still order sealed transcripts + degree verification via Parchment (schools want official sealed, not a photo)" },
+          { id: "v1e", label: "Scan diploma now (PDF/photos) into Move folder + share with Coco", doneDefault: true },
+          { id: "v1f", label: "If Parchment can’t find Nashville ITT: escalate to TN Higher Ed / closed-school records" }
         ]
       },
       {
         id: "v2",
-        label: "Authenticate for China (Tennessee path)",
+        label: "Authenticate docs for China (Tennessee path)",
         subs: [
-          { id: "v2a", label: "Notarize copies if required" },
-          { id: "v2b", label: "Tennessee Secretary of State apostille / authentication" },
-          { id: "v2c", label: "Chinese Embassy/Consulate legalization if employer requires (beyond apostille)" }
+          { id: "v2a", label: "TN apostille / authentication guide ($2/doc): https://sos.tn.gov/businesses/guides/apostille-authentication-guide" },
+          { id: "v2b", label: "TN SOS Business Services hub: https://sos.tn.gov/businesses" },
+          { id: "v2c", label: "Notarize diploma/transcript copies if the SOS packet requires it" },
+          { id: "v2d", label: "Submit apostille for degree docs (keep originals + apostilled set)" },
+          { id: "v2e", label: "Chinese authentication (only if school says apostille isn’t enough): Embassy auth email washington_gzrz@csm.mfa.gov.cn" }
         ]
       },
       {
         id: "v3",
-        label: "Background + passport",
+        label: "Background check + passport",
         subs: [
-          { id: "v3a", label: "FBI Identity History Summary (or state police check as sponsor specifies)" },
-          { id: "v3b", label: "Apostille / authenticate the background check" },
-          { id: "v3c", label: "Passport valid 6+ months past planned entry" }
+          { id: "v3a", label: "FBI Identity History Summary (electronic): https://www.edo.cjis.gov/" },
+          { id: "v3b", label: "FBI EDO help / fingerprint options: https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/identity-history-summary-checks" },
+          { id: "v3c", label: "Apostille the FBI result via TN SOS (same guide as degree)" },
+          { id: "v3d", label: "Passport already held — only use renew link if under 6 months left: https://travel.state.gov/content/travel/en/passports.html", doneDefault: true },
+          { id: "v3e", label: "Passport in hand — confirm 6+ months validity past planned CAN entry + blank visa pages", doneDefault: true }
         ]
       },
       {
         id: "v4",
-        label: "Work Permit + Z visa (after offer)",
+        label: "After job offer — Work Permit Notification + Z visa (TN → Embassy DC)",
         subs: [
-          { id: "v4a", label: "School starts Work Permit Notification (employer side)" },
-          { id: "v4b", label: "Medical exam / other docs school lists" },
-          { id: "v4c", label: "Apply Z visa at Chinese consulate with notification letter" },
-          { id: "v4d", label: "Z visa sticker in passport" }
+          { id: "v4a", label: "School issues Work Permit Notification (PU letter) — you don’t start Z without this" },
+          { id: "v4b", label: "Confirm TN is Embassy DC jurisdiction: https://us.china-embassy.gov.cn/eng/lsfw/lqhf/" },
+          { id: "v4c", label: "China Z visa rules (Embassy US, Sep 2025 update): https://us.china-embassy.gov.cn/eng/lsfw/zj/notice/202509/t20250920_11712385.htm" },
+          { id: "v4d", label: "COVA online form (fill + upload): http://consular.mfa.gov.cn/VISA/" },
+          { id: "v4e", label: "COVA how-to: https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202509/t20250920_11712388.htm" },
+          { id: "v4f", label: "When status = Passport to be submitted → take passport + originals to Visa Office, 2201 Wisconsin Ave NW Suite 110, Washington DC" },
+          { id: "v4g", label: "Z visa sticker in passport — photo + scan shared with school + Coco" }
         ]
       },
       {
         id: "v5",
-        label: "Land in Guangzhou",
+        label: "Pre-flight kit (book only when Z is real)",
         subs: [
-          { id: "v5a", label: "Book flight to CAN" },
-          { id: "v5b", label: "Arrive & convert to residence permit (within required window)" },
-          { id: "v5c", label: "Register address (police / hotel / with Coco’s help)" }
+          { id: "v5a", label: "Compare flights to Guangzhou CAN: https://www.google.com/travel/flights" },
+          { id: "v5b", label: "Prefer arrival day Coco can meet you at CAN" },
+          { id: "v5c", label: "Pack docs pouch: passport+Z, apostilles, degree, contract, PU letter, photos, USB scans" },
+          { id: "v5d", label: "Unpack / sell US bulky stuff; luggage limit known before buy tickets" },
+          { id: "v5e", label: "Install WeChat before wheels up (Coco’s QR) — you’ll need it for life + medical booking" }
+        ]
+      },
+      {
+        id: "v6",
+        label: "Land in Guangzhou — medical + residence permit",
+        subs: [
+          { id: "v6a", label: "Within school’s window: book GZ International Travel Healthcare Center: https://www.gzwbzx.com/" },
+          { id: "v6b", label: "Bring passport, photos, cash/WeChat Pay, any form school HR gives you" },
+          { id: "v6c", label: "School HR books / walks you through residence permit at Exit-Entry (PSB)" },
+          { id: "v6d", label: "Temporary residence registration (police) at Coco’s address — do this ASAP after arrival" },
+          { id: "v6e", label: "Residence permit sticker/card in hand — Move lane complete" }
+        ]
+      },
+      {
+        id: "v7",
+        label: "Move ops with Coco (non-visa)",
+        subs: [
+          { id: "v7a", label: "Confirm you’re moving into her place (or short-term plan until lease)" },
+          { id: "v7b", label: "List what she already has vs what you must bring (meds, clothes, adapters)" },
+          { id: "v7c", label: "US SIM → eSIM/travel plan for first week, then cheap GZ number" },
+          { id: "v7d", label: "Banking day-one plan with her (open local account after residence permit if needed)" },
+          { id: "v7e", label: "Emergency sheet: her number, school HR, US embassy Guangzhou: https://china.usembassy-china.org.cn/embassy-consulates/guangzhou/" }
         ]
       }
     ]
@@ -580,6 +649,18 @@ const DATA = [
 const KEY = "oed-tracker-v2";
 const STUDY_KEY = "oed-study-v1";
 const TZ = "America/Chicago";
+
+function linkify(s) {
+  return String(s)
+    .replace(/(https?:\/\/[^\s<]+)/g, (url) => {
+      const clean = url.replace(/[),.;!?]+$/g, '');
+      const trail = url.slice(clean.length);
+      return `<a href="${clean}" target="_blank" rel="noopener noreferrer">${clean}</a>${trail}`;
+    })
+    .replace(/\b(study\/[\w.?/=\-]+)/g, (path) => {
+      return `<a href="${path}" target="_blank" rel="noopener noreferrer">${path}</a>`;
+    });
+}
 
 function loadJSON(key, fallback) {
   try { return JSON.parse(localStorage.getItem(key) || "null") ?? fallback; }
@@ -915,13 +996,13 @@ function render() {
           <div class="step ${stepDone ? "done" : ""}" data-step="${step.id}">
             <div class="step-main">
               <input type="checkbox" id="${step.id}" ${stepDone ? "checked" : ""} />
-              <label for="${step.id}">${step.label}</label>
+              <label for="${step.id}">${linkify(step.label)}</label>
             </div>
             <div class="subs">
               ${(step.subs || []).map(sub => `
                 <label class="${state[sub.id] ? "done" : ""}">
                   <input type="checkbox" id="${sub.id}" ${state[sub.id] ? "checked" : ""} />
-                  <span>${sub.label}</span>
+                  <span>${linkify(sub.label)}</span>
                 </label>
               `).join("")}
             </div>
