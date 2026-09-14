@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T07:02:41Z",
+  "updated": "2026-09-14T07:15:51Z",
   "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified.",
   "applications": [
     {
@@ -30,6 +30,117 @@
         {
           "at": "2026-09-14T07:02:41Z",
           "event": "Submitted successfully. Confirmation shown. No reference number."
+        }
+      ]
+    },
+    {
+      "id": "echina-training-1355113647",
+      "school": "Shijiazhuang Yingli (eChinacities training center)",
+      "city": "Guangzhou",
+      "role": "Training Center ESL / Literature Teacher",
+      "pay": "negotiable / ~20\u201325k band",
+      "zSponsor": "Yes (Work Permit stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jobs.echinacities.com/jobchapter/1355113647",
+      "appliedAt": null,
+      "status": "Skipped \u2014 listing expired",
+      "emailWatch": [
+        "echinacities.com"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "No experience OK; work visa stated. Queued while Michael sleeps.",
+      "history": [
+        {
+          "at": "2026-09-14T07:07:50Z",
+          "event": "Queued for overnight application"
+        },
+        {
+          "at": "2026-09-14T07:15:51Z",
+          "event": "Listing expired on eChinacities; could not apply"
+        }
+      ]
+    },
+    {
+      "id": "elevate7-workable-73388F66D4",
+      "school": "Elevate-7",
+      "city": "Guangzhou",
+      "role": "English ESL Teacher",
+      "pay": "\u00a517\u201321k + housing allowance \u00a52\u20132.5k",
+      "zSponsor": "Yes (Legal Work Visa stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://apply.workable.com/j/73388F66D4",
+      "appliedAt": "2026-09-14T07:15:51Z",
+      "status": "Submitted \u2014 awaiting recruiter email",
+      "emailWatch": [
+        "elevate-7",
+        "workable.com"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Housing allowance fits Coco housing. Cert required on posting; try CELTA-in-progress, skip if blocked.",
+      "history": [
+        {
+          "at": "2026-09-14T07:07:50Z",
+          "event": "Queued for overnight application"
+        },
+        {
+          "at": "2026-09-14T07:15:51Z",
+          "event": "Submitted on Workable. Confirmation: Your application has been submitted successfully. Email copy promised."
+        }
+      ]
+    },
+    {
+      "id": "echina-1355115039",
+      "school": "New Peak Recruitment (GZ ESL listing)",
+      "city": "Guangzhou",
+      "role": "ESL Teacher",
+      "pay": "\u00a520\u201323k package",
+      "zSponsor": "Yes (stated on listing)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jobs.echinacities.com/jobchapter/1355115039",
+      "appliedAt": null,
+      "status": "Skipped \u2014 listing expired",
+      "emailWatch": [
+        "echinacities.com",
+        "newpeak"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Expired before apply.",
+      "history": [
+        {
+          "at": "2026-09-14T07:15:51Z",
+          "event": "Listing expired; skipped"
+        }
+      ]
+    },
+    {
+      "id": "airuike-1355121035",
+      "school": "AiRuiKe International Institute of Education",
+      "city": "Guangzhou",
+      "role": "ESL (Work visa tagged)",
+      "pay": "ask",
+      "zSponsor": "Yes (Work visa tagged)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jobs.echinacities.com/jobchapter/1355121035",
+      "appliedAt": null,
+      "status": "Blocked \u2014 eChinacities email auth code (set aside)",
+      "emailWatch": [
+        "echinacities.com",
+        "airuike"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Needs Michael\u2019s eChinacities login email code. Set aside per skip-stuck rule.",
+      "history": [
+        {
+          "at": "2026-09-14T07:15:51Z",
+          "event": "Account exists; email auth code requested; set aside for Michael"
         }
       ]
     }
