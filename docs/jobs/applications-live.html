@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Living applications</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2332; --border:#2d3a4f; --text:#e8eef7; --muted:#8b9bb4; --accent:#f0b429; --ok:#3ecf8e; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:1rem; max-width:820px; margin-inline:auto; line-height:1.45; }
+  a { color:var(--accent); }
+  h1 { font-size:1.2rem; margin:0 0 .25rem; }
+  .sub { color:var(--muted); font-size:.85rem; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:.85rem 1rem; margin:.65rem 0; }
+  .status { display:inline-block; font-size:.75rem; padding:.15rem .5rem; border-radius:999px; background:#243044; color:var(--accent); margin-left:.35rem; }
+  .meta { font-size:.85rem; color:var(--muted); margin-top:.35rem; }
+  .hist { font-size:.8rem; color:#c5d0e0; margin:.4rem 0 0 1rem; }
+  button { background:#243044; color:var(--text); border:1px solid var(--border); border-radius:999px; padding:.4rem .8rem; font:inherit; cursor:pointer; margin-top:.5rem; }
+</style>
+</head>
+<body>
+  <a href="index.html">← Jobs docs</a>
+  <h1>Living job applications</h1>
+  <p class="sub" id="stamp">Loading…</p>
+  <div id="list"></div>
+  <p class="sub">Status only changes when China Job Finder verifies a real submit or a real email in Gmail. Manual edits here are for viewing; the source file is applications.json.</p>
+<script>
+async function load(){
+  const res = await fetch('./applications.json?t=' + Date.now());
+  const data = await res.json();
+  document.getElementById('stamp').textContent = 'Last updated: ' + (data.updated || 'unknown') + (data.note ? ' · ' + data.note : '');
+  const list = document.getElementById('list');
+  list.innerHTML = '';
+  (data.applications || []).forEach(app => {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = `
+      <strong>${app.school}</strong> <span class="status">${app.status}</span>
+      <div class="meta">${app.role || ''} · ${app.city || ''} · Z: ${app.zSponsor || '?'} · Mandarin: ${app.mandarinRequired ? 'yes' : 'no'}</div>
+      <div class="meta">Applied: ${app.appliedAt || 'not yet'} · Pay: ${app.pay || '?'}</div>
+      ${app.url ? `<div class="meta"><a href="${app.url}" target="_blank" rel="noopener">Open application / posting</a></div>` : ''}
+      ${app.lastEmailSubject ? `<div class="meta">Last email: ${app.lastEmailSubject} (${app.lastEmailAt})</div>` : ''}
+      ${app.notes ? `<div class="meta">${app.notes}</div>` : ''}
+      <ul class="hist">${(app.history||[]).slice().reverse().map(h => `<li>${h.at}: ${h.event}</li>`).join('')}</ul>`;
+    list.appendChild(el);
+  });
+}
+load().catch(e => { document.getElementById('stamp').textContent = 'Could not load applications.json'; });
+</script>
+</body>
+</html>

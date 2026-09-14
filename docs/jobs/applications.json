@@ -1,0 +1,26 @@
+{
+  "updated": "2026-09-14T06:55:00Z",
+  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified.",
+  "applications": [
+    {
+      "id": "english1-gz-2026-09-14",
+      "school": "English 1",
+      "city": "Guangzhou",
+      "role": "Entry-level ESL teacher",
+      "pay": "ask / typical language-center band",
+      "zSponsor": "Yes (stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.english1.com/tefl-jobs/apply-now/",
+      "appliedAt": null,
+      "status": "Blocked: needs date of birth to submit",
+      "emailWatch": ["english1.com", "ef.com", "English 1"],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Form filled + resume uploaded 2026-09-14. Waiting on Michael DOB. Prefer housing stipend in cash.",
+      "history": [
+        { "at": "2026-09-14T06:50:00Z", "event": "Application form filled; resume uploaded; blocked on DOB" }
+      ]
+    }
+  ]
+}
