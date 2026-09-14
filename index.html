@@ -425,36 +425,66 @@ const DATA = [
     id: "money",
     className: "l3",
     title: "3 · Money",
-    goal: "Fund CELTA ($2–3k) + landing buffer; first Coco-visible win is cutting the $281 phone",
+    goal: "Real CEAL as of Sep 14: cash ≈ $0, metals ≈ $5,220, Midland $2,527. Stretch U.S. Bank to Sep 25, then fund CELTA + landing.",
     steps: [
       {
-        id: "m1",
-        label: "Snapshot (do this first)",
+        id: "m0",
+        label: "Snapshot — actual accounts (Sep 14 2026)",
         subs: [
-          { id: "m1a", label: "Write today’s bank balance (checking + savings)" },
-          { id: "m1b", label: "Confirm take-home: ~$950 / 2 weeks (~$1,900/mo)" },
-          { id: "m1c", label: "List fixed burns: $281 phone, $80 insurance, Jumpspeak, Duolingo" },
-          { id: "m1d", label: "Add anything else monthly (rent, car, food) so the gap is real" }
+          { id: "m0a", label: "U.S. Bank 9763: $43.47 available after ~$267 pending (card 9679). Login: https://onlinebanking.usbank.com", doneDefault: true },
+          { id: "m0b", label: "FirstBank 4830: −$47.75 overdrawn. Login: https://www.firstbankonline.com", doneDefault: true },
+          { id: "m0c", label: "Chime checking ~$1; savings $0. Fidelity not signed in (retry later).", doneDefault: true },
+          { id: "m0d", label: "Take-home is $921.12 / 2 weeks split DD (not $950): $460.56 U.S. Bank + $460.56 FirstBank. Last pay Fri Sep 11. Next ~Fri Sep 25.", doneDefault: true },
+          { id: "m0e", label: "Hard assets (spot, Goldbacks out): 9×2.5g gold ~$3,145 · 28 oz silver ~$1,805 · 42×1oz copper ~$17 · 1,700 CNY ~$253. Stack ≈ $5,220.", doneDefault: true },
+          { id: "m0f", label: "Midland / PayPal Credit charge-off ≈ $2,527 remaining, $50 plan. Portal: https://www.midlandcreditonline.com", doneDefault: true },
+          { id: "m0g", label: "Paper net ≈ $2,700 (metals minus Midland). Banks are not the landing fund — the stack is." }
+        ]
+      },
+      {
+        id: "m9",
+        label: "Stretch to next check (Fri Sep 25) — this week only",
+        subs: [
+          { id: "m9a", label: "2001 GMC Jimmy 4.3: 18-gal tank, 3/4 full (~13.5 gal, ~200 mi at ~15 mpg). Commute ~35 mi each way / ~70 mi/day Lyles → 5021 Trotwood, Columbia.", doneDefault: true },
+          { id: "m9b", label: "3/4 tank covers Mon–Wed. $43 is one fill (~11 gal). This work week is doable. Next week is ~$50–70 short unless payday hits overnight Thu/Fri." },
+          { id: "m9c", label: "U.S. Bank card = cheapest regular gas only. Compare: https://www.gasbuddy.com/gasprices/tennessee/columbia" },
+          { id: "m9d", label: "No Food Lion / Fast Stop / extra trips. Weekend: Jimmy parked. Do not overdraft (already ate a $36 fee Aug 28)." },
+          { id: "m9e", label: "Nothing NEW is set to hit U.S. Bank 9763 before the 25th besides pending already reserved. Scentbird last billed Aug 27 → ~Sep 26–27, after payday if it stays on schedule." },
+          { id: "m9f", label: "Backup if tank is empty next week: sell ONE 1 oz silver bar, not the gold stack." }
         ]
       },
       {
         id: "m2",
-        label: "Cut drag — first Coco-visible money win",
+        label: "Monthly burns (real) — Verizon is still the first Coco-visible cut",
         subs: [
-          { id: "m2a", label: "Pull the $281 phone bill: what’s actually on it (lines, devices, extras)" },
-          { id: "m2b", label: "Cut or switch plan this month (target well under $80)" },
-          { id: "m2c", label: "Review Jumpspeak + Duolingo — keep one paid Mandarin tool if they overlap" },
-          { id: "m2d", label: "Plan: US phone dies for a cheap GZ SIM after landing" }
+          { id: "m2a", label: "Verizon $280.07 (pending FirstBank). Account: https://www.verizon.com — target well under $80, then cheap GZ SIM after landing" },
+          { id: "m2b", label: "Insurance is TWO policies, not $80: Progressive ~$72.17 + Mountain Laurel Assoc ~$72.17. Progressive: https://www.progressive.com" },
+          { id: "m2c", label: "Meriwether Lewis broadband $49.95–$109.95. Keep until wheels up." },
+          { id: "m2d", label: "Planet Fitness $49 (+ $20 extra Sep 11). Cancel/freeze when ready: https://www.planetfitness.com" },
+          { id: "m2e", label: "Midland $50 (biweekly) — debt, not junk. Keep paying. https://www.midlandcreditonline.com" },
+          { id: "m2f", label: "Keep Jumpspeak (Klarna $32.84 due Oct 12) as the Mandarin tool. Drop overlapping Super Duo when he says go." }
+        ]
+      },
+      {
+        id: "m10",
+        label: "Junk-sub kill list (HOLD until Michael says go) — tap to cancel",
+        subs: [
+          { id: "m10a", label: "Google Play (Duo $18.65, SuperGrok $32.91, YouTube Premium $29.55, Google One $21.94, Plamfy Live tips, Autopilot $4.38): https://play.google.com/store/account/subscriptions" },
+          { id: "m10b", label: "DEOS deodorant capsules $28 / 30 days: https://trydeos.com/a/loop_subscriptions/customer (or hello@trydeos.com)" },
+          { id: "m10c", label: "Eurae appetite pills $37.29 / 4 weeks — 2-order cancel trap. Manage: https://eurae.com  · cs@eurae.com" },
+          { id: "m10d", label: "Jay Cutler Nutrition $33.45 auto-ship (already 2nd order). Email cs@jaycutler.com · site: https://jaycutler.com" },
+          { id: "m10e", label: "Physician’s Choice probiotics $22.12: https://physicianschoice.com (cancel ≥2 days before next ship)" },
+          { id: "m10f", label: "ChatGPT Plus / OpenAI $21.94: https://chatgpt.com  · Microsoft 365 $10.96: https://account.microsoft.com/services  · Garmin $9.99: https://garmin.com/subscriptions" },
+          { id: "m10g", label: "Also on the list: Scentbird $19.70, Crunchyroll $15.31, AnatolyFit $19.99, Lovable $5.49, Rocket Money $7.68, Dave $3. Scribd already canceled (ends Oct 3). Xbox Game Pass already failing — don’t update the card. Klarna leftovers: https://www.klarna.com" }
         ]
       },
       {
         id: "m3",
-        label: "Pick the path: thin/fast vs $70k stack",
+        label: "Path: thin/fast vs $70k stack",
         subs: [
           { id: "m3a", label: "If Flight Coordinator ($70k) offer lands: take it or keep going ASAP" },
-          { id: "m3b", label: "Thin/fast = stay on ~$1,900/mo, fund CELTA + thin buffer, move sooner" },
-          { id: "m3c", label: "Stack = 2–3 months at $70k, CELTA + real cushion, show Coco the bank" },
-          { id: "m3d", label: "Tell Financial Assistant + Coco which path (weekly pulse)" }
+          { id: "m3b", label: "Thin/fast = stay on ~$921 / 2 weeks, kill Verizon + junk, fund CELTA from the metal stack if needed, move sooner" },
+          { id: "m3c", label: "Stack = 2–3 months at $70k, CELTA + real cash cushion, show Coco the bank not just the bars" },
+          { id: "m3d", label: "Tell Coco which path on the weekly pulse" }
         ]
       },
       {
@@ -463,8 +493,9 @@ const DATA = [
         subs: [
           { id: "m4a", label: "Compare authorised centres: https://www.cambridgeenglish.org/teaching-english/teaching-qualifications/celta/" },
           { id: "m4b", label: "US price check (Teaching House ~$2,995): https://www.teachinghouse.com/coursess/the-celta-course" },
-          { id: "m4c", label: "Open a named pot / transfer: CELTA tuition" },
-          { id: "m4d", label: "Deposit or full fee paid when the centre is chosen" }
+          { id: "m4c", label: "ELT Concourse free pre-course: https://www.eltconcourse.com/training/initial/celta/celta_pre-course.html" },
+          { id: "m4d", label: "Named pot: CELTA. Do not raid the 3/4-tank gas money for this." },
+          { id: "m4e", label: "Deposit or full fee paid when the centre is chosen" }
         ]
       },
       {
@@ -473,37 +504,39 @@ const DATA = [
         subs: [
           { id: "m5a", label: "Target if her place: flight + visa docs + 1–2 months spend (~$3–4k)" },
           { id: "m5b", label: "If solo housing: add deposit shock (up to ~¥32k / ~$4.4k extra)" },
-          { id: "m5c", label: "Open a named pot: Landing" },
-          { id: "m5d", label: "Buffer funded before booking the CAN flight" }
+          { id: "m5c", label: "Compare CAN flights when ready: https://www.google.com/travel/flights" },
+          { id: "m5d", label: "Named pot: Landing. Metals cover this on paper; don’t sell the gold until CELTA + tickets are the actual bill." },
+          { id: "m5e", label: "Buffer funded before booking the CAN flight" }
         ]
       },
       {
         id: "m6",
-        label: "Pay the paper-trail fees (don’t let docs stall on cash)",
+        label: "Paper-trail cash (Move lane has the taps — budget it here)",
         subs: [
-          { id: "m6a", label: "Budget ITT replacement diploma + sealed transcripts (closed school = wildcard)" },
-          { id: "m6b", label: "TN apostille is cheap ($2/doc): https://sos.tn.gov/businesses/guides/apostille-authentication-guide" },
-          { id: "m6c", label: "FBI Identity History (~$18): https://www.edo.cjis.gov/" },
-          { id: "m6d", label: "Set aside Z / medical / residence-permit cash (small; school may reimburse)" }
+          { id: "m6a", label: "Diploma already in hand. Budget Parchment sealed transcripts + degree verification (not a reprint hunt). How-to: https://parchment.my.site.com/s/article/ITT-Technical-Institute-transcript-requests" },
+          { id: "m6b", label: "TN apostille $2/doc: https://sos.tn.gov/businesses/guides/apostille-authentication-guide" },
+          { id: "m6c", label: "FBI Identity History ~$18: https://www.edo.cjis.gov/" },
+          { id: "m6d", label: "Set aside Z / GZ medical / residence-permit cash (small; school may reimburse). Medical: https://www.gzwbzx.com/" }
         ]
       },
       {
         id: "m7",
         label: "Offer math (when Jobs has a written offer)",
         subs: [
-          { id: "m7a", label: "Compare base ¥ + housing stipend in CASH (don’t take a school flat)" },
+          { id: "m7a", label: "Compare base ¥ + housing stipend in CASH (don’t take a school flat — you’re with Coco)" },
           { id: "m7b", label: "Add flight reimbursement + contract bonus if any" },
           { id: "m7c", label: "Confirm first-paycheck date — buffer must cover that gap" },
-          { id: "m7d", label: "Year-one “good money” = his Z pay + Coco’s L’Oréal + shared housing" }
+          { id: "m7d", label: "Year-one good money = his Z pay + Coco’s L’Oréal + shared housing" }
         ]
       },
       {
         id: "m8",
         label: "US wind-down before wheels up",
         subs: [
-          { id: "m8a", label: "Cancel or pause leftover US subs after the last useful month" },
-          { id: "m8b", label: "Put insurance / phone / any lease end dates on a calendar" },
-          { id: "m8c", label: "Keep a small US account alive for leftovers / tax" }
+          { id: "m8a", label: "Cancel leftover US subs after the last useful month (use the kill-list links above)" },
+          { id: "m8b", label: "Calendar: Verizon, Progressive, Mountain Laurel, broadband, Planet Fitness, Midland end/pause dates" },
+          { id: "m8c", label: "Keep a small U.S. Bank account alive for leftovers / tax. Close FirstBank once it’s not overdrawn." },
+          { id: "m8d", label: "GZ SIM after landing — don’t keep paying $280 Verizon from China." }
         ]
       }
     ]
