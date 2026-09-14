@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Assignment tracker</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2332; --border:#2d3a4f; --text:#e8eef7; --muted:#8b9bb4; --accent:#7c9cff; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--text); padding:1.25rem; max-width:720px; margin-inline:auto; line-height:1.45; }
+  a { color:var(--accent); } h1 { font-size:1.15rem; margin:0 0 .35rem; }
+  .sub { color:var(--muted); font-size:.9rem; margin:0 0 1rem; }
+  .back { display:inline-block; margin-bottom:1rem; color:var(--muted); text-decoration:none; }
+  label { display:block; font-size:.85rem; color:var(--muted); margin:.65rem 0 .2rem; }
+  input, textarea { width:100%; background:#141c28; border:1px solid var(--border); border-radius:8px; color:var(--text); padding:.55rem .65rem; font:inherit; }
+  textarea { min-height:4.5rem; }
+  table { width:100%; border-collapse:collapse; font-size:.9rem; margin:.75rem 0; }
+  th, td { border:1px solid var(--border); padding:.45rem .5rem; vertical-align:top; }
+  th { background:var(--card); text-align:left; color:var(--muted); font-weight:600; }
+  .tip { font-size:.85rem; color:var(--muted); margin-top:1rem; }
+  ul.check { padding-left:1.1rem; } li { margin:.35rem 0; }
+  @media print { body { background:#fff; color:#000; } input, textarea { border:1px solid #999; } }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← CELTA docs</a>
+
+<h1>Written assignment tracker</h1>
+<p class="sub">Practice drafts from the study pack — not the assessed course submissions.</p>
+<table>
+<tr><th>Assignment</th><th>Practice file</th><th>Draft done</th><th>Weak spots</th></tr>
+<tr><td>Focus on the learner</td><td><a href="../../study/view.html?f=exams/assignment-practice/focus-on-the-learner-brief.md">open</a></td><td>☐</td><td><input/></td></tr>
+<tr><td>Language-related tasks</td><td><a href="../../study/view.html?f=exams/assignment-practice/language-related-tasks-practice.md">open</a></td><td>☐</td><td><input/></td></tr>
+<tr><td>Language skills related tasks</td><td><a href="../../study/view.html?f=exams/assignment-practice/language-skills-tasks-practice.md">open</a></td><td>☐</td><td><input/></td></tr>
+<tr><td>Lessons from the classroom</td><td><a href="../../study/view.html?f=exams/assignment-practice/lessons-from-classroom-template.md">open</a></td><td>☐</td><td><input/></td></tr>
+</table>
+<label>Notes for real course tutor</label>
+<textarea></textarea>
+</body></html>

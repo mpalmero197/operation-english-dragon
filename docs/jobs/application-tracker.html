@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Application tracker</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2332; --border:#2d3a4f; --text:#e8eef7; --muted:#8b9bb4; --accent:#f0b429; --ok:#3ecf8e; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:1rem; max-width:900px; margin-inline:auto; }
+  a { color:var(--accent); }
+  h1 { font-size:1.15rem; margin:0 0 .25rem; }
+  .sub { color:var(--muted); font-size:.85rem; }
+  table { width:100%; border-collapse:collapse; margin-top:.85rem; font-size:.85rem; }
+  th, td { border:1px solid var(--border); padding:.45rem; vertical-align:top; }
+  th { background:#141c28; text-align:left; color:var(--muted); font-weight:600; }
+  input, select { width:100%; background:#141c28; border:1px solid #243044; border-radius:6px; color:var(--text); padding:.35rem .4rem; font:inherit; }
+  .actions { display:flex; flex-wrap:wrap; gap:.5rem; margin:.85rem 0; }
+  button { background:#243044; color:var(--text); border:1px solid var(--border); border-radius:999px; padding:.45rem .85rem; font:inherit; cursor:pointer; }
+  .tip { font-size:.8rem; color:var(--muted); margin-top:.75rem; }
+</style>
+</head>
+<body>
+  <a href="index.html">← Jobs docs</a>
+  <h1>Application tracker</h1>
+  <p class="sub">Saves on this device. Use for weekly Coco pulse: “Applied X · interviewed Y · waiting on Z.”</p>
+  <div class="actions">
+    <button type="button" id="add">Add row</button>
+    <button type="button" id="save">Save</button>
+    <button type="button" id="export">Copy for Coco</button>
+  </div>
+  <div style="overflow-x:auto">
+    <table>
+      <thead>
+        <tr>
+          <th>School</th><th>Pay (¥)</th><th>Z sponsor?</th><th>Applied</th><th>Status</th><th>Notes</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <p class="tip">Pre-rows: English 1 + blank slots for licensed GZ centers. Delete anything you skip.</p>
+<script>
+const KEY = "oed-app-tracker";
+const statuses = ["To apply","Applied","Interview","Offer","Rejected","Hold"];
+function row(data={}) {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td><input data-k="school" value="${data.school||""}" /></td>
+    <td><input data-k="pay" value="${data.pay||""}" placeholder="18–25k" /></td>
+    <td><select data-k="z"><option>Yes</option><option>Unclear</option><option>No — skip</option></select></td>
+    <td><input data-k="date" type="date" value="${data.date||""}" /></td>
+    <td><select data-k="status">${statuses.map(s=>`<option>${s}</option>`).join("")}</select></td>
+    <td><input data-k="notes" value="${data.notes||""}" /></td>
+    <td><button type="button" class="del">✕</button></td>`;
+  if (data.z) tr.querySelector('[data-k="z"]').value = data.z;
+  if (data.status) tr.querySelector('[data-k="status"]').value = data.status;
+  tr.querySelector(".del").onclick = () => { tr.remove(); save(); };
+  return tr;
+}
+function read() {
+  return [...document.querySelectorAll("#tbody tr")].map(tr => {
+    const o = {};
+    tr.querySelectorAll("[data-k]").forEach(el => o[el.dataset.k] = el.value);
+    return o;
+  });
+}
+function save() {
+  localStorage.setItem(KEY, JSON.stringify(read()));
+}
+function load() {
+  const tbody = document.getElementById("tbody");
+  tbody.innerHTML = "";
+  let rows;
+  try { rows = JSON.parse(localStorage.getItem(KEY) || "null"); } catch { rows = null; }
+  if (!rows || !rows.length) {
+    rows = [
+      { school: "English 1 — Guangzhou", pay: "ask", z: "Yes", status: "To apply", notes: "First-timer friendly" },
+      { school: "", pay: "", z: "Yes", status: "To apply", notes: "Licensed GZ center" },
+      { school: "", pay: "", z: "Yes", status: "To apply", notes: "" },
+      { school: "", pay: "", z: "Yes", status: "To apply", notes: "" }
+    ];
+  }
+  rows.forEach(r => tbody.appendChild(row(r)));
+}
+document.getElementById("add").onclick = () => { document.getElementById("tbody").appendChild(row()); save(); };
+document.getElementById("save").onclick = () => { save(); alert("Saved on this device."); };
+document.getElementById("export").onclick = async () => {
+  save();
+  const lines = ["Jobs applications — Opération English Dragon", ""];
+  read().filter(r => r.school).forEach(r => {
+    lines.push(`• ${r.school} | ¥${r.pay||"?"} | Z:${r.z} | ${r.status} | ${r.date||"no date"} ${r.notes? "— "+r.notes:""}`);
+  });
+  const text = lines.join("\n");
+  try { await navigator.clipboard.writeText(text); alert("Copied — paste to Coco / WeChat."); }
+  catch { prompt("Copy:", text); }
+};
+document.getElementById("tbody").addEventListener("change", save);
+load();
+</script>
+</body>
+</html>

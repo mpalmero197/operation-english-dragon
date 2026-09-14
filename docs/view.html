@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Docs</title>
+<style>
+  body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:#0f1419;color:#e8eef7;line-height:1.5;padding:1rem;max-width:720px;margin-inline:auto}
+  a{color:#8eb6ff} pre,code{white-space:pre-wrap;word-break:break-word;background:#141c28;padding:.15rem .35rem;border-radius:6px}
+  pre{padding:.75rem;overflow:auto} h1,h2,h3{line-height:1.25} .back{display:inline-block;margin-bottom:1rem;color:#8b9bb4}
+  table{border-collapse:collapse;width:100%;font-size:.9rem} td,th{border:1px solid #2d3a4f;padding:.35rem .5rem}
+  ul{padding-left:1.2rem}
+</style>
+</head>
+<body>
+<a class="back" id="back" href="./index.html">← Docs</a>
+<article id="c">Loading…</article>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+const q=new URLSearchParams(location.search).get('f')||'move/INDEX.md';
+const base=q.includes('/')?q.split('/')[0]:'';
+if(base) document.getElementById('back').href='./'+base+'/';
+document.title='Docs · '+q;
+fetch('./'+q).then(r=>{if(!r.ok)throw new Error(r.status);return r.text()}).then(t=>{
+  document.getElementById('c').innerHTML=marked.parse(t);
+}).catch(e=>{document.getElementById('c').textContent='Could not load '+q+': '+e.message});
+</script>
+</body>
+</html>

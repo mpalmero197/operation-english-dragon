@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Offer / Z checklist</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2332; --border:#2d3a4f; --text:#e8eef7; --muted:#8b9bb4; --accent:#f0b429; --ok:#3ecf8e; --bad:#e85d4c; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:1rem; max-width:720px; margin-inline:auto; line-height:1.45; }
+  a { color:var(--accent); }
+  h1 { font-size:1.15rem; margin:0 0 .25rem; }
+  h2 { font-size:1rem; margin:1.1rem 0 .4rem; }
+  .sub { color:var(--muted); font-size:.85rem; }
+  label { display:flex; gap:.5rem; align-items:flex-start; margin:.35rem 0; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.55rem .7rem; }
+  input[type=checkbox] { margin-top:.2rem; accent-color:var(--ok); width:1.05rem; height:1.05rem; }
+  .bad { border-color:#5a2a2a; }
+  .warn { color:#ffb4a8; font-size:.85rem; margin:.75rem 0; padding:.65rem .75rem; background:#2a1515; border-radius:8px; border-left:3px solid var(--bad); }
+</style>
+</head>
+<body>
+  <a href="index.html">← Jobs docs</a>
+  <h1>Offer / Z sponsor checklist</h1>
+  <p class="sub">Do not sign until the must-haves are in writing. Then hand off to Move lane for PU letter → Z.</p>
+
+  <div class="warn">Walk away if they say: tourist/business visa first, “work under the table,” or “we’ll sort the visa after you arrive.”</div>
+
+  <h2 style="color:var(--ok)">Must have (written)</h2>
+  <label><input type="checkbox" data-k="m1" /> Employer will sponsor Work Permit + Z visa (named in contract/offer)</label>
+  <label><input type="checkbox" data-k="m2" /> Monthly pay before tax (target ¥18–25k language center)</label>
+  <label><input type="checkbox" data-k="m3" /> Contract length + start date in Guangzhou</label>
+  <label><input type="checkbox" data-k="m4" /> Teaching hours / working hours / days off</label>
+  <label><input type="checkbox" data-k="m5" /> Probation terms (if any) clear</label>
+
+  <h2 style="color:var(--accent)">Strongly prefer (your situation)</h2>
+  <label><input type="checkbox" data-k="p1" /> Housing stipend in cash (you’re with Coco — not a school flat)</label>
+  <label><input type="checkbox" data-k="p2" /> Flight allowance / reimbursement</label>
+  <label><input type="checkbox" data-k="p3" /> Health insurance</label>
+  <label><input type="checkbox" data-k="p4" /> Airport pickup / first-week support</label>
+
+  <h2>After you sign</h2>
+  <label><input type="checkbox" data-k="a1" /> Scan contract → Coco + Overseas Moving Assistant / Move lane</label>
+  <label><input type="checkbox" data-k="a2" /> Wait for Work Permit Notification (PU) before booking Z / flight</label>
+  <label><input type="checkbox" data-k="a3" /> Update Application tracker status → Offer</label>
+  <label><input type="checkbox" data-k="a4" /> One-win pulse to Coco</label>
+
+<script>
+const KEY = "oed-offer-check";
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY)||"{}"); } catch {}
+document.querySelectorAll("[data-k]").forEach(cb => {
+  cb.checked = !!state[cb.dataset.k];
+  cb.addEventListener("change", () => {
+    state[cb.dataset.k] = cb.checked;
+    localStorage.setItem(KEY, JSON.stringify(state));
+  });
+});
+</script>
+</body>
+</html>

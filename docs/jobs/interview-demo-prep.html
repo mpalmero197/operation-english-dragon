@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interview + demo prep</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2332; --border:#2d3a4f; --text:#e8eef7; --muted:#8b9bb4; --accent:#f0b429; --ok:#3ecf8e; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:1rem; max-width:720px; margin-inline:auto; line-height:1.45; }
+  a { color:var(--accent); }
+  h1 { font-size:1.15rem; margin:0 0 .25rem; }
+  h2 { font-size:1rem; margin:1.1rem 0 .4rem; color:var(--accent); }
+  .sub { color:var(--muted); font-size:.85rem; }
+  label { display:flex; gap:.5rem; align-items:flex-start; margin:.35rem 0; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.55rem .7rem; }
+  input[type=checkbox] { margin-top:.2rem; accent-color:var(--ok); width:1.05rem; height:1.05rem; }
+  .box { background:#141c28; border:1px solid var(--border); border-radius:10px; padding:.75rem .85rem; font-size:.9rem; }
+  .box ol { margin:.35rem 0 .35rem 1.1rem; padding:0; }
+</style>
+</head>
+<body>
+  <a href="index.html">← Jobs docs</a>
+  <h1>Interview + demo lesson prep</h1>
+  <p class="sub">Ticks save on this device. Run this before any school interview.</p>
+
+  <h2>Before the call</h2>
+  <label><input type="checkbox" data-k="b1" /> Confirm school is licensed Z / Work Permit sponsor</label>
+  <label><input type="checkbox" data-k="b2" /> Know pay band, hours, student ages, start date they want</label>
+  <label><input type="checkbox" data-k="b3" /> CV + photo PDF ready to resend</label>
+  <label><input type="checkbox" data-k="b4" /> Quiet room + stable internet; WeChat/Zoom tested</label>
+  <label><input type="checkbox" data-k="b5" /> One sentence why Guangzhou (partner lives/works there — long-term)</label>
+
+  <h2>Common questions — have answers</h2>
+  <label><input type="checkbox" data-k="q1" /> Why China / why Guangzhou?</label>
+  <label><input type="checkbox" data-k="q2" /> Why teaching (design → classroom story)?</label>
+  <label><input type="checkbox" data-k="q3" /> CELTA status + when certificate lands</label>
+  <label><input type="checkbox" data-k="q4" /> Can you work evenings/weekends (language center)?</label>
+  <label><input type="checkbox" data-k="q5" /> How long will you stay? (say 1–2+ years, serious)</label>
+
+  <h2>5–10 min demo structure (CELTA-style)</h2>
+  <div class="box">
+    <ol>
+      <li><strong>Warmer</strong> (1 min) — greet, easy question, energy</li>
+      <li><strong>Context</strong> (1–2) — picture/story that needs the target language</li>
+      <li><strong>Clarify</strong> (2) — meaning, form, pronunciation of 4–6 items</li>
+      <li><strong>Practice</strong> (3–4) — controlled → freer (pair question, mini role-play)</li>
+      <li><strong>Feedback</strong> (1) — correct 1–2 errors kindly + close</li>
+    </ol>
+    Ask the recruiter: young learners or adults? Match materials to that.
+  </div>
+  <label><input type="checkbox" data-k="d1" /> Demo plan written on one page</label>
+  <label><input type="checkbox" data-k="d2" /> Practiced once on camera</label>
+  <label><input type="checkbox" data-k="d3" /> Materials ready (slides or paper props)</label>
+
+  <h2>After</h2>
+  <label><input type="checkbox" data-k="a1" /> Log result in Application tracker</label>
+  <label><input type="checkbox" data-k="a2" /> One-line win for Coco weekly pulse</label>
+
+<script>
+const KEY = "oed-interview-prep";
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY)||"{}"); } catch {}
+document.querySelectorAll("[data-k]").forEach(cb => {
+  cb.checked = !!state[cb.dataset.k];
+  cb.addEventListener("change", () => {
+    state[cb.dataset.k] = cb.checked;
+    localStorage.setItem(KEY, JSON.stringify(state));
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>China teaching CV — draft</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2332; --border:#2d3a4f; --text:#e8eef7; --muted:#8b9bb4; --accent:#f0b429; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:1rem; max-width:720px; margin-inline:auto; line-height:1.4; }
+  a { color:var(--accent); }
+  h1 { font-size:1.15rem; margin:0 0 .25rem; }
+  .sub { color:var(--muted); font-size:.85rem; margin-bottom:1rem; }
+  label { display:block; font-size:.75rem; color:var(--muted); margin:.55rem 0 .2rem; }
+  input, textarea { width:100%; background:#141c28; border:1px solid var(--border); border-radius:8px; color:var(--text); padding:.55rem .65rem; font:inherit; }
+  textarea { min-height:4.5rem; resize:vertical; }
+  .row { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+  @media (max-width:520px){ .row { grid-template-columns:1fr; } }
+  .actions { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0; }
+  button { background:#243044; color:var(--text); border:1px solid var(--border); border-radius:999px; padding:.45rem .85rem; font:inherit; cursor:pointer; }
+  .sheet { background:#fff; color:#111; border-radius:10px; padding:1.1rem; margin-top:.75rem; }
+  .sheet h2 { margin:0; font-size:1.35rem; text-align:center; }
+  .sheet .meta { text-align:center; font-size:.9rem; color:#333; margin:.25rem 0 .85rem; }
+  .sheet h3 { font-size:.95rem; border-bottom:1px solid #ccc; margin:0.85rem 0 .35rem; text-transform:uppercase; letter-spacing:.04em; }
+  .sheet p, .sheet li { font-size:.9rem; margin:.2rem 0; }
+  .sheet ul { margin:.2rem 0 .2rem 1.1rem; padding:0; }
+  .photo-note { font-size:.8rem; color:#555; text-align:center; margin-top:.5rem; }
+  @media print {
+    body { background:#fff; color:#000; padding:0; }
+    .no-print { display:none !important; }
+    .sheet { box-shadow:none; }
+  }
+</style>
+</head>
+<body>
+  <div class="no-print">
+    <a href="index.html">← Jobs docs</a>
+    <h1>China teaching CV (draft)</h1>
+    <p class="sub">Pre-filled from what we know. Edit blanks → Print / Share as PDF. Add a professional headshot when you export.</p>
+    <div class="row">
+      <div><label>Full name</label><input id="name" value="Michael Palmero" /></div>
+      <div><label>Nationality / passport</label><input id="nat" value="United States" /></div>
+    </div>
+    <div class="row">
+      <div><label>Email</label><input id="email" value="mpalmero197@gmail.com" /></div>
+      <div><label>Phone (US + WeChat if any)</label><input id="phone" value="270-498-0159" /></div>
+    </div>
+    <div class="row">
+      <div><label>Target city</label><input id="city" value="Guangzhou, China" /></div>
+      <div><label>Availability</label><input id="avail" value="ASAP after CELTA (date TBD)" /></div>
+    </div>
+    <label>Professional summary (2–3 lines)</label>
+    <textarea id="summary">US citizen relocating long-term to Guangzhou for a full-time ESL role with Z-visa sponsorship. Bachelor’s in Digital Entertainment & Game Design (ITT Nashville) plus 15+ years in graphic design and technical training. Completing CELTA; FAA Part 107 Remote Pilot and current Remote Pilot Instructor — experienced teaching structured curricula and explaining complex material clearly. Partner already lives and works in Guangzhou.</textarea>
+    <label>Education</label>
+    <textarea id="edu">B.S. Digital Entertainment & Game Design — ITT Technical Institute, Nashville, TN (2011)
+A.S. Multimedia — ITT Technical Institute, Nashville, TN (2009)
+CELTA — in progress (authorised centre; target completion: ____)</textarea>
+    <label>Certifications</label>
+    <textarea id="certs">CELTA (Cambridge) — in progress
+FAA 14 CFR Part 107 Remote Pilot Certificate
+DJI operational experience (photogrammetry / visual inspection)
+Willing to complete any additional TEFL hours a school requires</textarea>
+    <label>Relevant experience / strengths (bullets)</label>
+    <textarea id="exp">Remote Pilot Instructor, DronieApp.com (2025–Present)
+- Design and deliver structured training for FAA Part 107 (airspace, charts, meteorology, ADM)
+- Coach students through certification — clear explanations, SOPs, high standards
+
+Palmero Design — Freelance Designer & Technical Consultant (2011–Present)
+- 15+ years client work: digital assets, brand visuals, deadlines, technical specs
+- Strong visual lesson materials and classroom tech comfort
+
+ATS Tactical Gear — Graphic Designer & IT Specialist (2009–2011)
+- Photography and catalog production; warehouse IT / hardware reliability
+
+Also: Mandarin study underway (Duolingo / Jumpspeak); long-term Guangzhou move with partner already in city; open to language-center evening/weekend schedules</textarea>
+    <label>Job preferences (for you — trim before sending if needed)</label>
+    <textarea id="prefs">Full-time ESL at licensed language center / training school in Guangzhou
+Seeking legal Z-visa sponsorship + Work Permit
+Prefer housing stipend in cash (already housed with partner in GZ)
+Target package: ¥18,000–25,000/month + flight allowance + insurance</textarea>
+    <div class="actions">
+      <button type="button" id="render">Update preview</button>
+      <button type="button" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </div>
+
+  <div class="sheet" id="sheet">
+    <h2 id="o-name">Michael Palmero</h2>
+    <div class="meta" id="o-meta"></div>
+    <p class="photo-note">[Attach professional headshot — white/neutral background]</p>
+    <h3>Summary</h3>
+    <p id="o-summary"></p>
+    <h3>Education</h3>
+    <p id="o-edu" style="white-space:pre-wrap"></p>
+    <h3>Certifications</h3>
+    <p id="o-certs" style="white-space:pre-wrap"></p>
+    <h3>Strengths &amp; experience</h3>
+    <p id="o-exp" style="white-space:pre-wrap"></p>
+    <h3>Availability &amp; preferences</h3>
+    <p id="o-prefs" style="white-space:pre-wrap"></p>
+  </div>
+
+<script>
+const ids = ["name","nat","email","phone","city","avail","summary","edu","certs","exp","prefs"];
+function render(){
+  document.getElementById("o-name").textContent = name.value.trim() || "Your Name";
+  const bits = [email.value, phone.value, nat.value, city.value, "Available: "+avail.value].filter(Boolean);
+  document.getElementById("o-meta").textContent = bits.join(" · ");
+  document.getElementById("o-summary").textContent = summary.value;
+  document.getElementById("o-edu").textContent = edu.value;
+  document.getElementById("o-certs").textContent = certs.value;
+  document.getElementById("o-exp").textContent = exp.value;
+  document.getElementById("o-prefs").textContent = prefs.value;
+  try { localStorage.setItem("oed-cv-draft", JSON.stringify(Object.fromEntries(ids.map(i=>[i,document.getElementById(i).value])))); } catch(e){}
+}
+document.getElementById("render").onclick = render;
+ids.forEach(i => document.getElementById(i).addEventListener("input", render));
+try {
+  const s = JSON.parse(localStorage.getItem("oed-cv-draft")||"null");
+  if (s) ids.forEach(i => { if (s[i]!=null) document.getElementById(i).value = s[i]; });
+} catch(e){}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Centre compare</title>
+<style>
+  :root { --bg:#0f1419; --card:#1a2332; --border:#2d3a4f; --text:#e8eef7; --muted:#8b9bb4; --accent:#7c9cff; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--text); padding:1.25rem; max-width:720px; margin-inline:auto; line-height:1.45; }
+  a { color:var(--accent); } h1 { font-size:1.15rem; margin:0 0 .35rem; }
+  .sub { color:var(--muted); font-size:.9rem; margin:0 0 1rem; }
+  .back { display:inline-block; margin-bottom:1rem; color:var(--muted); text-decoration:none; }
+  label { display:block; font-size:.85rem; color:var(--muted); margin:.65rem 0 .2rem; }
+  input, textarea { width:100%; background:#141c28; border:1px solid var(--border); border-radius:8px; color:var(--text); padding:.55rem .65rem; font:inherit; }
+  textarea { min-height:4.5rem; }
+  table { width:100%; border-collapse:collapse; font-size:.9rem; margin:.75rem 0; }
+  th, td { border:1px solid var(--border); padding:.45rem .5rem; vertical-align:top; }
+  th { background:var(--card); text-align:left; color:var(--muted); font-weight:600; }
+  .tip { font-size:.85rem; color:var(--muted); margin-top:1rem; }
+  ul.check { padding-left:1.1rem; } li { margin:.35rem 0; }
+  @media print { body { background:#fff; color:#000; } input, textarea { border:1px solid #999; } }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← CELTA docs</a>
+
+<h1>Centre compare sheet</h1>
+<p class="sub">Authorised centres only. Fill 2–3 options; pick with Financial Assistant before deposit.</p>
+<table>
+<tr><th></th><th>Centre A</th><th>Centre B</th><th>Centre C</th></tr>
+<tr><td>Name / city</td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td>URL</td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td>Online / in-person</td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td>Start date</td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td>Price (USD)</td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td>Deposit</td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td>Interview?</td><td><input/></td><td><input/></td><td><input/></td></tr>
+<tr><td>Notes</td><td><input/></td><td><input/></td><td><input/></td></tr>
+</table>
+<p class="tip">US ballpark: Teaching House ~$2,995 — confirm live pricing before you commit.</p>
+</body></html>

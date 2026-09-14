@@ -1,4 +1,4 @@
-const CACHE = "oed-v4";
+const CACHE = "oed-v6";
 const ASSETS = [
   "./",
   "./index.html",
@@ -7,7 +7,9 @@ const ASSETS = [
   "./icon-512.png",
   "./apple-touch-icon.png",
   "./study/index.html",
-  "./study/view.html"
+  "./study/view.html",
+  "./docs/index.html",
+  "./docs/view.html"
 ];
 
 self.addEventListener("install", (e) => {

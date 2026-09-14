@@ -246,7 +246,10 @@ const DATA = [
           { id: "c1b", label: "Weekday lunch check-in required in Study Clock (can’t skip)", doneDefault: true },
           { id: "c1c", label: "Open study pack in this app: study/index.html" },
           { id: "c1d", label: "8-week schedule checklist: study/view.html?f=schedule.md" },
-          { id: "c1e", label: "Enable reminders on the Study Clock (so noon CT isn’t optional)" }
+          { id: "c1e", label: "Enable reminders on the Study Clock (so noon CT isn’t optional)" },
+          { id: "cDocs0", label: "CELTA docs folder (download/print): https://mpalmero197.github.io/operation-english-dragon/docs/celta/" },
+          { id: "cDocs1", label: "Daily study log: https://mpalmero197.github.io/operation-english-dragon/docs/celta/daily-study-log.html" },
+          { id: "cDocs2", label: "Enrolment prep checklist: https://mpalmero197.github.io/operation-english-dragon/docs/celta/enrolment-prep.html" }
         ]
       },
       {
@@ -344,7 +347,7 @@ const DATA = [
     id: "jobs",
     className: "l2",
     title: "2 · Jobs (Guangzhou)",
-    goal: "Run the hire from this app: CV → boards → English 1 + licensed GZ centers → Z offer ¥18–25k → climb later",
+    goal: "Run the hire from this app: docs pack → CV → boards → English 1 + licensed GZ centers → Z offer ¥18–25k",
     steps: [
       {
         id: "j0",
@@ -353,6 +356,19 @@ const DATA = [
         subs: [
           { id: "j0a", label: "ITT Digital Entertainment & Game Design (Nashville) confirmed for Z", doneDefault: true },
           { id: "j0b", label: "Keep diploma/transcripts path in sync with Move lane (Parchment)" }
+        ]
+      },
+      {
+        id: "jDocs",
+        label: "Jobs docs pack (free · no sign-in · open/save from phone)",
+        subs: [
+          { id: "jDocs0", label: "Jobs docs folder: https://mpalmero197.github.io/operation-english-dragon/docs/jobs/" },
+          { id: "jDocsR", label: "Source resume (docx): https://mpalmero197.github.io/operation-english-dragon/docs/jobs/michael-palmero-resume.docx" },
+          { id: "jDocs1", label: "China teaching CV draft: https://mpalmero197.github.io/operation-english-dragon/docs/jobs/china-teaching-cv.html" },
+          { id: "jDocs2", label: "Application tracker: https://mpalmero197.github.io/operation-english-dragon/docs/jobs/application-tracker.html" },
+          { id: "jDocs3", label: "Interview + demo prep: https://mpalmero197.github.io/operation-english-dragon/docs/jobs/interview-demo-prep.html" },
+          { id: "jDocs4", label: "Offer / Z checklist: https://mpalmero197.github.io/operation-english-dragon/docs/jobs/offer-checklist.html" },
+          { id: "jDocs5", label: "Recruiter email / WeChat templates: https://mpalmero197.github.io/operation-english-dragon/docs/jobs/recruiter-email.html" }
         ]
       },
       {
@@ -548,6 +564,16 @@ const DATA = [
     goal: "Do the paper trail from this app: degree → apostille → FBI → Z → CAN → residence permit with Coco",
     steps: [
       {
+        id: "v0",
+        label: "Open Move docs pack (free downloads — phone ready)",
+        subs: [
+          { id: "v0a", label: "Docs hub: docs/index.html" },
+          { id: "v0b", label: "Move folder: docs/move/" },
+          { id: "v0c", label: "Start here: docs/view.html?f=move/INDEX.md" },
+          { id: "v0d", label: "Your resume in pack: docs/move/michael-palmero-resume.docx" }
+        ]
+      },
+      {
         id: "v1",
         label: "Get ITT degree paperwork (start NOW — closed school)",
         subs: [
@@ -706,6 +732,9 @@ function linkify(s) {
       return `<a href="${clean}" target="_blank" rel="noopener noreferrer">${clean}</a>${trail}`;
     })
     .replace(/\b(study\/[\w.?/=\-]+)/g, (path) => {
+      return `<a href="${path}" target="_blank" rel="noopener noreferrer">${path}</a>`;
+    })
+    .replace(/\b(docs\/[\w.?/=\-]+)/g, (path) => {
       return `<a href="${path}" target="_blank" rel="noopener noreferrer">${path}</a>`;
     });
 }
