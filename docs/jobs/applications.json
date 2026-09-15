@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T14:45:00Z",
+  "updated": "2026-09-15T20:48:00Z",
   "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified.",
   "applications": [
     {
@@ -13,15 +13,15 @@
       "certRequiredFirst": false,
       "url": "https://www.english1.com/tefl-jobs/apply-now/",
       "appliedAt": "2026-09-14T07:02:41Z",
-      "status": "Interview invite — Nathan Bell-Toxtle (English 1); book Calendly / Teams video",
+      "status": "Interview confirmed — Sat Sep 19, 2026 11:30pm CDT (Teams); Nathan Bell-Toxtle / English 1",
       "emailWatch": [
         "english1.com",
         "ef.com",
         "English 1"
       ],
-      "lastEmailAt": "2026-09-15T07:30:22Z",
-      "lastEmailSubject": "English 1 / Interview Invitation",
-      "notes": "Submitted 2026-09-14 via english1.com/tefl-jobs/apply-now/. Confirmation: Thank you. Your application has been submitted. No reference number shown. Prefer housing stipend in cash. Interview invite 2026-09-15 from nathan.belltoxtle@english1.com — book Calendly for Teams video interview.",
+      "lastEmailAt": "2026-09-15T16:07:52Z",
+      "lastEmailSubject": "English 1 / Interview Confirmed – Please Review",
+      "notes": "Submitted 2026-09-14 via english1.com/tefl-jobs/apply-now/. Confirmation: Thank you. Your application has been submitted. No reference number shown. Prefer housing stipend in cash. Interview invite 2026-09-15 from nathan.belltoxtle@english1.com — book Calendly for Teams video interview. Interview CONFIRMED 2026-09-15: Saturday Sep 19, 2026 at 11:30pm Central (US & Canada), Microsoft Teams. Nathan scheduled via Calendly. Join early; dress professionally. Reschedule once only.",
       "history": [
         {
           "at": "2026-09-14T06:50:00Z",
@@ -38,6 +38,14 @@
         {
           "at": "2026-09-15T07:30:22Z",
           "event": "Gmail: nathan.belltoxtle@english1.com Interview Invitation — schedule via Calendly (Teams video); docs check first few minutes. Calendly: calendly.com/nathan-belltoxtle-english1/30min"
+        },
+        {
+          "at": "2026-09-15T16:01:17Z",
+          "event": "Gmail: nathan.belltoxtle@english1.com — interview scheduled; accept calendar invite; reschedule once only"
+        },
+        {
+          "at": "2026-09-15T16:07:52Z",
+          "event": "Gmail/Calendly: English 1 Interview Confirmed — Sat Sep 19, 2026 11:30pm Central Time (US & Canada), Microsoft Teams. Join 10 min early; dress professionally."
         }
       ]
     },
@@ -918,9 +926,9 @@
   },
   "pendingPublish": false,
   "emailWatchRun": {
-    "at": "2026-09-15T14:45:00Z",
+    "at": "2026-09-15T20:48:00Z",
     "material": true,
-    "summary": "English 1 interview invite from nathan.belltoxtle@english1.com (2026-09-15 07:30Z). Book Calendly for Teams video. No other new recruiter replies (Houhai, Pei Zheng, AiRuiKe, WSE, Shane, Meiyin, i2, Songtian, Giraffe, SYSU, SCUT, Aston, Elevate, Goldstar unchanged).",
+    "summary": "English 1 interview CONFIRMED: Sat Sep 19, 2026 11:30pm CDT via Microsoft Teams (Nathan Bell-Toxtle / Calendly). No other new recruiter replies (Houhai, Pei Zheng, AiRuiKe, WSE, Shane, Meiyin, i2, Songtian, Giraffe, SYSU, SCUT, Aston, Elevate, Goldstar unchanged).",
     "changedIds": [
       "english1-gz-2026-09-14"
     ]
