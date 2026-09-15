@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T15:03:00Z",
+  "updated": "2026-09-15T05:33:32Z",
   "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified.",
   "applications": [
     {
@@ -276,14 +276,14 @@
       "certRequiredFirst": false,
       "url": "https://jobs.echinacities.com/jobchapter/1355119825",
       "appliedAt": null,
-      "status": "Blocked/Skipped — live listing but eChinacities Apply needs logged-in browser; this executor had no Task/browserUse/computerUse",
+      "status": "Skipped — listing expired (verified overnight 2026-09-15)",
       "emailWatch": [
         "echinacities.com",
         "yingli"
       ],
       "lastEmailAt": null,
       "lastEmailSubject": null,
-      "notes": "Listing live as of 2026-09-14 (Apply button present; not expired). Same Yingli agent family as prior expired 1355113647. Queue for parent/browserUse re-run; do not treat as submitted. Morning queue 2026-09-14: apply when Michael awake / daytime run.",
+      "notes": "Was live 2026-09-14 needing browser Apply; by overnight 2026-09-15 run eChinacities shows ad expired. Same Yingli agent family.",
       "history": [
         {
           "at": "2026-09-14T09:35:40Z",
@@ -292,6 +292,10 @@
         {
           "at": "2026-09-14T11:32:03Z",
           "event": "Morning wrap: still blocked for overnight; queued for daytime browser apply"
+        },
+        {
+          "at": "2026-09-15T05:30:56Z",
+          "event": "Overnight verify: listing expired on eChinacities; cannot apply"
         }
       ]
     },
@@ -320,6 +324,87 @@
           "event": "Skipped — hard completed-cert / apostille wall"
         }
       ]
+    },
+    {
+      "id": "wse-gz-2026-09-15",
+      "school": "Wall Street English China",
+      "city": "Guangzhou",
+      "role": "English Teacher for Adults (GZ among cities)",
+      "pay": "~¥13–19k + city allowance (band; confirm with recruiter)",
+      "zSponsor": "Yes (Z work visa / residence permit stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://www.wallstreetenglish.com/apply-to-teach/",
+      "appliedAt": "2026-09-15T05:30:56Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "wallstreetenglish.com",
+        "teachinchina@wallstreetenglish.com",
+        "Wall Street English"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted 2026-09-15 overnight via email teachinchina@wallstreetenglish.com (Gmail send id 1a0a38baaea26a7d). Guangzhou preferred; CELTA-in-progress disclosed; prefer cash housing stipend. Resume DOCX attached. Official employer language center.",
+      "history": [
+        {
+          "at": "2026-09-15T05:30:56Z",
+          "event": "Application email sent to teachinchina@wallstreetenglish.com with resume DOCX; CELTA-in-progress noted"
+        }
+      ]
+    },
+    {
+      "id": "shane-gz-2026-09-15",
+      "school": "Shane English China",
+      "city": "Guangzhou",
+      "role": "English Teacher (Guangzhou request)",
+      "pay": "ask",
+      "zSponsor": "Yes (western-owned EFL; request Z path)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "http://teachzing.com/fs/19-shane-english-school",
+      "appliedAt": "2026-09-15T05:30:56Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "shane.com.cn",
+        "recruitment@shane.com.cn",
+        "Shane English"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted 2026-09-15 overnight via email recruitment@shane.com.cn (Gmail send id 1a0a38bacec4bb17). Guangzhou-only request; CELTA-in-progress disclosed; prefer cash housing stipend. Resume DOCX attached. Western-owned language-center brand.",
+      "history": [
+        {
+          "at": "2026-09-15T05:30:56Z",
+          "event": "Application email sent to recruitment@shane.com.cn with resume DOCX; Guangzhou-only + CELTA-in-progress noted"
+        }
+      ]
+    },
+    {
+      "id": "echina-meiyin-1355119423",
+      "school": "Meiyin Education Co. Ltd",
+      "city": "Guangzhou",
+      "role": "Kindergarten English Teacher",
+      "pay": "¥20–23k after tax",
+      "zSponsor": "Yes (work visa stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://jobs.echinacities.com/jobchapter/1355119423",
+      "appliedAt": "2026-09-15T05:33:32Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "echinacities.com",
+        "meiyin",
+        "Meiyin Education"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted overnight 2026-09-15 via eChinacities Apply. Confirmation: You've successfully applied for this job! TEFL/TESOL listed on posting; CELTA-in-progress disclosed in browser apply. Prefer cash housing stipend.",
+      "history": [
+        {
+          "at": "2026-09-15T05:33:32Z",
+          "event": "Submitted on eChinacities. Confirmation: You've successfully applied for this job!"
+        }
+      ]
     }
   ],
   "morningSummary": {
@@ -344,13 +429,26 @@
   },
   "pendingPublish": false,
   "emailWatchRun": {
-    "at": "2026-09-14T15:03:00Z",
-    "material": true,
-    "summary": "Goldstar: Jim Althans recruiter reply — 120hr TEFL required before proceed (INTESOL pitch). English 1 + Elevate-7 auto acknowledgments recorded. Houhai / Pei Zheng / AiRuiKe: no recruiter reply yet.",
-    "changedIds": [
-      "goldstar-gz-2026-09-14",
-      "english1-gz-2026-09-14",
-      "elevate7-workable-73388F66D4"
-    ]
+    "at": "2026-09-14T20:49:44Z",
+    "material": false,
+    "summary": "No new recruiter replies since prior watch. Houhai / Pei Zheng / AiRuiKe still awaiting. Goldstar / English 1 / Elevate unchanged. EF marketing mail ignored.",
+    "changedIds": []
+  },
+  "overnightRun": {
+    "at": "2026-09-15T05:33:32Z",
+    "chicago": "2026-09-15 ~12:25–12:33am CDT",
+    "newSubmits": [
+      "Wall Street English China",
+      "Shane English China",
+      "Meiyin Education Co. Ltd"
+    ],
+    "skipped": [
+      "Yingli eChinacities 1355119825 expired",
+      "Bosen PGCE wall",
+      "Click China agent",
+      "Elite Teach TEFL/TESOL wall",
+      "Longyun recruitment-services"
+    ],
+    "note": "Ask Motivational Expert to push Pages (pendingPublish true)."
   }
 }
