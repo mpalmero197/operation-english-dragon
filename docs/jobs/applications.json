@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T11:14:18Z",
+  "updated": "2026-09-15T14:45:00Z",
   "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified.",
   "applications": [
     {
@@ -13,15 +13,15 @@
       "certRequiredFirst": false,
       "url": "https://www.english1.com/tefl-jobs/apply-now/",
       "appliedAt": "2026-09-14T07:02:41Z",
-      "status": "Received — English 1 thank-you; shortlist contact within 5 working days if selected",
+      "status": "Interview invite — Nathan Bell-Toxtle (English 1); book Calendly / Teams video",
       "emailWatch": [
         "english1.com",
         "ef.com",
         "English 1"
       ],
-      "lastEmailAt": "2026-09-14T07:40:04Z",
-      "lastEmailSubject": "English 1 / Thank You for Your Application",
-      "notes": "Submitted 2026-09-14 via english1.com/tefl-jobs/apply-now/. Confirmation: Thank you. Your application has been submitted. No reference number shown. Prefer housing stipend in cash.",
+      "lastEmailAt": "2026-09-15T07:30:22Z",
+      "lastEmailSubject": "English 1 / Interview Invitation",
+      "notes": "Submitted 2026-09-14 via english1.com/tefl-jobs/apply-now/. Confirmation: Thank you. Your application has been submitted. No reference number shown. Prefer housing stipend in cash. Interview invite 2026-09-15 from nathan.belltoxtle@english1.com — book Calendly for Teams video interview.",
       "history": [
         {
           "at": "2026-09-14T06:50:00Z",
@@ -34,6 +34,10 @@
         {
           "at": "2026-09-14T07:40:04Z",
           "event": "Gmail: e1recruitment@english1.com thank-you. App under review; only shortlisted contacted within 5 working days."
+        },
+        {
+          "at": "2026-09-15T07:30:22Z",
+          "event": "Gmail: nathan.belltoxtle@english1.com Interview Invitation — schedule via Calendly (Teams video); docs check first few minutes. Calendly: calendly.com/nathan-belltoxtle-english1/30min"
         }
       ]
     },
@@ -914,10 +918,12 @@
   },
   "pendingPublish": false,
   "emailWatchRun": {
-    "at": "2026-09-14T20:49:44Z",
-    "material": false,
-    "summary": "No new recruiter replies since prior watch. Houhai / Pei Zheng / AiRuiKe still awaiting. Goldstar / English 1 / Elevate unchanged. EF marketing mail ignored.",
-    "changedIds": []
+    "at": "2026-09-15T14:45:00Z",
+    "material": true,
+    "summary": "English 1 interview invite from nathan.belltoxtle@english1.com (2026-09-15 07:30Z). Book Calendly for Teams video. No other new recruiter replies (Houhai, Pei Zheng, AiRuiKe, WSE, Shane, Meiyin, i2, Songtian, Giraffe, SYSU, SCUT, Aston, Elevate, Goldstar unchanged).",
+    "changedIds": [
+      "english1-gz-2026-09-14"
+    ]
   },
   "overnightRun": {
     "at": "2026-09-15T09:17:34Z",
