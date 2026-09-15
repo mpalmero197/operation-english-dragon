@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T07:38:05Z",
+  "updated": "2026-09-15T09:17:34Z",
   "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified.",
   "applications": [
     {
@@ -693,6 +693,182 @@
           "event": "Skipped — not fitting foreign Z ESL criteria"
         }
       ]
+    },
+    {
+      "id": "sysu-cfle-gz-2026-09-15",
+      "school": "Sun Yat-sen University (CFLE)",
+      "city": "Guangzhou",
+      "role": "Full-time ESL Instructor (CFLE; Guangzhou campus preferred)",
+      "pay": "~¥9,667/mo pre-tax + yearly bonus (stated)",
+      "zSponsor": "Yes (university foreign-teacher hire)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.sysu.edu.cn/sysuenold/Job/International_Teachers.htm",
+      "appliedAt": "2026-09-15T09:12:00Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "mail.sysu.edu.cn",
+        "zhengyf@mail.sysu.edu.cn",
+        "Sun Yat-sen",
+        "SYSU",
+        "CFLE"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted overnight 2026-09-15 via email zhengyf@mail.sysu.edu.cn (Gmail send id 1a0a4578a3459f65). Guangzhou campus preferred; CELTA-in-progress disclosed (TEFL can exempt 2yr adult ESL req); prefer cash housing stipend. Resume TXT follow-up attached (id 1a0a4593ebe3087b). Official university employer. No browserUse/Task this run.",
+      "history": [
+        {
+          "at": "2026-09-15T09:12:00Z",
+          "event": "Application email sent to zhengyf@mail.sysu.edu.cn; Guangzhou campus + CELTA-in-progress noted"
+        },
+        {
+          "at": "2026-09-15T09:15:30Z",
+          "event": "Follow-up: resume TXT attached on same thread (1a0a4593ebe3087b)"
+        }
+      ]
+    },
+    {
+      "id": "scut-gzic-2026-09-15",
+      "school": "South China University of Technology (GZIC)",
+      "city": "Guangzhou",
+      "role": "Full-Time English Language Teacher (Academic English / GZIC Panyu)",
+      "pay": "¥187,300–247,300 / year (stated) + on-campus apt rent",
+      "zSponsor": "Yes (Work and Residential Permits assistance stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www2.scut.edu.cn/gzic_en/2025/0820/c44854a599685/page.psp",
+      "appliedAt": "2026-09-15T09:12:20Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "scut.edu.cn",
+        "ota@scut.edu.cn",
+        "SCUT",
+        "GZIC"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted overnight 2026-09-15 via email ota@scut.edu.cn (Gmail send id 1a0a457c6309d6bf). TEFL preferred not hard wall; CELTA-in-progress + instructor experience disclosed; prefer cash housing stipend if apt rent optional. Resume TXT follow-up attached (id 1a0a45a87403aa08). Official university employer (GZIC).",
+      "history": [
+        {
+          "at": "2026-09-15T09:12:20Z",
+          "event": "Application email sent to ota@scut.edu.cn; CELTA-in-progress noted"
+        },
+        {
+          "at": "2026-09-15T09:15:30Z",
+          "event": "Follow-up: resume TXT attached on same thread (1a0a45a87403aa08)"
+        }
+      ]
+    },
+    {
+      "id": "aston-gz-2026-09-15",
+      "school": "Aston English",
+      "city": "Guangzhou",
+      "role": "English Teacher (children; Guangzhou-only request)",
+      "pay": "~¥7–9k band + free housing (national Aston package; confirm GZ)",
+      "zSponsor": "Yes (Legal Z work visa stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://recruitforchina.wixsite.com/jobs/teach-at-aston-english",
+      "appliedAt": "2026-09-15T09:12:25Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "astonschool.com",
+        "gparker@astonschool.com",
+        "Aston English",
+        "Gavin Parker"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted overnight 2026-09-15 via email gparker@astonschool.com (Gmail send id 1a0a457ca6af0ae7). Guangzhou-only request; BA any subject; TEFL preferred not required; CELTA-in-progress disclosed; prefer cash housing stipend. Resume TXT follow-up attached (id 1a0a45a845037975). Language-center brand (Aston Educational Group).",
+      "history": [
+        {
+          "at": "2026-09-15T09:12:25Z",
+          "event": "Application email sent to gparker@astonschool.com; Guangzhou-only + CELTA-in-progress noted"
+        },
+        {
+          "at": "2026-09-15T09:15:30Z",
+          "event": "Follow-up: resume TXT attached on same thread (1a0a45a845037975)"
+        }
+      ]
+    },
+    {
+      "id": "huali-gz-ma-skip",
+      "school": "Guangzhou Huali College",
+      "city": "Guangzhou",
+      "role": "English Instructor (School of Foreign Studies)",
+      "pay": "negotiable + free faculty apt",
+      "zSponsor": "Yes (assist Work Permit / residence)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://www.hualixy.edu.cn/rsc/rczp1/rczp",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — Master's degree wall",
+      "emailWatch": [
+        "hualixy.edu.cn",
+        "lhy8@outlook.com",
+        "hr@hualixy.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "2025 foreign-teacher notice requires Master's+; Michael has BA only.",
+      "history": [
+        {
+          "at": "2026-09-15T09:17:34Z",
+          "event": "Skipped — Master's wall"
+        }
+      ]
+    },
+    {
+      "id": "jnu-cfs-ma-skip",
+      "school": "Jinan University (College of Foreign Studies)",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher",
+      "pay": "ask",
+      "zSponsor": "Yes (visa assistance stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://fc.jnu.edu.cn/2023/0414/c33833a744181/page.htm",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — Master's degree wall",
+      "emailWatch": [
+        "jnu.edu.cn",
+        "ocfsoffice@jnu.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Requires Master's or above.",
+      "history": [
+        {
+          "at": "2026-09-15T09:17:34Z",
+          "event": "Skipped — Master's wall"
+        }
+      ]
+    },
+    {
+      "id": "scnu-ma-tesol-skip",
+      "school": "South China Normal University (SFS)",
+      "city": "Guangzhou",
+      "role": "English Language Teacher",
+      "pay": "¥180,000 / year",
+      "zSponsor": "Yes (university)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://rsc.scnu.edu.cn/a/20250424/975.html",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — Master's + TESOL certificate wall (deadline also passed)",
+      "emailWatch": [
+        "scnu.edu.cn",
+        "wwxy@scnu.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Requires Master's + TESOL/TESL; application deadline listed 15 June 2025.",
+      "history": [
+        {
+          "at": "2026-09-15T09:17:34Z",
+          "event": "Skipped — Master's + TESOL wall / deadline"
+        }
+      ]
     }
   ],
   "morningSummary": {
@@ -723,25 +899,19 @@
     "changedIds": []
   },
   "overnightRun": {
-    "at": "2026-09-15T07:38:05Z",
-    "chicago": "2026-09-15 ~2:37am CDT",
+    "at": "2026-09-15T09:17:34Z",
+    "chicago": "2026-09-15 ~4:17am CDT",
     "newSubmits": [
-      "i2 Education",
-      "Guangzhou Songtian Polytechnic College",
-      "Giraffe English (Guangzhou)"
+      "Sun Yat-sen University (CFLE)",
+      "South China University of Technology (GZIC)",
+      "Aston English"
     ],
     "skipped": [
-      "JND/Fangke eChinacities 1355117239 expired+agent",
-      "Nabang eChinacities 1355117927 expired+agent",
-      "New Peak 1355117397 expired+agent",
-      "Guangzhou University hard teaching-cert wall",
-      "GDIC/SCAU hard CELTA/Trinity + EAP wall",
-      "Fettes College PGCE/QTS wall",
-      "ST teachers ESL Cafe grey agent",
-      "Global Education bilingual/Mandarin wall",
-      "Elevate-7 kindergarten — school already Submitted (no re-apply)",
-      "EF efrecruitment — same family as English 1 already Submitted"
+      "Guangzhou Huali College — Master's wall",
+      "Jinan University CFS — Master's wall",
+      "South China Normal University — Master's + TESOL / deadline",
+      "No browserUse/Task available — email applies used"
     ],
-    "note": "3 new email submits (no browserUse/Task available this run). pendingPublish true — parent should push Pages."
+    "note": "3 new email submits (Gmail). Resume TXT attached on follow-up threads. pendingPublish true — parent should push Pages."
   }
 }
