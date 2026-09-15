@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T05:33:32Z",
+  "updated": "2026-09-15T07:38:05Z",
   "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified.",
   "applications": [
     {
@@ -405,6 +405,294 @@
           "event": "Submitted on eChinacities. Confirmation: You've successfully applied for this job!"
         }
       ]
+    },
+    {
+      "id": "i2edu-gz-2026-09-15",
+      "school": "i2 Education",
+      "city": "Guangzhou",
+      "role": "English Teacher (ages 3–12; GZ among cities — requested GZ only)",
+      "pay": "¥16–22k + housing allowance ~¥2k (band)",
+      "zSponsor": "Yes (legal working residence permit stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.i2edu.cn/",
+      "appliedAt": "2026-09-15T07:32:30Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "i2edu.cn",
+        "vivienne.xy@i2edu.cn",
+        "i2 Education"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted overnight 2026-09-15 via email vivienne.xy@i2edu.cn (Gmail send id 1a0a3fc72393a57a). Guangzhou-only request; CELTA-in-progress disclosed; prefer cash housing stipend. Resume DOCX attached. Official language-center employer (branches include Guangzhou).",
+      "history": [
+        {
+          "at": "2026-09-15T07:32:30Z",
+          "event": "Application email sent to vivienne.xy@i2edu.cn with resume DOCX; Guangzhou-only + CELTA-in-progress noted"
+        }
+      ]
+    },
+    {
+      "id": "songtian-gz-2026-09-15",
+      "school": "Guangzhou Songtian Polytechnic College",
+      "city": "Guangzhou",
+      "role": "Full-time Foreign English Teacher (International Education College, Zengcheng)",
+      "pay": "ask (college foreign-teacher package)",
+      "zSponsor": "Yes (foreign-teacher hire; Work Permit / Z path expected)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.gaoxiaojob.com/announcement/detail/429855.html",
+      "appliedAt": "2026-09-15T07:33:10Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gzst.edu.cn",
+        "stgj_hr@gzst.edu.cn",
+        "Songtian"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted overnight 2026-09-15 via email stgj_hr@gzst.edu.cn (Gmail send id 1a0a3ff035a3bb2a). Foreign English Teacher posting (Sep 2026); soft TEFL/CELTA or experience path — CELTA-in-progress + instructor experience disclosed. Prefer cash housing stipend if on-campus housing not suitable. Resume DOCX attached. Official employer (vocational college).",
+      "history": [
+        {
+          "at": "2026-09-15T07:33:10Z",
+          "event": "Application email sent to stgj_hr@gzst.edu.cn with resume DOCX; CELTA-in-progress noted"
+        }
+      ]
+    },
+    {
+      "id": "giraffe-gz-2026-09-15",
+      "school": "Giraffe English (Guangzhou)",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher (kids 3–12; Jiangnanxi / Huangsha centers)",
+      "pay": "ask",
+      "zSponsor": "Yes (requesting Z / Work Permit; brand historically sponsors)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.giraffe.com.cn/",
+      "appliedAt": "2026-09-15T07:33:10Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gzgiraffe.com",
+        "zhaopin@gzgiraffe.com",
+        "Giraffe English"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted overnight 2026-09-15 via email zhaopin@gzgiraffe.com (Gmail send id 1a0a3ff03058c6ba). Official Guangzhou Haizhu/Liwan language-center brand; CELTA-in-progress disclosed; prefer cash housing stipend. Resume DOCX attached.",
+      "history": [
+        {
+          "at": "2026-09-15T07:33:10Z",
+          "event": "Application email sent to zhaopin@gzgiraffe.com with resume DOCX; CELTA-in-progress noted"
+        }
+      ]
+    },
+    {
+      "id": "echina-jnd-1355117239-skip",
+      "school": "JND / Fangke Careers4U (eChinacities 1355117239)",
+      "city": "Guangzhou",
+      "role": "Training Center English Teacher",
+      "pay": "¥20–25k",
+      "zSponsor": "Yes (stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://jobs.echinacities.com/jobchapter/1355117239",
+      "appliedAt": null,
+      "status": "Skipped — listing expired + agent recruiter (Fangke)",
+      "emailWatch": [
+        "echinacities.com",
+        "fangke"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Expired; agent. TEFL + 2yrs required.",
+      "history": [
+        {
+          "at": "2026-09-15T07:38:05Z",
+          "event": "Overnight verify: expired agent listing; skipped"
+        }
+      ]
+    },
+    {
+      "id": "echina-nabang-1355117927-skip",
+      "school": "Tianjin Nabang (eChinacities pri/junior GZ)",
+      "city": "Guangzhou",
+      "role": "Primary & Junior High ESL",
+      "pay": "¥20–30k",
+      "zSponsor": "Yes (Z assistance stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://jobs.echinacities.com/jobchapter/1355117927",
+      "appliedAt": null,
+      "status": "Skipped — listing expired + agent recruiter",
+      "emailWatch": [
+        "echinacities.com",
+        "nabang"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Expired; intermediary agent.",
+      "history": [
+        {
+          "at": "2026-09-15T07:38:05Z",
+          "event": "Overnight verify: expired agent listing; skipped"
+        }
+      ]
+    },
+    {
+      "id": "gzhu-irisbing-skip",
+      "school": "Guangzhou University",
+      "city": "Guangzhou",
+      "role": "Campus English Teacher",
+      "pay": "ask + free campus housing",
+      "zSponsor": "Yes (university hire)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://english.gzhu.edu.cn/index/Join_Us.htm",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — hard teaching-certification wall (recognized English teaching cert + 2 yrs required)",
+      "emailWatch": [
+        "gzhu.edu.cn",
+        "irisbing@gzhu.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Requires completed recognized teaching certification before apply; CELTA still in progress.",
+      "history": [
+        {
+          "at": "2026-09-15T07:38:05Z",
+          "event": "Skipped — hard completed teaching-cert wall"
+        }
+      ]
+    },
+    {
+      "id": "gdic-scau-aet-skip",
+      "school": "Guangzhou Dublin International College (SCAU)",
+      "city": "Guangzhou",
+      "role": "Academic English Tutor",
+      "pay": "¥15–20k band (chinajob)",
+      "zSponsor": "Yes (university joint college)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://www.chinajob.com/job/job-detail.php?jobid=7qJr0wuoUPRqWnHDL7",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — hard CELTA/Trinity + 2 yrs university EAP wall",
+      "emailWatch": [
+        "scau.edu.cn",
+        "janicezqx@scau.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Requires CELTA/Trinity TESOL and university EAP experience; CELTA in progress only.",
+      "history": [
+        {
+          "at": "2026-09-15T07:38:05Z",
+          "event": "Skipped — hard CELTA/Trinity + EAP experience wall"
+        }
+      ]
+    },
+    {
+      "id": "eslcafe-st-teachers-skip",
+      "school": "ST teachers (ESL Cafe multi-city agent)",
+      "city": "Guangzhou",
+      "role": "Language training / kindergarten (Job 12 Guangdong)",
+      "pay": "¥17–25k",
+      "zSponsor": "Yes (stated via agent)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.eslcafe.com/postajob-detail/13000-30000rmb-esl-and-subject-teacher-needed-15",
+      "appliedAt": null,
+      "status": "Skipped — grey recruiting agency (danny1005@qq.com)",
+      "emailWatch": [
+        "eslcafe.com"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Licensed agency framing but qq.com contact; skip grey agents per criteria.",
+      "history": [
+        {
+          "at": "2026-09-15T07:38:05Z",
+          "event": "Skipped — grey agent"
+        }
+      ]
+    },
+    {
+      "id": "newpeak-1355117397-skip",
+      "school": "New Peak Recruitment (GZ training center 1355117397)",
+      "city": "Guangzhou",
+      "role": "Training Center ESL Teacher",
+      "pay": "¥18k + overtime",
+      "zSponsor": "Yes (stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jobs.echinacities.com/jobchapter/1355117397",
+      "appliedAt": null,
+      "status": "Skipped — listing expired + agent (New Peak already on avoid list)",
+      "emailWatch": [
+        "echinacities.com",
+        "newpeak"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Expired New Peak agent listing.",
+      "history": [
+        {
+          "at": "2026-09-15T07:38:05Z",
+          "event": "Overnight verify: expired; skipped"
+        }
+      ]
+    },
+    {
+      "id": "fettes-gz-eoi-skip",
+      "school": "Fettes College Guangzhou",
+      "city": "Guangzhou",
+      "role": "Teaching community EOI / EAL",
+      "pay": "ask",
+      "zSponsor": "Yes (international school)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://en.fettesgz.com/info/1144/1269.htm",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — PGCE/QTS-style teaching qualification wall",
+      "emailWatch": [
+        "fettes.cn",
+        "hr@fettes.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "International school expects recognized teaching qualification (PGCE/BEd); not soft TEFL.",
+      "history": [
+        {
+          "at": "2026-09-15T07:38:05Z",
+          "event": "Skipped — hard teaching-qualification wall"
+        }
+      ]
+    },
+    {
+      "id": "global-edu-gz-skip",
+      "school": "Global Education Guangzhou (环球教育)",
+      "city": "Guangzhou",
+      "role": "IELTS/TOEFL teacher",
+      "pay": "ask",
+      "zSponsor": "unclear (postings target bilingual Chinese teachers)",
+      "mandarinRequired": true,
+      "certRequiredFirst": true,
+      "url": "http://guangzhou.gedu.org/contents/6506/203911.html",
+      "appliedAt": null,
+      "status": "Skipped — Mandarin/bilingual + exam-score wall; not foreign Z ESL path",
+      "emailWatch": [
+        "126.com",
+        "global_education@126.com"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Listings require TEM-8 / IELTS 7+ bilingual Chinese instructors.",
+      "history": [
+        {
+          "at": "2026-09-15T07:38:05Z",
+          "event": "Skipped — not fitting foreign Z ESL criteria"
+        }
+      ]
     }
   ],
   "morningSummary": {
@@ -435,20 +723,25 @@
     "changedIds": []
   },
   "overnightRun": {
-    "at": "2026-09-15T05:33:32Z",
-    "chicago": "2026-09-15 ~12:25–12:33am CDT",
+    "at": "2026-09-15T07:38:05Z",
+    "chicago": "2026-09-15 ~2:37am CDT",
     "newSubmits": [
-      "Wall Street English China",
-      "Shane English China",
-      "Meiyin Education Co. Ltd"
+      "i2 Education",
+      "Guangzhou Songtian Polytechnic College",
+      "Giraffe English (Guangzhou)"
     ],
     "skipped": [
-      "Yingli eChinacities 1355119825 expired",
-      "Bosen PGCE wall",
-      "Click China agent",
-      "Elite Teach TEFL/TESOL wall",
-      "Longyun recruitment-services"
+      "JND/Fangke eChinacities 1355117239 expired+agent",
+      "Nabang eChinacities 1355117927 expired+agent",
+      "New Peak 1355117397 expired+agent",
+      "Guangzhou University hard teaching-cert wall",
+      "GDIC/SCAU hard CELTA/Trinity + EAP wall",
+      "Fettes College PGCE/QTS wall",
+      "ST teachers ESL Cafe grey agent",
+      "Global Education bilingual/Mandarin wall",
+      "Elevate-7 kindergarten — school already Submitted (no re-apply)",
+      "EF efrecruitment — same family as English 1 already Submitted"
     ],
-    "note": "Ask Motivational Expert to push Pages (pendingPublish true)."
+    "note": "3 new email submits (no browserUse/Task available this run). pendingPublish true — parent should push Pages."
   }
 }
