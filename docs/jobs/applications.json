@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-16T05:17:01Z",
-  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Overnight 2026-09-16 (~12:10am CDT): submitted CIEO, Meten English (Guangzhou), Guangdong Polytechnic of Industry and Commerce (GDGM). pendingPublish.",
+  "updated": "2026-09-16T07:27:00Z",
+  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Overnight 2026-09-16 (~2:24am CDT): submitted I Can Read (Guangzhou), Guangdong University of Technology (GDUT). Also logged Calendly cancel/reschedule notice on English 1 — verify Sat Sep 19 interview. pendingPublish.",
   "applications": [
     {
       "id": "english1-gz-2026-09-14",
@@ -13,15 +13,15 @@
       "certRequiredFirst": false,
       "url": "https://www.english1.com/tefl-jobs/apply-now/",
       "appliedAt": "2026-09-14T07:02:41Z",
-      "status": "Interview confirmed — Sat Sep 19, 2026 11:30pm CDT (Teams); Nathan Bell-Toxtle / English 1",
+      "status": "Interview canceled by Nathan — rebook needed (reschedule request sent)",
       "emailWatch": [
         "english1.com",
         "ef.com",
         "English 1"
       ],
-      "lastEmailAt": "2026-09-15T16:07:52Z",
-      "lastEmailSubject": "English 1 / Interview Confirmed – Please Review",
-      "notes": "Submitted 2026-09-14 via english1.com/tefl-jobs/apply-now/. Confirmation: Thank you. Your application has been submitted. No reference number shown. Prefer housing stipend in cash. Interview invite 2026-09-15 from nathan.belltoxtle@english1.com — book Calendly for Teams video interview. Interview CONFIRMED 2026-09-15: Saturday Sep 19, 2026 at 11:30pm Central (US & Canada), Microsoft Teams. Nathan scheduled via Calendly. Join early; dress professionally. Reschedule once only.",
+      "lastEmailAt": "2026-09-16T02:46:13Z",
+      "lastEmailSubject": "Canceled: Michael Palmero | English 1 Interview",
+      "notes": "Calendly cancel 2026-09-16: original Sat Sep 19 11:30pm CDT canceled. Nathan emailed “Schedule a new time with me.” Original slot does NOT stand.",
       "history": [
         {
           "at": "2026-09-14T06:50:00Z",
@@ -46,6 +46,14 @@
         {
           "at": "2026-09-15T16:07:52Z",
           "event": "Gmail/Calendly: English 1 Interview Confirmed — Sat Sep 19, 2026 11:30pm Central Time (US & Canada), Microsoft Teams. Join 10 min early; dress professionally."
+        },
+        {
+          "at": "2026-09-16T02:46:13Z",
+          "event": "Gmail: nathan.belltoxtle@english1.com — Calendly subject 'Canceled: Michael Palmero | English 1 Interview'; body says interview scheduled + Cancellation Reason: Reschedule request sent. Parent should verify Sat Sep 19 11:30pm CDT Teams still stands."
+        },
+        {
+          "at": "2026-09-16T07:27:00Z",
+          "event": "Nathan canceled Sat Sep 19 11:30pm CDT; reschedule request sent — Michael must pick new time"
         }
       ]
     },
@@ -1306,6 +1314,397 @@
           "event": "Skipped — not Guangzhou-only workplace"
         }
       ]
+    },
+    {
+      "id": "icanread-gz-2026-09-16",
+      "school": "I Can Read (Guangzhou)",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher (young learners / literacy centers)",
+      "pay": "ask / historically competitive + housing allowance",
+      "zSponsor": "Yes (stated on prior GZ ICR listings; official China join page recruiting)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.icanreadasia.cn/join.html",
+      "appliedAt": "2026-09-16T07:24:09Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "icanread.asia",
+        "icanreadasia.cn",
+        "teacher.hr.cn@icanread.asia",
+        "hr-center@icanreadasia.cn",
+        "michelle.stuart@icanread.asia",
+        "I Can Read"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight ~2:24am CDT 2026-09-16: Gmail apply to teacher.hr.cn@icanread.asia (cc hr-center@icanreadasia.cn) with resume TXT. Official China join page lists Guangzhou among cities and asks resume to those addresses. CELTA in progress disclosed honestly. Prefer cash housing stipend. Gmail message id: 1a0a919cca82b676.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Submitted via Gmail to teacher.hr.cn@icanread.asia (cc hr-center@icanreadasia.cn). Message id 1a0a919cca82b676. Resume TXT attached. Guangzhou-only + CELTA-in-progress disclosed."
+        }
+      ]
+    },
+    {
+      "id": "gdut-fl-gz-2026-09-16",
+      "school": "Guangdong University of Technology (GDUT)",
+      "city": "Guangzhou",
+      "role": "Foreign English Language Teacher",
+      "pay": "ask / university band",
+      "zSponsor": "Yes (Work Permit / foreign expert path typical for GDUT foreign teachers)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://wsc.gdut.edu.cn/info/1157/2923.htm",
+      "appliedAt": "2026-09-16T07:24:09Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gdut.edu.cn",
+        "mitchshaw@gdut.edu.cn",
+        "GDUT",
+        "广东工业大学"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight ~2:24am CDT 2026-09-16: Gmail apply to mitchshaw@gdut.edu.cn (official WSC foreign-language-teacher page; BA + language-teaching training path). CELTA in progress disclosed as training-in-progress. Guangzhou campus only. Prefer cash housing stipend. Gmail message id: 1a0a919cca385192. Note: page originally dated 2021 but still live on official GDUT site.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Submitted via Gmail to mitchshaw@gdut.edu.cn. Message id 1a0a919cca385192. Resume TXT attached. BA path + CELTA-in-progress disclosed."
+        }
+      ]
+    },
+    {
+      "id": "clickchina-1355121853-skip",
+      "school": "Click China (GZ middle-school ESL listing)",
+      "city": "Guangzhou",
+      "role": "Middle School English Teacher",
+      "pay": "¥12,500/month",
+      "zSponsor": "Yes (stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jobs.echinacities.com/jobchapter/1355121853",
+      "appliedAt": null,
+      "status": "Skipped — grey recruiting agency (Click China / Wuhan agent)",
+      "emailWatch": [
+        "echinacities.com",
+        "clickchina"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Live eChinacities Sep 9 update but Recruiter Type: Agent (Click China Cultural Exchange, Wuhan). Skip per no grey agents.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — agent recruiter (Click China), not direct employer"
+        }
+      ]
+    },
+    {
+      "id": "xinan-sz-skip",
+      "school": "Guangdong Xin'an Polytechnic",
+      "city": "Shenzhen",
+      "role": "Foreign English Teacher",
+      "pay": "¥15–20k",
+      "zSponsor": "Yes (stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://www.gdxa.edu.cn/info/2332/22551.htm",
+      "appliedAt": null,
+      "status": "Skipped — Shenzhen campus (not Guangzhou-only) + TEFL/TESOL required + qq.com contact",
+      "emailWatch": [
+        "gdxa.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Nanshan Shenzhen location; TEFL/TESOL required; qq contact. Outside GZ-only rule.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — not Guangzhou workplace"
+        }
+      ]
+    },
+    {
+      "id": "gduf-ma-skip",
+      "school": "Guangdong University of Finance (GDUF)",
+      "city": "Guangzhou",
+      "role": "Oral English Teacher",
+      "pay": "¥7.5–12.5k",
+      "zSponsor": "Yes (typical university path)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://wsb.gduf.edu.cn/info/1049/1718.htm",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — Master's degree wall",
+      "emailWatch": [
+        "gduf.edu.cn",
+        "70-333@gduf.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Longdong Guangzhou campus but requires Master's or above in English-related field. 2023-24 dated posting.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — Master's wall"
+        }
+      ]
+    },
+    {
+      "id": "scauzj-tefl-skip",
+      "school": "Zhujiang College, South China Agricultural University",
+      "city": "Guangzhou",
+      "role": "Full-time College English Teacher",
+      "pay": "¥14–16k",
+      "zSponsor": "Yes (visa assistance stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://rsc.scauzj.edu.cn/rczp/webinfo/2025/3/1000000000212587.htm",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — hard TEFL/TESOL certificate wall (+ dated 2020 page)",
+      "emailWatch": [
+        "scauzj.edu.cn",
+        "zhujiangxueyuan@163.com"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Conghua Guangzhou. TESOL/TEFL certificate required before apply. CELTA still in progress.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — hard TEFL/TESOL wall"
+        }
+      ]
+    },
+    {
+      "id": "gzasc-ma-qq-skip",
+      "school": "Guangzhou College of Applied Science and Technology (GZASC)",
+      "city": "Zhaoqing / Guangzhou dual",
+      "role": "Full-time English foreign teacher",
+      "pay": "ask",
+      "zSponsor": "Yes (stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://wentchina.com/recruitment-announcement-for-foreign-english-teachers-at-guangzhou-college-of-applied-science-and-technology/",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — Master's wall + primary contact qq.com + Zhaoqing address",
+      "emailWatch": [
+        "gzasc.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Requires Master's (or TEFL with Master's-style exemptions). Contact 361287949@qq.com. Address listed Zhaoqing Dinghu.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — Master's + qq + non-GZ-primary campus risk"
+        }
+      ]
+    },
+    {
+      "id": "english-today-agent-skip",
+      "school": "English Today Recruitment (multi-city agent board)",
+      "city": "Guangzhou",
+      "role": "Various KG/primary/training posts via agent",
+      "pay": "varies",
+      "zSponsor": "claimed",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://englishrecruitment.com/job-detail/kgenglishprimaryelaviceprincipalibpypvisualartselaenglishteachersrequiredforvariouscitiesinchina-englishtodayrecruitment",
+      "appliedAt": null,
+      "status": "Skipped — grey recruiting agency / multi-school outsourcing board",
+      "emailWatch": [
+        "englishrecruitment.com"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "HR@englishrecruitment.com posts anonymous multi-city roles including GZ. Skip per no grey agents.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — grey agent board"
+        }
+      ]
+    },
+    {
+      "id": "worlda-outsource-skip",
+      "school": "Guangzhou Worlda Cultural & Educational Consulting",
+      "city": "Guangzhou",
+      "role": "Foreign teacher placement / outsourcing",
+      "pay": "ask",
+      "zSponsor": "claimed (licensed employer of record)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.teachaway.com/schools/guangzhou-worlda-cultural-educational-consulting-service-coltd",
+      "appliedAt": null,
+      "status": "Skipped — grey recruiting / foreign-teacher outsourcing intermediary",
+      "emailWatch": [
+        "worldaedu.com.cn",
+        "worlda"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Employer-of-record / placement intermediary for schools. No live vacancies on Teach Away. Skip per no outsourcing intermediaries.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — outsourcing intermediary"
+        }
+      ]
+    },
+    {
+      "id": "hello-english-lyg-skip",
+      "school": "Hello English (Recruit4China listing)",
+      "city": "Lianyungang",
+      "role": "Young learner ESL",
+      "pay": "¥8–10k",
+      "zSponsor": "Yes (stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://recruitforchina.wixsite.com/jobs/hello-english",
+      "appliedAt": null,
+      "status": "Skipped — Lianyungang not Guangzhou",
+      "emailWatch": [
+        "recruitforchina.com"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Recruit4China Hello English page is Lianyungang Jiangsu only.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — wrong city"
+        }
+      ]
+    },
+    {
+      "id": "xdf-local-only-skip",
+      "school": "New Oriental (XDF) Guangzhou",
+      "city": "Guangzhou",
+      "role": "Local/bilingual Chinese teacher posts (not foreign Z ESL)",
+      "pay": "local bands",
+      "zSponsor": "No (current public GZ posts are Chinese-teacher roles)",
+      "mandarinRequired": true,
+      "certRequiredFirst": false,
+      "url": "http://www.neworiental.org/english/contact/201507/8214181.html",
+      "appliedAt": null,
+      "status": "Skipped — current GZ hiring is local Chinese teachers; no verified foreign Z-visa ESL opening",
+      "emailWatch": [
+        "xdf.cn",
+        "ehr@xdf.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Official ehr@xdf.cn careers mailbox exists but live GZ Zhaopin posts are Chinese bilingual teachers (TEM-8 / CET walls), not foreign Z ESL.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — no verified foreign-teacher Z opening"
+        }
+      ]
+    },
+    {
+      "id": "basis-ell-closed-skip",
+      "school": "BASIS International School Guangzhou",
+      "city": "Guangzhou",
+      "role": "ELL Teacher Middle/High School",
+      "pay": "$55–65k/year",
+      "zSponsor": "Yes (stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://www.teachaway.com/teaching-jobs-abroad/ell-teacher-middle-and-high-school-guangzhou-1",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — applications closed + 2yrs lead-teacher / certified-teacher wall",
+      "emailWatch": [
+        "basisinternationalschools.com"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Teach Away shows Closed. Requires 2+ years lead classroom teaching; international-school cert path.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — closed + hard experience/cert wall"
+        }
+      ]
+    },
+    {
+      "id": "aodu-graceland-stale-skip",
+      "school": "Aodu / Graceland English (Guangzhou)",
+      "city": "Guangzhou",
+      "role": "ESL teacher (training center)",
+      "pay": "¥15–20k + ¥2k housing",
+      "zSponsor": "unclear",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.liepin.com/job/1930470557.shtml",
+      "appliedAt": null,
+      "status": "Skipped — stale Sep 2020 start listing + no public apply email (PM-only on Liepin)",
+      "emailWatch": [
+        "aodu",
+        "graceland"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Language-center brand fit but no inventable contact email; posting start date Sep 2020.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — no verified email + stale"
+        }
+      ]
+    },
+    {
+      "id": "seig-ft-stale-inchina-skip",
+      "school": "Guangzhou Software College (SEIG)",
+      "city": "Guangzhou",
+      "role": "Full-time English teacher (外教)",
+      "pay": "ask",
+      "zSponsor": "unclear",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "http://gdsoa.cn/Jobs/Details_28864.html",
+      "appliedAt": null,
+      "status": "Skipped — 2022 listing requires already living in China; no apply email on posting",
+      "emailWatch": [
+        "seig.edu.cn",
+        "gzus.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Conghua Guangzhou campus historically. Candidate must live in China now. 2026 SEIG posts are Master's Chinese faculty, mostly Jiangmen for foreign languages.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — stale + in-China requirement"
+        }
+      ]
+    },
+    {
+      "id": "zcst-zhuhai-skip",
+      "school": "Zhuhai College of Science and Technology (ZCST)",
+      "city": "Zhuhai",
+      "role": "English foreign teacher 2025",
+      "pay": "¥170–260k/year",
+      "zSponsor": "Yes (stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://iec.zcst.edu.cn/2024/0607/c1785a177166/page.htm",
+      "appliedAt": null,
+      "status": "Skipped — Zhuhai not Guangzhou-only",
+      "emailWatch": [
+        "zcst.edu.cn",
+        "okiya@zcst.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "BA path attractive but workplace Zhuhai Jinwan.",
+      "history": [
+        {
+          "at": "2026-09-16T07:24:09Z",
+          "event": "Skipped — wrong city"
+        }
+      ]
     }
   ],
   "morningSummary": {
@@ -1359,25 +1758,31 @@
     ]
   },
   "overnightRun": {
-    "at": "2026-09-16T05:17:01Z",
-    "chicago": "2026-09-16 ~12:10am CDT",
+    "at": "2026-09-16T07:24:09Z",
+    "chicago": "2026-09-16 ~2:24am CDT",
     "newSubmits": [
-      "CIEO (Canadian International Educational Organization)",
-      "Meten English (Guangzhou)",
-      "Guangdong Polytechnic of Industry and Commerce (GDGM)"
+      "I Can Read (Guangzhou)",
+      "Guangdong University of Technology (GDUT)"
     ],
     "skipped": [
-      "Elite Teach eChinacities — grey agent",
-      "Bosen China middle-school — agent + PGCE wall",
-      "Bosen China primary — grey agent",
-      "Wuhan Oscar IB KNG — grey agent",
-      "Guangzhou Huashang College — Master's wall",
-      "Guangzhou College of Commerce — Master's wall",
-      "GDUFS International School (GIS) — Master's + no ESL",
-      "Shanghai Meiji GZ training — hard TEFL/apostille + agent",
-      "Zhongkai IELTS training — Master's/IELTS wall + qq",
-      "GDUFE — Foshan campus not GZ-only"
+      "Click China eChinacities middle-school — grey agent",
+      "Guangdong Xin'an Polytechnic — Shenzhen not GZ + TEFL + qq",
+      "Guangdong University of Finance — Master's wall",
+      "SCAU Zhujiang College — hard TEFL/TESOL wall",
+      "GZASC Applied Science — Master's + qq + Zhaoqing",
+      "English Today Recruitment — grey agent board",
+      "Worlda Education — outsourcing intermediary",
+      "Hello English R4C — Lianyungang not GZ",
+      "New Oriental GZ — local Chinese posts only",
+      "BASIS GZ ELL — closed + cert/experience wall",
+      "Aodu/Graceland — stale + no email",
+      "SEIG Software College 外教 — stale + must live in China",
+      "ZCST Zhuhai — not Guangzhou"
     ],
-    "note": "3 new email submits (Gmail) with resume TXT. No browserUse this run. pendingPublish true — parent should push Pages. Full apply mode (midnight CDT; 6am cutoff ahead)."
+    "note": "2 new email submits (Gmail) with resume TXT. No browserUse this run (Task/browserUse not available to executor). I Can Read via official icanreadasia.cn/join.html contacts; GDUT via official wsc.gdut.edu.cn foreign-language page. pendingPublish true — parent should push Pages. Full apply mode (~2am CDT; 6am cutoff ahead). Parent: English 1 Calendly cancel notice (reschedule request) at 2026-09-16T02:46:13Z — confirm Sat Sep 19 11:30pm CDT still on.",
+    "gmailIds": {
+      "I Can Read (Guangzhou)": "1a0a919cca82b676",
+      "Guangdong University of Technology (GDUT)": "1a0a919cca385192"
+    }
   }
 }
