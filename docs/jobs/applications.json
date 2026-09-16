@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-15T20:48:00Z",
-  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified.",
+  "updated": "2026-09-16T03:12:39Z",
+  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Overnight 2026-09-16 (~10pm CDT): submitted WEBi English, Nanfang College Guangzhou, GTCFLA Longdong. pendingPublish.",
   "applications": [
     {
       "id": "english1-gz-2026-09-14",
@@ -879,6 +879,90 @@
         {
           "at": "2026-09-15T09:17:34Z",
           "event": "Skipped — Master's + TESOL wall / deadline"
+        }
+      ]
+    },
+    {
+      "id": "webi-gz-2026-09-16",
+      "school": "WEBi English (Guangzhou)",
+      "city": "Guangzhou",
+      "role": "English Teacher (adult / language center)",
+      "pay": "ask / language-center band",
+      "zSponsor": "Yes (employer language center; Work Permit expected)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://sw.hc23.com/company/377936.html",
+      "appliedAt": "2026-09-16T03:12:39Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "webi.com.cn",
+        "Jordan.zuo@webi.com.cn",
+        "WEBi",
+        "韦博"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted overnight 2026-09-16 via email Jordan.zuo@webi.com.cn (Gmail send id 1a0a830be3ba8c40). Guangzhou Tianhe language center (Guangsheng Building). CELTA-in-progress disclosed; prefer cash housing stipend. Resume DOCX attached. Official WEBi Guangzhou contact listed on company directory.",
+      "history": [
+        {
+          "at": "2026-09-16T03:12:39Z",
+          "event": "Submitted via Gmail to Jordan.zuo@webi.com.cn with resume DOCX (overnight routine)"
+        }
+      ]
+    },
+    {
+      "id": "nanfang-gz-2026-09-16",
+      "school": "Nanfang College Guangzhou",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher (College English Education Center)",
+      "pay": "ask / ~15–20k band (older listing)",
+      "zSponsor": "Yes (university Work Permit / Z path)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://en.nfu.edu.cn/Join_us.htm",
+      "appliedAt": "2026-09-16T03:12:39Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "nfu.edu.cn",
+        "nfrecruit@nfu.edu.cn",
+        "Nanfang",
+        "Southern College"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted overnight 2026-09-16 via email nfrecruit@nfu.edu.cn (Gmail send id 1a0a833548dc58b9). Conghua District campus. BA + work-visa eligible; CELTA-in-progress disclosed; prefer cash housing stipend. Resume DOCX attached. Official college employer.",
+      "history": [
+        {
+          "at": "2026-09-16T03:12:39Z",
+          "event": "Submitted via Gmail to nfrecruit@nfu.edu.cn with resume DOCX (overnight routine)"
+        }
+      ]
+    },
+    {
+      "id": "gtcfla-gz-2026-09-16",
+      "school": "Guangdong Teachers College of Foreign Languages and Arts (GTCFLA)",
+      "city": "Guangzhou",
+      "role": "English Teacher (Longdong campus, Tianhe)",
+      "pay": "ask / to be discussed",
+      "zSponsor": "Yes (public college Work Permit / Z path)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.gtcfla.edu.cn/English/zcejdh/Job_Opportunities.htm",
+      "appliedAt": "2026-09-16T03:12:39Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gtcfla.edu.cn",
+        "fao@gtcfla.edu.cn",
+        "Joan Liang",
+        "GTCFLA"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Submitted overnight 2026-09-16 via email fao@gtcfla.edu.cn (Gmail send id 1a0a833521aebfbf). Public college Longdong campus Tianhe. BA any subject; 2+ yrs teaching preferred — instructor experience + CELTA-in-progress disclosed; prefer cash housing stipend. Resume DOCX attached. Contact Joan Liang / FAO. Listing start date text is older (2024) but contact page still live.",
+      "history": [
+        {
+          "at": "2026-09-16T03:12:39Z",
+          "event": "Submitted via Gmail to fao@gtcfla.edu.cn with resume DOCX (overnight routine)"
         }
       ]
     }
