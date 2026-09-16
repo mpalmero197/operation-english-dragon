@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-16T09:12:45Z",
-  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Overnight 2026-09-16 (~4:07am CDT): submitted Guangdong Baiyun University, Guangzhou City University of Technology (GCUT), Guangdong Industry Polytechnic University (gdqy). Skipped SCAU CIE (stale+2yr wall), Kid Castle (TEFL wall), Meriteach agent, expired eChinacities agents. pendingPublish.",
+  "updated": "2026-09-16T14:52:12Z",
+  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Morning summary 2026-09-16 (~6:12am CDT wind-down): overnight stopped aggressive applying after 6am. Pipeline: 25 active/submitted awaiting reply (language centers + GZ universities). Tonight’s overnight submits: WEBi, Nanfang College, GTCFLA (~10pm); CIEO, Meten GZ, GDGM (~12am); I Can Read GZ, GDUT (~2am); Guangdong Baiyun University, GCUT, Guangdong Industry Polytechnic University (~4am). Action for Michael: rebook English 1 interview (Nathan canceled Sat Sep 19 11:30pm CDT — https://calendly.com/nathan-belltoxtle-english1/30min?share_attribution=send_from_calendly_reschedule). Skipped overnight: SCAU CIE (stale+2yr wall), Kid Castle (TEFL wall), Meriteach/Click China agents, expired eChinacities. No new submits this 6am wind-down run. pendingPublish. | Email watch 2026-09-16 ~9:50am CDT: CIEO + Nanfang auto-acks recorded.",
   "applications": [
     {
       "id": "english1-gz-2026-09-14",
@@ -929,20 +929,24 @@
       "certRequiredFirst": false,
       "url": "https://en.nfu.edu.cn/Join_us.htm",
       "appliedAt": "2026-09-16T03:12:39Z",
-      "status": "Submitted — awaiting recruiter reply",
+      "status": "Received — Nanfang HR auto-reply (resume received; wait for screening)",
       "emailWatch": [
         "nfu.edu.cn",
         "nfrecruit@nfu.edu.cn",
         "Nanfang",
         "Southern College"
       ],
-      "lastEmailAt": null,
-      "lastEmailSubject": null,
-      "notes": "Submitted overnight 2026-09-16 via email nfrecruit@nfu.edu.cn (Gmail send id 1a0a833548dc58b9). Conghua District campus. BA + work-visa eligible; CELTA-in-progress disclosed; prefer cash housing stipend. Resume DOCX attached. Official college employer.",
+      "lastEmailAt": "2026-09-16T03:12:20Z",
+      "lastEmailSubject": "AutoReply: Application: Foreign English Teacher — Michael Palmero (US)",
+      "notes": "Submitted overnight 2026-09-16 via email nfrecruit@nfu.edu.cn (Gmail send id 1a0a833548dc58b9). Conghua District campus. BA + work-visa eligible; CELTA-in-progress disclosed; prefer cash housing stipend. Resume DOCX attached. Official college employer. Auto-ack 2026-09-16T03:12:20Z from nfrecruit@nfu.edu.cn (thread 1a0a833853f900ed): 简历已收到，请勿重复投递.",
       "history": [
         {
           "at": "2026-09-16T03:12:39Z",
           "event": "Submitted via Gmail to nfrecruit@nfu.edu.cn with resume DOCX (overnight routine)"
+        },
+        {
+          "at": "2026-09-16T03:12:20Z",
+          "event": "Gmail: nfrecruit@nfu.edu.cn AutoReply (Nanfang College HR) — resume received; do not re-apply; interview notify by phone/email if screening passes"
         }
       ]
     },
@@ -985,19 +989,23 @@
       "certRequiredFirst": false,
       "url": "http://www.cieo.com.cn/en/Employment.asp",
       "appliedAt": "2026-09-16T05:17:01Z",
-      "status": "Submitted — awaiting recruiter reply",
+      "status": "Received — CIEO auto-reply confirmed email received",
       "emailWatch": [
         "cieo.com.cn",
         "CIEO",
         "Canadian International Educational"
       ],
-      "lastEmailAt": "2026-09-16T05:17:01Z",
-      "lastEmailSubject": "Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
-      "notes": "Submitted overnight 2026-09-16 via email recruitment@cieo.com.cn (Gmail send id 1a0a8a45cd3af567). Official CIEO Employment page contact. ~20 schools in/around Guangzhou. CELTA-in-progress disclosed; Guangzhou-only; prefer cash housing stipend. Resume TXT attached. Language-center / school employer (not grey agent).",
+      "lastEmailAt": "2026-09-16T05:15:44Z",
+      "lastEmailSubject": "AutoReply: Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
+      "notes": "Submitted overnight 2026-09-16 via email recruitment@cieo.com.cn (Gmail send id 1a0a8a45cd3af567). Official CIEO Employment page contact. ~20 schools in/around Guangzhou. CELTA-in-progress disclosed; Guangzhou-only; prefer cash housing stipend. Resume TXT attached. Language-center / school employer (not grey agent). Auto-ack 2026-09-16T05:15:44Z from recruitment@cieo.com.cn (thread 1a0a8a47ab79bea5).",
       "history": [
         {
           "at": "2026-09-16T05:17:01Z",
           "event": "Email submitted to recruitment@cieo.com.cn with resume TXT; Gmail id 1a0a8a45cd3af567"
+        },
+        {
+          "at": "2026-09-16T05:15:44Z",
+          "event": "Gmail: recruitment@cieo.com.cn AutoReply — application email received by CIEO education group; will reply if you meet recruitment requirements"
         }
       ]
     },
@@ -1898,45 +1906,25 @@
     }
   ],
   "morningSummary": {
-    "at": "2026-09-15T11:14:18Z",
-    "chicago": "2026-09-15 ~6:13am CDT",
-    "text": "Morning wrap (2026-09-15 ~6:13am CDT). Overnight aggressive applying stopped at ~6am Chicago. No new applications this 6:13am run — cutoff. Overnight Sep 14 night → Sep 15 morning added 9 submits: Wall Street English China, Shane English China, Meiyin Education Co. Ltd, i2 Education, Guangzhou Songtian Polytechnic College, Giraffe English (Guangzhou), Sun Yat-sen University (CFLE), South China University of Technology (GZIC), Aston English. Full pipeline now (15): English 1, Elevate-7, AiRuiKe International Institute of Education, Goldstar (Guangzhou), Houhai English, Guangdong Pei Zheng College, Wall Street English China, Shane English China, Meiyin Education Co. Ltd, i2 Education, Guangzhou Songtian Polytechnic College, Giraffe English (Guangzhou), Sun Yat-sen University (CFLE), South China University of Technology (GZIC), Aston English. Goldstar: Recruiter reply — need 120hr TEFL before they will consider / sponsor (Jim Althans / Gold Star). Skipped/blocked overnight: Yingli 1355113647 / 1355119825 — expired; Meiji Culture — hard TEFL/TESOL apostille wall; Fangke / Tianjin Nabang / New Peak — expired agent listings; ST teachers — grey agent; Guangzhou University — teaching-cert wall; Dublin International College (SCAU) — CELTA/Trinity + EAP wall; Fettes College GZ — PGCE/QTS wall; Global Education GZ — Mandarin/bilingual wall; Guangzhou Huali College — Master's wall; Jinan University CFS — Master's wall; South China Normal University SFS — Master's + TESOL / deadline. Review when awake: Gmail for all Submitted/Received schools; Goldstar needs 120hr TEFL before they will consider; do not re-apply to Submitted schools; daytime can hunt fresh language-center Z-sponsor openings only.",
-    "submittedCount": 15,
-    "submittedSchools": [
-      "English 1",
-      "Elevate-7",
-      "AiRuiKe International Institute of Education",
-      "Goldstar (Guangzhou)",
-      "Houhai English",
-      "Guangdong Pei Zheng College",
-      "Wall Street English China",
-      "Shane English China",
-      "Meiyin Education Co. Ltd",
-      "i2 Education",
-      "Guangzhou Songtian Polytechnic College",
-      "Giraffe English (Guangzhou)",
-      "Sun Yat-sen University (CFLE)",
-      "South China University of Technology (GZIC)",
-      "Aston English"
+    "at": "2026-09-16T11:13:40Z",
+    "localLabel": "Wed Sep 16 2026 ~6:12am CDT",
+    "newSubmitsThisRun": 0,
+    "overnightSubmits": [
+      "WEBi English (Guangzhou)",
+      "Nanfang College Guangzhou",
+      "Guangdong Teachers College of Foreign Languages and Arts (GTCFLA)",
+      "CIEO",
+      "Meten English (Guangzhou)",
+      "Guangdong Polytechnic of Industry and Commerce (GDGM)",
+      "I Can Read (Guangzhou)",
+      "Guangdong University of Technology (GDUT)",
+      "Guangdong Baiyun University",
+      "Guangzhou City University of Technology (GCUT)",
+      "Guangdong Industry Polytechnic University"
     ],
-    "overnightNewSubmits": [
-      "Wall Street English China",
-      "Shane English China",
-      "Meiyin Education Co. Ltd",
-      "i2 Education",
-      "Guangzhou Songtian Polytechnic College",
-      "Giraffe English (Guangzhou)",
-      "Sun Yat-sen University (CFLE)",
-      "South China University of Technology (GZIC)",
-      "Aston English"
-    ],
-    "nextActions": [
-      "Gmail watch: Wall Street English, Shane, Meiyin, i2, Songtian, Giraffe, SYSU CFLE, SCUT GZIC, Aston, Houhai, Pei Zheng, AiRuiKe, English 1, Elevate-7",
-      "Goldstar: hold until 120hr TEFL / CELTA complete (Jim Althans reply)",
-      "Do not re-apply to Submitted/Received schools",
-      "Daytime only: find 1–3 new GZ language-center Z-sponsor openings (no grey agents; no Mandarin-required; prefer no completed CELTA wall)"
-    ],
-    "newSubmitsThisRun": 0
+    "topAction": "Rebook English 1 Calendly with Nathan Bell-Toxtle",
+    "activeAwaitingReply": 25,
+    "pendingPublish": true
   },
   "pendingPublish": false,
   "emailWatchRun": {
