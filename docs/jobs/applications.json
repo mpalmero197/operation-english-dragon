@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-16T07:27:00Z",
-  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Overnight 2026-09-16 (~2:24am CDT): submitted I Can Read (Guangzhou), Guangdong University of Technology (GDUT). Also logged Calendly cancel/reschedule notice on English 1 — verify Sat Sep 19 interview. pendingPublish.",
+  "updated": "2026-09-16T09:12:45Z",
+  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Overnight 2026-09-16 (~4:07am CDT): submitted Guangdong Baiyun University, Guangzhou City University of Technology (GCUT), Guangdong Industry Polytechnic University (gdqy). Skipped SCAU CIE (stale+2yr wall), Kid Castle (TEFL wall), Meriteach agent, expired eChinacities agents. pendingPublish.",
   "applications": [
     {
       "id": "english1-gz-2026-09-14",
@@ -1703,6 +1703,196 @@
         {
           "at": "2026-09-16T07:24:09Z",
           "event": "Skipped — wrong city"
+        }
+      ]
+    },
+    {
+      "id": "baiyun-university-2026-09-16",
+      "school": "Guangdong Baiyun University",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher (oral English / ESL)",
+      "pay": "ask / ~¥12k+ band (China Connection listing noted ¥12k+; official package TBD)",
+      "zSponsor": "Yes (university foreign-teacher hire; Z/Work Permit path)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://en.baiyunu.edu.cn/Academics/College_of_Foreign_Studies/College_of_Foreign_Studies.htm",
+      "appliedAt": "2026-09-16T09:08:45Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "baiyunu.edu.cn",
+        "baiyunuinternational@baiyunu.edu.cn",
+        "RSC@baiyunu.edu.cn",
+        "Baiyun"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight ~4:07am CDT 2026-09-16: Gmail apply to baiyunuinternational@baiyunu.edu.cn (cc RSC@baiyunu.edu.cn) with resume DOCX. Official international/HR emails. College of Foreign Studies regularly hires foreign teachers. Soft policy path BA + related teaching (Remote Pilot Instructor + CELTA-in-progress disclosed). Prefer cash housing stipend. Gmail message id: 1a0a979c8d6218e4. Note: China Connection agent listing also exists with TEFL wall — applied via university emails, not agent.",
+      "history": [
+        {
+          "at": "2026-09-16T09:08:45Z",
+          "event": "Submitted via Gmail to baiyunuinternational@baiyunu.edu.cn (cc RSC@baiyunu.edu.cn). Message id 1a0a979c8d6218e4. Resume DOCX attached. Guangzhou-only + CELTA-in-progress disclosed."
+        }
+      ]
+    },
+    {
+      "id": "gcut-esl-2026-09-16",
+      "school": "Guangzhou City University of Technology (GCUT)",
+      "city": "Guangzhou",
+      "role": "University ESL / Oral English Teacher",
+      "pay": "¥10–14k + rent-free flat (2023–24 posting)",
+      "zSponsor": "Yes (university foreign-teacher hire)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jl.gcut.edu.cn/2022/1024/c1117a144173/page.htm",
+      "appliedAt": "2026-09-16T09:11:42Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gcu.edu.cn",
+        "dep-jl@gcu.edu.cn",
+        "international@gcu.edu.cn",
+        "GCUT",
+        "广州城市理工"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight ~4:07am CDT 2026-09-16: Gmail apply to dep-jl@gcu.edu.cn (cc international@gcu.edu.cn) with resume DOCX. Soft path: BA + (2yrs English teaching OR TEFL/CELTA). CELTA-in-progress + instructor experience disclosed. Prefer cash housing stipend if flat not suitable. Gmail message id: 1a0a97c7abe2c248. Posting dated 2023–24 but contact emails still live on international affairs site.",
+      "history": [
+        {
+          "at": "2026-09-16T09:11:42Z",
+          "event": "Submitted via Gmail to dep-jl@gcu.edu.cn (cc international@gcu.edu.cn). Message id 1a0a97c7abe2c248. Resume DOCX attached. CELTA-in-progress + soft OR-path noted."
+        }
+      ]
+    },
+    {
+      "id": "gdqy-industry-poly-2026-09-16",
+      "school": "Guangdong Industry Polytechnic University (广东轻工职业技术大学)",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher (inquiry / apply)",
+      "pay": "ask",
+      "zSponsor": "Yes (international center manages foreign teachers / work permits)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jlxy.gdipu.edu.cn/wzwj.htm",
+      "appliedAt": "2026-09-16T09:11:42Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gdqy.edu.cn",
+        "gdipu.edu.cn",
+        "gjzx@gdqy.edu.cn",
+        "轻工"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight ~4:07am CDT 2026-09-16: Gmail apply/inquiry to gjzx@gdqy.edu.cn (International Exchange & Cooperation Center; official foreign-teacher management contact). No public fresh ESL vacancy page found this run — open application for current/upcoming openings. CELTA-in-progress disclosed; Guangzhou-only; prefer cash housing stipend. Gmail message id: 1a0a97c7a4d96229.",
+      "history": [
+        {
+          "at": "2026-09-16T09:11:42Z",
+          "event": "Submitted via Gmail to gjzx@gdqy.edu.cn. Message id 1a0a97c7a4d96229. Resume DOCX attached. Open inquiry for foreign ESL openings."
+        }
+      ]
+    },
+    {
+      "id": "scau-cie-skip-2026-09-16",
+      "school": "South China Agricultural University (College of International Education)",
+      "city": "Guangzhou",
+      "role": "Native English Teachers (IELTS Speaking/Writing)",
+      "pay": "¥8.5–9.5k language-teacher band (2020 page)",
+      "zSponsor": "Yes (university)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://cie.scau.edu.cn/2020/0402/c5532a223728/page.htm",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — stale 2020 listing + hard 2-year teaching experience wall for language teachers (no TEFL soft path); pay low vs language-center band",
+      "emailWatch": [
+        "scau.edu.cn",
+        "scaucie@126.com",
+        "chenliu@scau.edu.cn",
+        "cie@scau.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Verified overnight 2026-09-16: page last dated 2020-04-02; requires min 2 years teaching for language teachers. Distinct from Zhujiang College (already TEFL-walled). Did not email.",
+      "history": [
+        {
+          "at": "2026-09-16T09:08:00Z",
+          "event": "Skipped — stale 2020 posting + 2yr teaching hard wall"
+        }
+      ]
+    },
+    {
+      "id": "kidcastle-skip-2026-09-16",
+      "school": "Kid Castle Educational Corporation",
+      "city": "Guangzhou (claimed expansion; HQ Shanghai)",
+      "role": "English Teacher",
+      "pay": "ask",
+      "zSponsor": "Yes (stated Z-visa support)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://ft.kidcastle.com/",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — TEFL required before Z-visa docs; Shanghai HQ focus; no verified Guangzhou-only direct opening this run",
+      "emailWatch": [
+        "kidcastle.org.cn",
+        "ft_recruiting@kidcastle.org.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight check 2026-09-16: recruitment site requires authenticated TEFL for Z-visa process; primary HQ Shanghai.",
+      "history": [
+        {
+          "at": "2026-09-16T09:08:00Z",
+          "event": "Skipped — TEFL wall + no verified GZ-only opening"
+        }
+      ]
+    },
+    {
+      "id": "meriteach-skip-2026-09-16",
+      "school": "Meriteach Recruitment (Guangzhou primary ESL listing)",
+      "city": "Guangzhou",
+      "role": "ESL Teacher — Primary School",
+      "pay": "¥26k/mo (TeachingJobChina listing)",
+      "zSponsor": "Unclear (recruiter listing)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.teachingjobchina.com/",
+      "appliedAt": null,
+      "status": "Skipped — grey recruiting agency (Meriteach Recruitment) on TeachingJobChina",
+      "emailWatch": [
+        "teachingjobchina.com",
+        "Meriteach"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight 2026-09-16: listed as Meriteach Recruitment intermediary — skip per grey-agent rule.",
+      "history": [
+        {
+          "at": "2026-09-16T09:08:00Z",
+          "event": "Skipped — recruiter/agency listing"
+        }
+      ]
+    },
+    {
+      "id": "echina-agents-skip-2026-09-16-am",
+      "school": "eChinacities Guangzhou ESL batch (Yingli / Fangke / DinChance / Yilai / M Consultancy)",
+      "city": "Guangzhou",
+      "role": "Various training-center / school ESL",
+      "pay": "various",
+      "zSponsor": "Stated on listings",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jobs.echinacities.com/",
+      "appliedAt": null,
+      "status": "Skipped — listings expired and/or Agent recruiter type (already on avoid list)",
+      "emailWatch": [
+        "echinacities.com"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight 2026-09-16 recheck: 1355114471, 1355086739, 1355115959, 1355117733 expired and/or Agent.",
+      "history": [
+        {
+          "at": "2026-09-16T09:08:00Z",
+          "event": "Skipped batch — expired + agent recruiters"
         }
       ]
     }
