@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-16T03:12:39Z",
-  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Overnight 2026-09-16 (~10pm CDT): submitted WEBi English, Nanfang College Guangzhou, GTCFLA Longdong. pendingPublish.",
+  "updated": "2026-09-16T05:17:01Z",
+  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Overnight 2026-09-16 (~12:10am CDT): submitted CIEO, Meten English (Guangzhou), Guangdong Polytechnic of Industry and Commerce (GDGM). pendingPublish.",
   "applications": [
     {
       "id": "english1-gz-2026-09-14",
@@ -965,6 +965,347 @@
           "event": "Submitted via Gmail to fao@gtcfla.edu.cn with resume DOCX (overnight routine)"
         }
       ]
+    },
+    {
+      "id": "cieo-gz-2026-09-16",
+      "school": "CIEO (Canadian International Educational Organization)",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher (language centers / schools)",
+      "pay": "ask / language-center band",
+      "zSponsor": "Yes (employer; work-permit path expected)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "http://www.cieo.com.cn/en/Employment.asp",
+      "appliedAt": "2026-09-16T05:17:01Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "cieo.com.cn",
+        "CIEO",
+        "Canadian International Educational"
+      ],
+      "lastEmailAt": "2026-09-16T05:17:01Z",
+      "lastEmailSubject": "Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
+      "notes": "Submitted overnight 2026-09-16 via email recruitment@cieo.com.cn (Gmail send id 1a0a8a45cd3af567). Official CIEO Employment page contact. ~20 schools in/around Guangzhou. CELTA-in-progress disclosed; Guangzhou-only; prefer cash housing stipend. Resume TXT attached. Language-center / school employer (not grey agent).",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Email submitted to recruitment@cieo.com.cn with resume TXT; Gmail id 1a0a8a45cd3af567"
+        }
+      ]
+    },
+    {
+      "id": "meten-gz-2026-09-16",
+      "school": "Meten English (Guangzhou)",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher (adults / language center)",
+      "pay": "~¥10–13k + ¥2k housing allowance (posted band; negotiable)",
+      "zSponsor": "Yes (reimbursed work visa stated on Meten job page)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://recruitforchina.wixsite.com/jobs/meten-english",
+      "appliedAt": "2026-09-16T05:17:01Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "meten.com",
+        "Meten",
+        "mia_wj"
+      ],
+      "lastEmailAt": "2026-09-16T05:17:01Z",
+      "lastEmailSubject": "Application — Meten English Teacher (Guangzhou only) — Michael Palmero (US)",
+      "notes": "Submitted overnight 2026-09-16 via email mia_wj@meten.com (Gmail send id 1a0a8a4b2cff2b00). Meten-domain recruiter (employer). BA + (TEFL/CELTA OR 2yrs related teaching) soft path — CELTA-in-progress + instructor experience disclosed. Guangzhou-only; prefer cash housing stipend. Resume TXT attached.",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Email submitted to mia_wj@meten.com with resume TXT; Gmail id 1a0a8a4b2cff2b00"
+        }
+      ]
+    },
+    {
+      "id": "gdgm-gz-2026-09-16",
+      "school": "Guangdong Polytechnic of Industry and Commerce (GDGM)",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher",
+      "pay": "ask",
+      "zSponsor": "Yes (college foreign-teacher / work-permit path)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.gdgm.edu.cn/dwjl/",
+      "appliedAt": "2026-09-16T05:17:01Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gdgm.edu.cn",
+        "gdgmjlc",
+        "126.com",
+        "工贸"
+      ],
+      "lastEmailAt": "2026-09-16T05:17:01Z",
+      "lastEmailSubject": "Application — Foreign English Teacher — Michael Palmero (US) — Guangzhou",
+      "notes": "Submitted overnight 2026-09-16 via email gdgmjlc@126.com (Gmail send id 1a0a8a4b43cafcc9). Official International Exchange & Cooperation Office contact (对外交流合作部). CELTA-in-progress + instructor experience disclosed; Guangzhou campus; prefer cash housing stipend. Resume TXT attached. Employer college (not agent).",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Email submitted to gdgmjlc@126.com with resume TXT; Gmail id 1a0a8a4b43cafcc9"
+        }
+      ]
+    },
+    {
+      "id": "elite-teach-1355121677-skip",
+      "school": "Elite Teach (eChinacities ESL Teacher 1355121677)",
+      "city": "Guangzhou",
+      "role": "ESL Teacher (bilingual school outsourcing)",
+      "pay": "¥19–22k",
+      "zSponsor": "Unclear (agent outsourcing)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jobs.echinacities.com/jobchapter/1355121677",
+      "appliedAt": null,
+      "status": "Skipped — grey recruiting agency / foreign-teacher outsourcing agent (Elite Teach)",
+      "emailWatch": [
+        "echinacities.com",
+        "Elite Teach"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Updated Sep 16 2026 on eChinacities; recruiter type Agent. Skip per grey-agent rule.",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Reviewed live listing; skipped as agent/outsourcing intermediary"
+        }
+      ]
+    },
+    {
+      "id": "bosen-pgce-1355121419-skip",
+      "school": "Bosen China (GZ middle-school English listing)",
+      "city": "Guangzhou",
+      "role": "International Middle School English Teacher",
+      "pay": "¥24–30k + ¥4k housing",
+      "zSponsor": "Yes (stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://jobs.echinacities.com/jobchapter/1355121419",
+      "appliedAt": null,
+      "status": "Skipped — grey agent (Bosen China / Wuhan) + hard PGCE wall",
+      "emailWatch": [
+        "echinacities.com",
+        "Bosen"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Agent recruiter; PGCE required. Skip.",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Skipped — agent + PGCE hard wall"
+        }
+      ]
+    },
+    {
+      "id": "bosen-primary-1355121423-skip",
+      "school": "Bosen China (GZ primary teacher listing)",
+      "city": "Guangzhou",
+      "role": "International Primary Teacher",
+      "pay": "¥23–29k + ¥4k housing",
+      "zSponsor": "Yes (stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jobs.echinacities.com/jobchapter/1355121423",
+      "appliedAt": null,
+      "status": "Skipped — grey recruiting agency (Bosen China / Wuhan)",
+      "emailWatch": [
+        "echinacities.com",
+        "Bosen"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Agent recruiter on eChinacities. Skip per grey-agent rule.",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Skipped — agent intermediary"
+        }
+      ]
+    },
+    {
+      "id": "oscar-ibkng-1355119875-skip",
+      "school": "Wuhan Oscar Education (IB KNG Liwan listing)",
+      "city": "Guangzhou",
+      "role": "IB Kindergarten Homeroom Teacher",
+      "pay": "¥23–26k after tax incl housing",
+      "zSponsor": "Yes (teaching visa stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://jobs.echinacities.com/jobchapter/1355119875",
+      "appliedAt": null,
+      "status": "Skipped — grey recruiting agency (Wuhan Oscar Education Technology)",
+      "emailWatch": [
+        "echinacities.com",
+        "Oscar"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Agent recruiter. Skip.",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Skipped — agent intermediary"
+        }
+      ]
+    },
+    {
+      "id": "huashang-ma-skip",
+      "school": "Guangzhou Huashang College",
+      "city": "Guangzhou",
+      "role": "International Teacher (subject + English)",
+      "pay": "negotiable",
+      "zSponsor": "Yes (residence permit path stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.gzhs.edu.cn/info/1007/4537.htm",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — Master's degree wall",
+      "emailWatch": [
+        "gzhs.edu.cn",
+        "gdhsc.edu.cn",
+        "zjy_edu_cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Official posting requires MA or above. Contact zjy_edu_cn@163.com not used.",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Skipped — Master's wall"
+        }
+      ]
+    },
+    {
+      "id": "gcc-ma-skip",
+      "school": "Guangzhou College of Commerce (GCC International College)",
+      "city": "Guangzhou",
+      "role": "Language Teacher",
+      "pay": "negotiable",
+      "zSponsor": "Yes (working visa fee stated)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://ic.gcc.edu.cn/tzgg/f8f49e29e4a64f5eb8a037aca167b53c.htm",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — Master's degree wall (+ TEFL required)",
+      "emailWatch": [
+        "gzcc.cn",
+        "gcc.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Requires Master degree or above. eva@gzcc.cn not contacted.",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Skipped — Master's wall"
+        }
+      ]
+    },
+    {
+      "id": "gis-gdufs-ma-skip",
+      "school": "GDUFS International School (GIS)",
+      "city": "Guangzhou",
+      "role": "High school subject teachers (no ESL opening)",
+      "pay": "¥250–400k/year pretax",
+      "zSponsor": "Likely",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://gisen.gdufs.edu.cn/Recruitment.htm",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — Master's degree wall + no ESL opening",
+      "emailWatch": [
+        "gdufs.edu.cn",
+        "GIS_GZ"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Minimum Master's; openings are subject teachers not ESL. GIS_GZ@163.com not contacted.",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Skipped — Master's wall / wrong role mix"
+        }
+      ]
+    },
+    {
+      "id": "meiji-1355120125-skip",
+      "school": "Shanghai Meiji Culture Communications (GZ training center 1355120125)",
+      "city": "Guangzhou",
+      "role": "Training Center English Teacher",
+      "pay": "¥15–16k incl apartment",
+      "zSponsor": "Yes (teaching work visa)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://jobs.echinacities.com/jobchapter/1355120125",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — hard TEFL wall (apostilled cert + docs ready) + agent recruiter",
+      "emailWatch": [
+        "echinacities.com",
+        "Meiji"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Related listing to prior Meiji skip; requires docs ready including TEFL with apostille; agent. Skip.",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Skipped — hard cert wall + agent"
+        }
+      ]
+    },
+    {
+      "id": "zhku-ielts-ma-skip",
+      "school": "Zhongkai University of Agriculture and Engineering (IELTS training)",
+      "city": "Guangzhou",
+      "role": "English training teacher (IELTS)",
+      "pay": "ask",
+      "zSponsor": "Unclear / local hire style",
+      "mandarinRequired": true,
+      "certRequiredFirst": true,
+      "url": "https://ielts.zhku.edu.cn/info/1025/2625.htm",
+      "appliedAt": null,
+      "status": "Blocked/Skipped — English-major Master's + IELTS 7.5 wall; qq.com contact",
+      "emailWatch": [
+        "zhku.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Requires English-major Master's + IELTS 7.5; contact 2833701908@qq.com. Not foreign Z ESL path.",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Skipped — hard academic walls + qq contact"
+        }
+      ]
+    },
+    {
+      "id": "gdufe-foshan-skip",
+      "school": "Guangdong University of Finance & Economics (GDUFE)",
+      "city": "Foshan (shuttle from Guangzhou)",
+      "role": "Full-time foreign English teacher",
+      "pay": "¥10–12.5k by degree",
+      "zSponsor": "Yes",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://english.gdufe.edu.cn/2024/0419/c1787a190845/page.htm",
+      "appliedAt": null,
+      "status": "Skipped — work location Foshan campus (not Guangzhou-only) + 2024 dated listing + cert preferred",
+      "emailWatch": [
+        "gdufe.edu.cn"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Posting is Foshan campus primary workplace. Skip Guangzhou-only rule.",
+      "history": [
+        {
+          "at": "2026-09-16T05:17:01Z",
+          "event": "Skipped — not Guangzhou-only workplace"
+        }
+      ]
     }
   ],
   "morningSummary": {
@@ -1018,21 +1359,25 @@
     ]
   },
   "overnightRun": {
-    "at": "2026-09-15T09:17:34Z",
-    "chicago": "2026-09-15 ~4:17am CDT",
+    "at": "2026-09-16T05:17:01Z",
+    "chicago": "2026-09-16 ~12:10am CDT",
     "newSubmits": [
-      "Sun Yat-sen University (CFLE)",
-      "South China University of Technology (GZIC)",
-      "Aston English"
+      "CIEO (Canadian International Educational Organization)",
+      "Meten English (Guangzhou)",
+      "Guangdong Polytechnic of Industry and Commerce (GDGM)"
     ],
     "skipped": [
-      "Guangzhou Huali College — Master's wall",
-      "Jinan University CFS — Master's wall",
-      "South China Normal University — Master's + TESOL / deadline",
-      "No browserUse/Task available — email applies used"
+      "Elite Teach eChinacities — grey agent",
+      "Bosen China middle-school — agent + PGCE wall",
+      "Bosen China primary — grey agent",
+      "Wuhan Oscar IB KNG — grey agent",
+      "Guangzhou Huashang College — Master's wall",
+      "Guangzhou College of Commerce — Master's wall",
+      "GDUFS International School (GIS) — Master's + no ESL",
+      "Shanghai Meiji GZ training — hard TEFL/apostille + agent",
+      "Zhongkai IELTS training — Master's/IELTS wall + qq",
+      "GDUFE — Foshan campus not GZ-only"
     ],
-    "note": "3 new email submits (Gmail). Resume TXT attached on follow-up threads. pendingPublish true — parent should push Pages. Morning cutoff 2026-09-15 ~6:13am CDT: no further applies this run; morningSummary refreshed; pendingPublish true.",
-    "morningCutoffAt": "2026-09-15T11:14:18Z",
-    "morningCutoffChicago": "2026-09-15 ~6:13am CDT"
+    "note": "3 new email submits (Gmail) with resume TXT. No browserUse this run. pendingPublish true — parent should push Pages. Full apply mode (midnight CDT; 6am cutoff ahead)."
   }
 }
