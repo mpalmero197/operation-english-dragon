@@ -1,4 +1,4 @@
-const CACHE = "oed-v33";
+const CACHE = "oed-v34";
 const ASSETS = [
   "./",
   "./index.html",
