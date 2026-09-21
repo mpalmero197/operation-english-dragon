@@ -1,7 +1,91 @@
 {
-  "updated": "2026-09-21T05:11:23Z",
+  "updated": "2026-09-21T07:31:33Z",
   "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Morning summary 2026-09-16 (~6:12am CDT wind-down): overnight stopped aggressive applying after 6am. Pipeline: 25 active/submitted awaiting reply (language centers + GZ universities). Tonight’s overnight submits: WEBi, Nanfang College, GTCFLA (~10pm); CIEO, Meten GZ, GDGM (~12am); I Can Read GZ, GDUT (~2am); Guangdong Baiyun University, GCUT, Guangdong Industry Polytechnic University (~4am). Action for Michael: rebook English 1 interview (Nathan canceled Sat Sep 19 11:30pm CDT — https://calendly.com/nathan-belltoxtle-english1/30min?share_attribution=send_from_calendly_reschedule). Skipped overnight: SCAU CIE (stale+2yr wall), Kid Castle (TEFL wall), Meriteach/Click China agents, expired eChinacities. No new submits this 6am wind-down run. pendingPublish. | Email watch 2026-09-16 ~9:50am CDT: CIEO + Nanfang auto-acks recorded. | Overnight 2026-09-16 (~10pm CDT): submitted Guangzhou Maritime University (International_Office@gzmtu.edu.cn). Logged skips: Guangzhou University (hard cert+2yrs), First Leap breezy (online-only), GZUCUM (stale 2016). pendingPublish — ask Motivational Expert to push Pages. | Overnight 2026-09-20 (~10:20pm CDT): submitted GPNU (oiec@gpnu.edu.cn + gpnuad@163.com) and GZIST (io@gzist.edu.cn). Logged skips: GWNG PhD wall, UISG QTS/PGCE wall, SMU stale 2020, TMEGA pinwaiyi agent board. eChinacities GZ batch mostly expired/agents/wrong-subject. No China recruiter mail since Sep 16. pendingPublish — ask Motivational Expert to push Pages. | Overnight 2026-09-21 ~12:10am CDT: submitted GZCCC (iec@gzccc.edu.cn), GDSDXY (zhaopin@gdsdxy.cn), Berlitz China (info@em.berlitz.com). pendingPublish — ask Motivational Expert to push Pages.",
   "applications": [
+    {
+      "id": "rise-english-gz-2026-09-21",
+      "school": "RISE English (瑞思英语) — Guangzhou",
+      "city": "Guangzhou",
+      "role": "English Teacher (children / subject English) — language center",
+      "pay": "ask / language-center band",
+      "zSponsor": "Yes (training-center Work Permit path expected; confirm with HR)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.risecenter.com/join.html",
+      "appliedAt": "2026-09-21T07:31:33Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "rdchina.net",
+        "hrhelp@rdchina.net",
+        "RISE",
+        "瑞思"
+      ],
+      "lastEmailAt": "2026-09-21T07:31:33Z",
+      "lastEmailSubject": "Application — English Teacher Guangzhou — Michael Palmero (US)",
+      "notes": "Overnight 2026-09-21 ~2:30am CDT: apply to RISE English teacher hiring (hrhelp@rdchina.net) Gmail id 1a0c2dfdda1f973b; resume DOCX attached via draft+upload. Careers page lists English Teacher with Guangzhou among work cities; bachelor OK; no hard TEFL wall before apply. Language center first preference.",
+      "history": [
+        {
+          "at": "2026-09-21T07:31:33Z",
+          "event": "Email submitted to hrhelp@rdchina.net with resume DOCX; Gmail id 1a0c2dfdda1f973b"
+        }
+      ]
+    },
+    {
+      "id": "gfdvc-intl-2026-09-21",
+      "school": "Guangdong Food and Drug Vocational College (GFDVC / 广东食品药品职业学院)",
+      "city": "Guangzhou (Tianhe Longdong)",
+      "role": "Foreign English Teacher (oral / college English / EAP) — inquiry",
+      "pay": "ask / vocational college band",
+      "zSponsor": "Yes (college international office; Work Permit path expected if hired)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://eng.gdyzy.edu.cn/",
+      "appliedAt": "2026-09-21T07:31:33Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gdyzy.edu.cn",
+        "GDFDVC@126.com",
+        "GFDVC",
+        "食品药品"
+      ],
+      "lastEmailAt": "2026-09-21T07:31:33Z",
+      "lastEmailSubject": "Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
+      "notes": "Overnight 2026-09-21 ~2:30am CDT: cold inquire to International Exchange Center (GDFDVC@126.com) Gmail id 1a0c2dfe1a4d00cf; resume DOCX attached. Public international contact for GFDVC; bachelor-level inquiry, CELTA-in-progress disclosed. Direct college.",
+      "history": [
+        {
+          "at": "2026-09-21T07:31:33Z",
+          "event": "Email submitted to GDFDVC@126.com with resume DOCX; Gmail id 1a0c2dfe1a4d00cf"
+        }
+      ]
+    },
+    {
+      "id": "gtxy-railway-2026-09-21",
+      "school": "Guangzhou Railway Polytechnic (广州铁路职业技术学院)",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher (oral / college English) — inquiry",
+      "pay": "ask / vocational college band",
+      "zSponsor": "Yes (college international cooperation; Work Permit path expected if hired)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.gtxy.edu.cn/",
+      "appliedAt": "2026-09-21T07:31:33Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gtxy.edu.cn",
+        "lianglekun@gtxy.edu.cn",
+        "Railway Polytechnic",
+        "铁路职业技术"
+      ],
+      "lastEmailAt": "2026-09-21T07:31:33Z",
+      "lastEmailSubject": "Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
+      "notes": "Overnight 2026-09-21 ~2:30am CDT: cold inquire to lianglekun@gtxy.edu.cn (overseas talent / international contact) Gmail id 1a0c2dfdf8048192; resume DOCX attached. Prior run lacked a clean FAO mailbox; this contact is published for overseas talent projects. Bachelor-level inquiry. Direct college.",
+      "history": [
+        {
+          "at": "2026-09-21T07:31:33Z",
+          "event": "Email submitted to lianglekun@gtxy.edu.cn with resume DOCX; Gmail id 1a0c2dfdf8048192"
+        }
+      ]
+    },
     {
       "id": "gzccc-iec-2026-09-21",
       "school": "Guangzhou City Construction College (GZCCC / 广州城建职业学院)",
@@ -2300,26 +2384,27 @@
     ]
   },
   "overnightRun": {
-    "at": "2026-09-21T05:11:23Z",
-    "chicago": "2026-09-21 ~12:10am CDT",
+    "at": "2026-09-21T07:31:33Z",
+    "chicago": "2026-09-21 ~2:30am CDT",
     "newSubmits": [
-      "Guangzhou City Construction College (GZCCC)",
-      "Guangdong Water Conservancy and Electric Power Vocational Technical College (GDSDXY)",
-      "Berlitz (China) — Guangzhou"
+      "RISE English (Guangzhou)",
+      "Guangdong Food and Drug Vocational College (GFDVC)",
+      "Guangzhou Railway Polytechnic"
     ],
     "skipped": [
-      "Guangzhou Railway Polytechnic — historical pinwaiyi outsourcing bid; no clean FAO email this run",
-      "Jackie Cong / Huadu K12 LinkedIn — agent-style gmail+wechat recruiter",
-      "DinChance / ApplyKite international school — agent recruiter",
-      "Pei Zheng / Elevate / English 1 / SCUT GZIC / SYSU — already on living list",
-      "Guangzhou Engineering Tech College — no verified international/FAO email",
-      "Guangdong Second Normal — no verified foreign-teacher mailbox"
+      "Bosen China / ReachMore / Tianjin Nabang eChinacities Sep listings — grey agents",
+      "DinChance LinkedIn Aug 2026 international-school posts — agent",
+      "GEOR / Shanghai Bowai Zengcheng primary ESL — agency board",
+      "Guangzhou Huali College — already Master's wall on living list",
+      "Songtian / Pei Zheng / Elevate-7 / English 1 — already Submitted or active",
+      "Huaqi Education A-Level bilingual — Master's wall; IELTS listing part-time (weak Z path)",
+      "GKD zengqianru@gkd.edu.cn — admissions mailbox for intl undergrad, not foreign-teacher HR"
     ],
-    "note": "3 new email submits (user-Gmail) with resume DOCX. Full apply mode (~12am CDT; 6am cutoff ahead). pendingPublish true — ask Motivational Expert to push Pages.",
+    "note": "3 new email submits (user-Gmail draft+upload_file+send) with resume DOCX. Full apply mode (~2:30am CDT; 6am cutoff ahead). pendingPublish true — ask Motivational Expert to push Pages.",
     "gmailIds": {
-      "Guangzhou City Construction College (GZCCC)": "1a0c25f8b1b6ca37",
-      "GDSDXY": "1a0c25f8d0224de5",
-      "Berlitz Guangzhou": "1a0c25f8e4e59aea"
+      "RISE English Guangzhou": "1a0c2dfdda1f973b",
+      "GFDVC": "1a0c2dfe1a4d00cf",
+      "Guangzhou Railway Polytechnic": "1a0c2dfdf8048192"
     }
   }
 }
