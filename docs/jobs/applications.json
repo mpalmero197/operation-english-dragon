@@ -2761,7 +2761,7 @@
     "pendingPublish": true,
     "windDown": "After ~6am CDT: stopped aggressive applying. No new submits this 6:18am wind-down run."
   },
-  "pendingPublish": true,
+  "pendingPublish": false,
   "emailWatchRun": {
     "at": "2026-09-21T20:49:50Z",
     "local": "2026-09-21 ~3:48pm CDT",
