@@ -1,7 +1,287 @@
 {
-  "updated": "2026-09-16T14:52:12Z",
-  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Morning summary 2026-09-16 (~6:12am CDT wind-down): overnight stopped aggressive applying after 6am. Pipeline: 25 active/submitted awaiting reply (language centers + GZ universities). Tonight’s overnight submits: WEBi, Nanfang College, GTCFLA (~10pm); CIEO, Meten GZ, GDGM (~12am); I Can Read GZ, GDUT (~2am); Guangdong Baiyun University, GCUT, Guangdong Industry Polytechnic University (~4am). Action for Michael: rebook English 1 interview (Nathan canceled Sat Sep 19 11:30pm CDT — https://calendly.com/nathan-belltoxtle-english1/30min?share_attribution=send_from_calendly_reschedule). Skipped overnight: SCAU CIE (stale+2yr wall), Kid Castle (TEFL wall), Meriteach/Click China agents, expired eChinacities. No new submits this 6am wind-down run. pendingPublish. | Email watch 2026-09-16 ~9:50am CDT: CIEO + Nanfang auto-acks recorded.",
+  "updated": "2026-09-21T03:20:31Z",
+  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Morning summary 2026-09-16 (~6:12am CDT wind-down): overnight stopped aggressive applying after 6am. Pipeline: 25 active/submitted awaiting reply (language centers + GZ universities). Tonight’s overnight submits: WEBi, Nanfang College, GTCFLA (~10pm); CIEO, Meten GZ, GDGM (~12am); I Can Read GZ, GDUT (~2am); Guangdong Baiyun University, GCUT, Guangdong Industry Polytechnic University (~4am). Action for Michael: rebook English 1 interview (Nathan canceled Sat Sep 19 11:30pm CDT — https://calendly.com/nathan-belltoxtle-english1/30min?share_attribution=send_from_calendly_reschedule). Skipped overnight: SCAU CIE (stale+2yr wall), Kid Castle (TEFL wall), Meriteach/Click China agents, expired eChinacities. No new submits this 6am wind-down run. pendingPublish. | Email watch 2026-09-16 ~9:50am CDT: CIEO + Nanfang auto-acks recorded. | Overnight 2026-09-16 (~10pm CDT): submitted Guangzhou Maritime University (International_Office@gzmtu.edu.cn). Logged skips: Guangzhou University (hard cert+2yrs), First Leap breezy (online-only), GZUCUM (stale 2016). pendingPublish — ask Motivational Expert to push Pages. | Overnight 2026-09-20 (~10:20pm CDT): submitted GPNU (oiec@gpnu.edu.cn + gpnuad@163.com) and GZIST (io@gzist.edu.cn). Logged skips: GWNG PhD wall, UISG QTS/PGCE wall, SMU stale 2020, TMEGA pinwaiyi agent board. eChinacities GZ batch mostly expired/agents/wrong-subject. No China recruiter mail since Sep 16. pendingPublish — ask Motivational Expert to push Pages.",
   "applications": [
+    {
+      "id": "tmega-agent-board-2026-09-21",
+      "school": "TMEGA Academy (Lion King International Education Group)",
+      "city": "Guangzhou (Tianhe)",
+      "role": "English / Montessori kindergarten teacher",
+      "pay": "8–15k CNY/month",
+      "zSponsor": "Yes (work visa stated) but listing is pinwaiyi agent bounty",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.pinwaiyi.com/i/?pid=TA10266",
+      "appliedAt": "2026-09-21T03:20:31Z",
+      "status": "Skipped — pinwaiyi agent-bounty listing (login wall) + education-major preference; no direct school HR email found",
+      "emailWatch": [
+        "TMEGA",
+        "Lion King",
+        "tmega"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight 2026-09-20: US nationality + age OK but education-related major preferred and apply path is agent platform. Skipped grey/indirect.",
+      "history": [
+        {
+          "at": "2026-09-21T03:20:31Z",
+          "event": "Reviewed TMEGA pinwaiyi listing; skipped agent board + major preference"
+        }
+      ]
+    },
+    {
+      "id": "smu-stale-2026-09-21",
+      "school": "Southern Medical University (School of Foreign Studies)",
+      "city": "Guangzhou",
+      "role": "International English Teacher",
+      "pay": "stale 2020 listing 11.8k",
+      "zSponsor": "Unknown (listing expired)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://portal.smu.edu.cn/renshi/info/1121/4685.htm",
+      "appliedAt": "2026-09-21T03:20:31Z",
+      "status": "Skipped — stale Sep 2020 start listing + TEFL/CELTA + 2yrs preferred; Chinese text also prefers Master's",
+      "emailWatch": [
+        "smu.edu.cn",
+        "857150668@qq.com",
+        "南方医科大学"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight 2026-09-20: only public foreign-teacher page is 2020. Skipped as stale.",
+      "history": [
+        {
+          "at": "2026-09-21T03:20:31Z",
+          "event": "Reviewed SMU 2020 foreign-teacher page; skipped stale"
+        }
+      ]
+    },
+    {
+      "id": "uisg-qts-2026-09-21",
+      "school": "Utahloy International School Guangzhou (UISG)",
+      "city": "Guangzhou",
+      "role": "MYP English Language Acquisition",
+      "pay": "international school band",
+      "zSponsor": "Yes (school)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://utahloy.cn/gz/about/work-at-uisg/",
+      "appliedAt": "2026-09-21T03:20:31Z",
+      "status": "Blocked/Skipped — hard QTS/PGCE/national teaching-cert + 3yrs experience wall",
+      "emailWatch": [
+        "uisgz.org",
+        "utahloy",
+        "UISG"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight 2026-09-20: MYP EAL roles require teaching license/QTS/PGCE + experience. Skipped vs CELTA-in-progress path.",
+      "history": [
+        {
+          "at": "2026-09-21T03:20:31Z",
+          "event": "Reviewed UISG careers; blocked for QTS/PGCE wall"
+        }
+      ]
+    },
+    {
+      "id": "gwng-phd-wall-2026-09-21",
+      "school": "South China Business College (GDUFS / GWNG) — University English Teaching Dept",
+      "city": "Guangzhou",
+      "role": "专任教师 (University English Teaching Department)",
+      "pay": "PhD package 23–100万/year band",
+      "zSponsor": "Yes (university) but PhD track",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.gwng.edu.cn/rsc/2026/0520/c992a107849/page.htm",
+      "appliedAt": "2026-09-21T03:20:31Z",
+      "status": "Blocked/Skipped — PhD degree wall (大学英语教学部 requires 博士研究生学历 + English-related major)",
+      "emailWatch": [
+        "gwng.edu.cn",
+        "ngrsc2024@163.com",
+        "南国商学院"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight 2026-09-20: reviewed official 2026 University English Teaching Department recruitment; PhD-only. Global talent posts also PhD. Skipped.",
+      "history": [
+        {
+          "at": "2026-09-21T03:20:31Z",
+          "event": "Reviewed GWNG 大学英语教学部 2026 notice; blocked for PhD wall"
+        }
+      ]
+    },
+    {
+      "id": "gzist-io-2026-09-21",
+      "school": "Guangzhou Institute of Science and Technology (GZIST)",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher (oral / college English / EAP) — inquiry",
+      "pay": "ask / university band",
+      "zSponsor": "Yes (university; Work Permit path expected)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.gzist.edu.cn/English/Contact_Us.htm",
+      "appliedAt": "2026-09-21T03:20:31Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gzist.edu.cn",
+        "io@gzist.edu.cn",
+        "GZIST",
+        "广州理工学院"
+      ],
+      "lastEmailAt": "2026-09-21T03:20:31Z",
+      "lastEmailSubject": "Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
+      "notes": "Overnight ~10:20pm CDT 2026-09-20: cold apply to International Office io@gzist.edu.cn (official Contact Us); Gmail id 1a0c1f9f3776f302; resume DOCX attached. Bachelor-level inquiry; CELTA-in-progress disclosed. Direct university.",
+      "history": [
+        {
+          "at": "2026-09-21T03:20:31Z",
+          "event": "Email submitted to io@gzist.edu.cn with resume DOCX; Gmail id 1a0c1f9f3776f302"
+        }
+      ]
+    },
+    {
+      "id": "gpnu-oiec-2026-09-21",
+      "school": "Guangdong Polytechnic Normal University (GPNU)",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher (oral / college English / EAP) — inquiry",
+      "pay": "ask / university band",
+      "zSponsor": "Yes (university; Work Permit path expected)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://en.gpnu.edu.cn/Contact_us.htm",
+      "appliedAt": "2026-09-21T03:20:31Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gpnu.edu.cn",
+        "oiec@gpnu.edu.cn",
+        "gpnuad@163.com",
+        "GPNU",
+        "广东技术师范大学"
+      ],
+      "lastEmailAt": "2026-09-21T03:20:31Z",
+      "lastEmailSubject": "Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
+      "notes": "Overnight ~10:20pm CDT 2026-09-20: cold apply to Office of International Cooperation (oiec@gpnu.edu.cn) Gmail id 1a0c1f9f0a602e1c + School of International Education (gpnuad@163.com) Gmail id 1a0c1fa07ee6f5f0; resume DOCX attached. No live foreign-teacher posting found this run; bachelor-level inquiry, CELTA-in-progress disclosed. Direct university.",
+      "history": [
+        {
+          "at": "2026-09-21T03:20:31Z",
+          "event": "Email submitted to oiec@gpnu.edu.cn with resume DOCX; Gmail id 1a0c1f9f0a602e1c"
+        },
+        {
+          "at": "2026-09-21T03:20:31Z",
+          "event": "Email submitted to gpnuad@163.com with resume DOCX; Gmail id 1a0c1fa07ee6f5f0"
+        }
+      ]
+    },
+    {
+      "id": "gzucm-net-stale-2026-09-17",
+      "school": "Guangzhou University of Chinese Medicine (GZUCUM)",
+      "city": "Guangzhou",
+      "role": "Native English Teacher (undergrad / graduate English)",
+      "pay": "stale 2016 listing 8–9.5k",
+      "zSponsor": "Unknown (listing expired)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://www.gzucm.edu.cn/info/1461/72771.htm",
+      "appliedAt": "2026-09-17T03:10:15Z",
+      "status": "Skipped — stale 2016–2017 foreign-teacher listing; current School of Foreign Studies posts are Chinese PhD teaching posts, not foreign Z ESL",
+      "emailWatch": [
+        "gzucm.edu.cn",
+        "shenminwang"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight 2026-09-16: only live foreign-teacher page is 2016; 2019+ posts are domestic PhD English majors. Skipped.",
+      "history": [
+        {
+          "at": "2026-09-17T03:10:15Z",
+          "event": "Reviewed GZUCUM foreign-teacher pages; skipped as stale / wrong track"
+        }
+      ]
+    },
+    {
+      "id": "firstleap-breezy-2026-09-17",
+      "school": "First Leap (TAL) — Breezy careers",
+      "city": "Guangzhou (brand present historically; current careers online-only)",
+      "role": "Online English Teacher (remote)",
+      "pay": "ask",
+      "zSponsor": "No (online/remote US listing — not China Z path)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://first-leap.breezy.hr/",
+      "appliedAt": "2026-09-17T03:10:15Z",
+      "status": "Skipped — current public careers only Online English Teacher (Orlando remote); no verified Guangzhou in-person Z-visa opening this run",
+      "emailWatch": [
+        "firstleap",
+        "First Leap",
+        "TAL"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight 2026-09-16: breezy.hr shows only Online English Teacher remote. Not a Guangzhou Z-visa apply target.",
+      "history": [
+        {
+          "at": "2026-09-17T03:10:15Z",
+          "event": "Checked first-leap.breezy.hr; skipped online-only / no GZ Z opening"
+        }
+      ]
+    },
+    {
+      "id": "gzhu-english-2026-09-17",
+      "school": "Guangzhou University (School of Foreign Studies)",
+      "city": "Guangzhou",
+      "role": "English Teacher (reading / writing / speaking)",
+      "pay": "competitive + free campus housing (listing)",
+      "zSponsor": "Yes (university expected)",
+      "mandarinRequired": false,
+      "certRequiredFirst": true,
+      "url": "https://english.gzhu.edu.cn/index/Join_Us.htm",
+      "appliedAt": "2026-09-17T03:10:15Z",
+      "status": "Blocked/Skipped — hard teaching-certification wall (recognized English teaching cert + minimum 2 years teaching experience required before apply)",
+      "emailWatch": [
+        "gzhu.edu.cn",
+        "irisbing"
+      ],
+      "lastEmailAt": null,
+      "lastEmailSubject": null,
+      "notes": "Overnight 2026-09-16: Join Us page requires native speaker + recognized English teaching certification + bachelor's + age ≤55 + ≥2 years teaching experience. Contact irisbing@gzhu.edu.cn. Hard cert wall vs CELTA-in-progress path — skipped. Direct university.",
+      "history": [
+        {
+          "at": "2026-09-17T03:10:15Z",
+          "event": "Reviewed english.gzhu.edu.cn Join Us; blocked for hard TEFL/cert + 2yrs wall"
+        }
+      ]
+    },
+    {
+      "id": "gzmtu-maritime-2026-09-17",
+      "school": "Guangzhou Maritime University (广州航海学院 / 广州交通大学筹)",
+      "city": "Guangzhou",
+      "role": "Foreign English Teacher (oral English / Business English)",
+      "pay": "~200k CNY/year package (base + class fee + housing allowance) per July 2025 listing",
+      "zSponsor": "Yes (university; work-permit path expected)",
+      "mandarinRequired": false,
+      "certRequiredFirst": false,
+      "url": "https://pinwaiyi.com/articles/n/p7694.html",
+      "appliedAt": "2026-09-17T03:10:15Z",
+      "status": "Submitted — awaiting recruiter reply",
+      "emailWatch": [
+        "gzmtu.edu.cn",
+        "Maritime",
+        "航海",
+        "International_Office"
+      ],
+      "lastEmailAt": "2026-09-17T03:10:15Z",
+      "lastEmailSubject": "Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
+      "notes": "Overnight ~10:03pm CDT 2026-09-16: Gmail apply to International_Office@gzmtu.edu.cn (Global Affairs Office listing Jul 2025 via pinwaiyi). BA + 1yr teaching path; TEFL preferred not hard wall. CELTA-in-progress + Remote Pilot Instructor disclosed. Guangzhou-only; prefer cash housing stipend. Gmail ids: 1a0ad56a4295e07b (DOCX) + follow-up TXT 1a0ad57767882205 same thread. Direct university employer.",
+      "history": [
+        {
+          "at": "2026-09-17T03:10:15Z",
+          "event": "Email submitted to International_Office@gzmtu.edu.cn with resume DOCX; Gmail id 1a0ad56a4295e07b"
+        },
+        {
+          "at": "2026-09-17T03:10:15Z",
+          "event": "Follow-up same thread with resume TXT; Gmail id 1a0ad57767882205"
+        }
+      ]
+    },
     {
       "id": "english1-gz-2026-09-14",
       "school": "English 1",
