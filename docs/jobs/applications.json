@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-21T09:16:30Z",
-  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Morning summary 2026-09-16 (~6:12am CDT wind-down): overnight stopped aggressive applying after 6am. Pipeline: 25 active/submitted awaiting reply (language centers + GZ universities). Tonight’s overnight submits: WEBi, Nanfang College, GTCFLA (~10pm); CIEO, Meten GZ, GDGM (~12am); I Can Read GZ, GDUT (~2am); Guangdong Baiyun University, GCUT, Guangdong Industry Polytechnic University (~4am). Action for Michael: rebook English 1 interview (Nathan canceled Sat Sep 19 11:30pm CDT — https://calendly.com/nathan-belltoxtle-english1/30min?share_attribution=send_from_calendly_reschedule). Skipped overnight: SCAU CIE (stale+2yr wall), Kid Castle (TEFL wall), Meriteach/Click China agents, expired eChinacities. No new submits this 6am wind-down run. pendingPublish. | Email watch 2026-09-16 ~9:50am CDT: CIEO + Nanfang auto-acks recorded. | Overnight 2026-09-16 (~10pm CDT): submitted Guangzhou Maritime University (International_Office@gzmtu.edu.cn). Logged skips: Guangzhou University (hard cert+2yrs), First Leap breezy (online-only), GZUCUM (stale 2016). pendingPublish — ask Motivational Expert to push Pages. | Overnight 2026-09-20 (~10:20pm CDT): submitted GPNU (oiec@gpnu.edu.cn + gpnuad@163.com) and GZIST (io@gzist.edu.cn). Logged skips: GWNG PhD wall, UISG QTS/PGCE wall, SMU stale 2020, TMEGA pinwaiyi agent board. eChinacities GZ batch mostly expired/agents/wrong-subject. No China recruiter mail since Sep 16. pendingPublish — ask Motivational Expert to push Pages. | Overnight 2026-09-21 ~12:10am CDT: submitted GZCCC (iec@gzccc.edu.cn), GDSDXY (zhaopin@gdsdxy.cn), Berlitz China (info@em.berlitz.com). pendingPublish — ask Motivational Expert to push Pages. | Overnight 2026-09-21 ~4:15am CDT: 3 new submits GZIEC/GDPU/Lingnan; pendingPublish true.",
+  "updated": "2026-09-21T15:22:14Z",
+  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Morning summary Mon Sep 21 2026 ~6:18am CDT wind-down: overnight stopped aggressive applying after 6am. No new submits this wind-down run. Overnight pipeline (+11 email submits ~10:20pm–4:15am CDT): GPNU, GZIST; GZCCC, GDSDXY, Berlitz; RISE, GFDVC, Railway Polytechnic; GZIEC, GDPU, Lingnan. Many vocational/polytechnic targets skipped (no FT mailbox / Chinese-hire-only / stale / non-GZ). Active awaiting reply/interview follow-up: 38. Top action: rebook English 1 with Nathan. pendingPublish true — ask Motivational Expert to push Pages.",
   "applications": [
     {
       "id": "gziec-foreign-en-2026-09-21",
@@ -481,7 +481,7 @@
       "certRequiredFirst": false,
       "url": "https://www.gdsdxy.cn/",
       "appliedAt": "2026-09-21T05:11:23Z",
-      "status": "Submitted — awaiting recruiter reply",
+      "status": "Received — GDSDXY HR auto-reply (mail received; next steps via school website announcements)",
       "emailWatch": [
         "gdsdxy.cn",
         "zhaopin@gdsdxy.cn",
@@ -489,13 +489,17 @@
         "广东水利电力职业技术学院",
         "水院"
       ],
-      "lastEmailAt": "2026-09-21T05:11:23Z",
-      "lastEmailSubject": "Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
-      "notes": "Overnight 2026-09-21 ~12:10am CDT: cold apply to college recruitment mailbox (zhaopin@gdsdxy.cn) Gmail id 1a0c25f8d0224de5; resume DOCX attached. Guangzhou campuses (Tianhe + Conghua). Bachelor-level inquiry, CELTA-in-progress disclosed. Direct college.",
+      "lastEmailAt": "2026-09-21T05:10:42Z",
+      "lastEmailSubject": "公招 Auto Reply  Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
+      "notes": "Overnight 2026-09-21 ~12:10am CDT: cold apply to college recruitment mailbox (zhaopin@gdsdxy.cn) Gmail id 1a0c25f8d0224de5; resume DOCX attached. Guangzhou campuses (Tianhe + Conghua). Bachelor-level inquiry, CELTA-in-progress disclosed. Direct college. Auto-ack 2026-09-21T05:10:42Z from zhaopin@gdsdxy.cn (thread 1a0c25facc38fcc1): 邮件已收悉; 资格审查/考试通知以学校官网公告为准.",
       "history": [
         {
           "at": "2026-09-21T05:11:23Z",
           "event": "Email submitted to zhaopin@gdsdxy.cn with resume DOCX; Gmail id 1a0c25f8d0224de5"
+        },
+        {
+          "at": "2026-09-21T05:10:42Z",
+          "event": "Gmail: zhaopin@gdsdxy.cn Auto Reply (公招) — application mail received; screening/exam notices will be on school website — do not rely on further email alone"
         }
       ]
     },
@@ -673,7 +677,7 @@
       "certRequiredFirst": false,
       "url": "https://en.gpnu.edu.cn/Contact_us.htm",
       "appliedAt": "2026-09-21T03:20:31Z",
-      "status": "Submitted — awaiting recruiter reply",
+      "status": "Received — GPNU OIEC auto-reply (delivery ack; redirects study inquiries to gpnuad@163.com)",
       "emailWatch": [
         "gpnu.edu.cn",
         "oiec@gpnu.edu.cn",
@@ -681,9 +685,9 @@
         "GPNU",
         "广东技术师范大学"
       ],
-      "lastEmailAt": "2026-09-21T03:20:31Z",
-      "lastEmailSubject": "Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
-      "notes": "Overnight ~10:20pm CDT 2026-09-20: cold apply to Office of International Cooperation (oiec@gpnu.edu.cn) Gmail id 1a0c1f9f0a602e1c + School of International Education (gpnuad@163.com) Gmail id 1a0c1fa07ee6f5f0; resume DOCX attached. No live foreign-teacher posting found this run; bachelor-level inquiry, CELTA-in-progress disclosed. Direct university.",
+      "lastEmailAt": "2026-09-21T03:19:42Z",
+      "lastEmailSubject": "国际交流与合作处 Auto Reply  Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
+      "notes": "Overnight ~10:20pm CDT 2026-09-20: cold apply to Office of International Cooperation (oiec@gpnu.edu.cn) Gmail id 1a0c1f9f0a602e1c + School of International Education (gpnuad@163.com) Gmail id 1a0c1fa07ee6f5f0; resume DOCX attached. No live foreign-teacher posting found this run; bachelor-level inquiry, CELTA-in-progress disclosed. Direct university. Auto-ack 2026-09-21T03:19:42Z from oiec@gpnu.edu.cn (thread 1a0c1fa11231bacb): \"Dear, study at GPNU, mail to gpnuad@163.com\" (already also emailed gpnuad@163.com).",
       "history": [
         {
           "at": "2026-09-21T03:20:31Z",
@@ -692,6 +696,10 @@
         {
           "at": "2026-09-21T03:20:31Z",
           "event": "Email submitted to gpnuad@163.com with resume DOCX; Gmail id 1a0c1fa07ee6f5f0"
+        },
+        {
+          "at": "2026-09-21T03:19:42Z",
+          "event": "Gmail: oiec@gpnu.edu.cn Auto Reply — delivery ack; body redirects study inquiries to gpnuad@163.com (already submitted there too)"
         }
       ]
     },
@@ -2710,60 +2718,85 @@
     }
   ],
   "morningSummary": {
-    "at": "2026-09-16T11:13:40Z",
-    "localLabel": "Wed Sep 16 2026 ~6:12am CDT",
+    "at": "2026-09-21T11:18:30Z",
+    "localLabel": "Mon Sep 21 2026 ~6:18am CDT",
     "newSubmitsThisRun": 0,
     "overnightSubmits": [
-      "WEBi English (Guangzhou)",
-      "Nanfang College Guangzhou",
-      "Guangdong Teachers College of Foreign Languages and Arts (GTCFLA)",
-      "CIEO",
-      "Meten English (Guangzhou)",
-      "Guangdong Polytechnic of Industry and Commerce (GDGM)",
-      "I Can Read (Guangzhou)",
-      "Guangdong University of Technology (GDUT)",
-      "Guangdong Baiyun University",
-      "Guangzhou City University of Technology (GCUT)",
-      "Guangdong Industry Polytechnic University"
-    ],
-    "topAction": "Rebook English 1 Calendly with Nathan Bell-Toxtle",
-    "activeAwaitingReply": 25,
-    "pendingPublish": true
-  },
-  "pendingPublish": false,
-  "emailWatchRun": {
-    "at": "2026-09-15T20:48:00Z",
-    "material": true,
-    "summary": "English 1 interview CONFIRMED: Sat Sep 19, 2026 11:30pm CDT via Microsoft Teams (Nathan Bell-Toxtle / Calendly). No other new recruiter replies (Houhai, Pei Zheng, AiRuiKe, WSE, Shane, Meiyin, i2, Songtian, Giraffe, SYSU, SCUT, Aston, Elevate, Goldstar unchanged).",
-    "changedIds": [
-      "english1-gz-2026-09-14"
-    ]
-  },
-  "overnightRun": {
-    "at": "2026-09-21T09:16:30Z",
-    "chicago": "2026-09-21 ~4:15am CDT",
-    "newSubmits": [
+      "Guangdong Polytechnic Normal University (GPNU)",
+      "Guangzhou Institute of Science and Technology (GZIST)",
+      "Guangzhou City Construction College (GZCCC)",
+      "Guangdong Water Conservancy and Electric Power Vocational Technical College (GDSDXY)",
+      "Berlitz (China) — Guangzhou",
+      "RISE English (Guangzhou)",
+      "Guangdong Food and Drug Vocational College (GFDVC)",
+      "Guangzhou Railway Polytechnic",
       "Guangzhou International Economics College (GZIEC)",
       "Guangdong Pharmaceutical University (GDPU)",
       "Guangdong Lingnan Institute of Technology"
     ],
-    "skipped": [
+    "overnightSubmitCount": 11,
+    "overnightSkippedHighlight": [
       "Spirit Kids — no direct HR email",
       "Acada — stale 2008 emails only",
       "Nanyang Polytechnic — qq.com-only Chinese hire",
-      "GCP City Vocational — Chinese talent mailbox only (not GCUT)",
-      "Civil Aviation Vocational — no FT mailbox",
-      "Construction Polytechnic — no FT email",
-      "Mechanical & Electrical Polytechnic — Chinese Master's hire",
-      "Science & Technology Polytechnic — Zhuhai-primary",
-      "Hualian College — mechanical Chinese hire only",
-      "Best Learning — no public GZ HR email"
+      "GCP City Vocational — Chinese talent mailbox only (≠ GCUT)",
+      "Civil Aviation / Construction / Mech&Elec / Sci&Tech / Hualian — no FT path",
+      "Best Learning — no public GZ HR email",
+      "Also researched/skipped earlier: Guangzhou University (cert+2yrs), HFI (cert+2yrs), Guangdong Communication Polytechnic (stale contact)"
     ],
-    "note": "3 new email submits (user-Gmail draft+attach+send) with resume DOCX. Full apply mode (~4:15am CDT; before 6am wind-down). pendingPublish true — ask Motivational Expert to push Pages.",
-    "gmailIds": {
-      "GZIEC": "1a0c3428c68bb2af",
-      "GDPU": "1a0c343b868a7038",
-      "Lingnan Institute": "1a0c343b7a72ebef"
+    "topAction": "Rebook English 1 Calendly with Nathan Bell-Toxtle (https://calendly.com/nathan-belltoxtle-english1/30min?share_attribution=send_from_calendly_reschedule). Original Sep 19 slot does not stand.",
+    "alsoWatch": [
+      "Goldstar — need 120hr TEFL before they will consider/sponsor",
+      "CIEO + Nanfang — Received (auto-replies); wait for screening"
+    ],
+    "activeAwaitingReply": 38,
+    "pendingPublish": true,
+    "windDown": "After ~6am CDT: stopped aggressive applying. No new submits this 6:18am wind-down run."
+  },
+  "pendingPublish": false,
+  "emailWatchRun": {
+    "at": "2026-09-21T15:22:14Z",
+    "localLabel": "Mon Sep 21 2026 ~10:20am CDT",
+    "material": true,
+    "summary": "Two overnight-submit auto-replies: GDSDXY (zhaopin@gdsdxy.cn) confirmed mail received — watch school website for screening/exam notices; GPNU OIEC (oiec@gpnu.edu.cn) auto-reply delivery ack redirecting study inquiries to gpnuad@163.com (already also emailed). No new English 1 / Nathan / Calendly mail; rebook still open. No other recruiter replies in last ~3 days for listed schools.",
+    "changedIds": [
+      "gdsdxy-zhaopin-2026-09-21",
+      "gpnu-oiec-2026-09-21"
+    ]
+  },
+  "overnightRun": {
+    "at": "2026-09-21T11:18:30Z",
+    "chicago": "Mon Sep 21 2026 ~6:18am CDT",
+    "phase": "morning-wind-down",
+    "newSubmits": [],
+    "skipped": [],
+    "note": "6:18am CDT wind-down only — no aggressive applying after 6am. Morning summary written for overnight ~10:20pm–4:15am CDT (+11 submits). pendingPublish true.",
+    "priorOvernight": {
+      "at": "2026-09-21T09:16:30Z",
+      "chicago": "2026-09-21 ~4:15am CDT",
+      "newSubmits": [
+        "Guangzhou International Economics College (GZIEC)",
+        "Guangdong Pharmaceutical University (GDPU)",
+        "Guangdong Lingnan Institute of Technology"
+      ],
+      "skipped": [
+        "Spirit Kids — no direct HR email",
+        "Acada — stale 2008 emails only",
+        "Nanyang Polytechnic — qq.com-only Chinese hire",
+        "GCP City Vocational — Chinese talent mailbox only (not GCUT)",
+        "Civil Aviation Vocational — no FT mailbox",
+        "Construction Polytechnic — no FT email",
+        "Mechanical & Electrical Polytechnic — Chinese Master's hire",
+        "Science & Technology Polytechnic — Zhuhai-primary",
+        "Hualian College — mechanical Chinese hire only",
+        "Best Learning — no public GZ HR email"
+      ],
+      "note": "3 new email submits (user-Gmail draft+attach+send) with resume DOCX. Full apply mode (~4:15am CDT; before 6am wind-down). pendingPublish true — ask Motivational Expert to push Pages.",
+      "gmailIds": {
+        "GZIEC": "1a0c3428c68bb2af",
+        "GDPU": "1a0c343b868a7038",
+        "Lingnan Institute": "1a0c343b7a72ebef"
+      }
     }
   }
 }
