@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-21T15:22:14Z",
-  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Morning summary Mon Sep 21 2026 ~6:18am CDT wind-down: overnight stopped aggressive applying after 6am. No new submits this wind-down run. Overnight pipeline (+11 email submits ~10:20pm–4:15am CDT): GPNU, GZIST; GZCCC, GDSDXY, Berlitz; RISE, GFDVC, Railway Polytechnic; GZIEC, GDPU, Lingnan. Many vocational/polytechnic targets skipped (no FT mailbox / Chinese-hire-only / stale / non-GZ). Active awaiting reply/interview follow-up: 38. Top action: rebook English 1 with Nathan. pendingPublish true — ask Motivational Expert to push Pages.",
+  "updated": "2026-09-21T20:49:50Z",
+  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Morning summary Mon Sep 21 2026 ~6:18am CDT wind-down: overnight stopped aggressive applying after 6am. No new submits this wind-down run. Overnight pipeline (+11 email submits ~10:20pm–4:15am CDT): GPNU, GZIST; GZCCC, GDSDXY, Berlitz; RISE, GFDVC, Railway Polytechnic; GZIEC, GDPU, Lingnan. Many vocational/polytechnic targets skipped (no FT mailbox / Chinese-hire-only / stale / non-GZ). Active awaiting reply/interview follow-up: 38. Top action: rebook English 1 with Nathan. pendingPublish true — ask Motivational Expert to push Pages. | Email watch Mon Sep 21 2026 ~3:48pm CDT: GZIEC HR auto-reply → Received. No other new recruiter replies. pendingPublish true.",
   "applications": [
     {
       "id": "gziec-foreign-en-2026-09-21",
@@ -13,7 +13,7 @@
       "certRequiredFirst": false,
       "url": "https://www.gaoxiaojob.com/announcement/detail/374639.html",
       "appliedAt": "2026-09-21T09:16:30Z",
-      "status": "Submitted — awaiting recruiter reply",
+      "status": "Received — GZIEC HR auto-reply (mail received; will reply in a few days)",
       "emailWatch": [
         "163.com",
         "shewairenshi@163.com",
@@ -21,13 +21,17 @@
         "涉外经济",
         "gziec.edu.cn"
       ],
-      "lastEmailAt": "2026-09-21T09:16:30Z",
-      "lastEmailSubject": "Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
-      "notes": "Overnight 2026-09-21 ~4:15am CDT: emailed shewairenshi@163.com (黎老师 HR) Gmail id 1a0c3428c68bb2af; resume DOCX attached. 2026招聘公告 lists 华文与国际教育学院英语专任教师1–2名 (IELTS 7 preferred for Chinese track) + school is pinwaiyi-registered foreign-teacher employer; applied as 外籍英语教师 / Z-visa path. Guangzhou Sha Tai Road campus preferred (Fogang also listed for some Chinese roles).",
+      "lastEmailAt": "2026-09-21T09:18:33Z",
+      "lastEmailSubject": "广州涉外学院 自动回复: Application — Foreign English Teacher (Guangzhou) — Michael Palmero (US)",
+      "notes": "Overnight 2026-09-21 ~4:15am CDT: emailed shewairenshi@163.com (黎老师 HR) Gmail id 1a0c3428c68bb2af; resume DOCX attached. 2026招聘公告 lists 华文与国际教育学院英语专任教师1–2名 (IELTS 7 preferred for Chinese track) + school is pinwaiyi-registered foreign-teacher employer; applied as 外籍英语教师 / Z-visa path. Guangzhou Sha Tai Road campus preferred (Fogang also listed for some Chinese roles). Email watch 2026-09-21 ~3:48pm CDT: HR auto-reply confirmed mail received.",
       "history": [
         {
           "at": "2026-09-21T09:16:30Z",
           "event": "Email submitted to shewairenshi@163.com with resume DOCX; Gmail id 1a0c3428c68bb2af"
+        },
+        {
+          "at": "2026-09-21T09:18:33Z",
+          "event": "Gmail: shewairenshi@163.com Auto Reply (广州涉外学院) — email received; will reply in a few days after review; Gmail id 1a0c342bbd017188"
         }
       ]
     },
@@ -700,6 +704,10 @@
         {
           "at": "2026-09-21T03:19:42Z",
           "event": "Gmail: oiec@gpnu.edu.cn Auto Reply — delivery ack; body redirects study inquiries to gpnuad@163.com (already submitted there too)"
+        },
+        {
+          "at": "2026-09-21T03:19:43Z",
+          "event": "Gmail: gpnuad@163.com Auto Reply (School of International Education) — email received; Gmail id 1a0c1fa2b057966d"
         }
       ]
     },
@@ -2753,16 +2761,17 @@
     "pendingPublish": true,
     "windDown": "After ~6am CDT: stopped aggressive applying. No new submits this 6:18am wind-down run."
   },
-  "pendingPublish": false,
+  "pendingPublish": true,
   "emailWatchRun": {
-    "at": "2026-09-21T15:22:14Z",
-    "localLabel": "Mon Sep 21 2026 ~10:20am CDT",
-    "material": true,
-    "summary": "Two overnight-submit auto-replies: GDSDXY (zhaopin@gdsdxy.cn) confirmed mail received — watch school website for screening/exam notices; GPNU OIEC (oiec@gpnu.edu.cn) auto-reply delivery ack redirecting study inquiries to gpnuad@163.com (already also emailed). No new English 1 / Nathan / Calendly mail; rebook still open. No other recruiter replies in last ~3 days for listed schools.",
-    "changedIds": [
-      "gdsdxy-zhaopin-2026-09-21",
-      "gpnu-oiec-2026-09-21"
-    ]
+    "at": "2026-09-21T20:49:50Z",
+    "local": "2026-09-21 ~3:48pm CDT",
+    "source": "GZ job email watch routine",
+    "gmail": "user-Gmail-xai (primary user-Gmail discovery errored; xai connected)",
+    "window": "newer_than:3d",
+    "material": [
+      "GZIEC → Received (HR auto-reply)"
+    ],
+    "notes": "Only new status: GZIEC shewairenshi@163.com auto-reply. GPNU/GDSDXY already Received. No interview/offer/rejection. No English 1 rebook mail. EF Language Abroad webinar promo ignored (not ESL hire)."
   },
   "overnightRun": {
     "at": "2026-09-21T11:18:30Z",
