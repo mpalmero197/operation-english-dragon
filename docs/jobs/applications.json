@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-21T20:49:50Z",
-  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Morning summary Mon Sep 21 2026 ~6:18am CDT wind-down: overnight stopped aggressive applying after 6am. No new submits this wind-down run. Overnight pipeline (+11 email submits ~10:20pm–4:15am CDT): GPNU, GZIST; GZCCC, GDSDXY, Berlitz; RISE, GFDVC, Railway Polytechnic; GZIEC, GDPU, Lingnan. Many vocational/polytechnic targets skipped (no FT mailbox / Chinese-hire-only / stale / non-GZ). Active awaiting reply/interview follow-up: 38. Top action: rebook English 1 with Nathan. pendingPublish true — ask Motivational Expert to push Pages. | Email watch Mon Sep 21 2026 ~3:48pm CDT: GZIEC HR auto-reply → Received. No other new recruiter replies. pendingPublish true.",
+  "updated": "2026-09-23T21:09:40Z",
+  "note": "Living list. China Job Finder updates from real submits + Gmail checks. Status only changes when verified. | Morning summary Mon Sep 21 2026 ~6:18am CDT wind-down: overnight stopped aggressive applying after 6am. No new submits this wind-down run. Overnight pipeline (+11 email submits ~10:20pm–4:15am CDT): GPNU, GZIST; GZCCC, GDSDXY, Berlitz; RISE, GFDVC, Railway Polytechnic; GZIEC, GDPU, Lingnan. Many vocational/polytechnic targets skipped (no FT mailbox / Chinese-hire-only / stale / non-GZ). Active awaiting reply/interview follow-up: 38. Top action: rebook English 1 with Nathan. pendingPublish true — ask Motivational Expert to push Pages. | Email watch Mon Sep 21 2026 ~3:48pm CDT: GZIEC HR auto-reply → Received. No other new recruiter replies. pendingPublish true. | Email watch Tue Sep 22 2026 ~3:45pm CDT: no new GZ ESL recruiter replies since ~10:12am; GZIEC/GPNU/GDSDXY still Received only; no interview/offer/rejection or English 1 rebook. pendingPublish false. | Email watch Wed Sep 23 2026 ~4:09pm CDT: no new GZ ESL recruiter replies since ~10:22am; GZIEC/GPNU/GDSDXY still Received only; no interview/offer/rejection or English 1 rebook. pendingPublish false.",
   "applications": [
     {
       "id": "gziec-foreign-en-2026-09-21",
@@ -2763,15 +2763,13 @@
   },
   "pendingPublish": false,
   "emailWatchRun": {
-    "at": "2026-09-21T20:49:50Z",
-    "local": "2026-09-21 ~3:48pm CDT",
+    "at": "2026-09-23T21:09:40Z",
+    "local": "Wed Sep 23 2026 ~4:09pm CDT",
     "source": "GZ job email watch routine",
-    "gmail": "user-Gmail-xai (primary user-Gmail discovery errored; xai connected)",
-    "window": "newer_than:3d",
-    "material": [
-      "GZIEC → Received (HR auto-reply)"
-    ],
-    "notes": "Only new status: GZIEC shewairenshi@163.com auto-reply. GPNU/GDSDXY already Received. No interview/offer/rejection. No English 1 rebook mail. EF Language Abroad webinar promo ignored (not ESL hire)."
+    "gmail": "user-Gmail",
+    "window": "newer_than:3d–5d + targeted from: listed HR addresses + edu.cn/163/126 Auto Reply + English 1/Nathan/Calendly",
+    "material": [],
+    "notes": "No new Guangzhou ESL recruiter replies since prior watch 2026-09-23 ~10:22am CDT. Still only already-logged auto-acks: GZIEC (Received), GPNU (Received), GDSDXY (Received). No interview/offer/rejection. No English 1 rebook mail."
   },
   "overnightRun": {
     "at": "2026-09-21T11:18:30Z",
